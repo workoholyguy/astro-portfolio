@@ -1,270 +1,100 @@
-# Astro Boilerplate with TypeScript and Tailwind CSS [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
+<!-- Header -->
+<h1 align="center">Hi there, I'm Omar 👋</h1>
 
-🚀 Astro Boilerplate is starter code for your blog or portfolio based on Astro
-with Tailwind CSS 3.0. ⚡️ Made with Astro, TypeScript, ESLint, Prettier,
-Tailwind CSS.
+<p align="center">
+  <a href="https://linkedin.com/in/omar-madjitov-6b3a33234">
+    <img src="https://img.shields.io/badge/LinkedIn-Omar%20Madjitov-blue?style=flat&logo=linkedin&logoColor=white">
+  </a>
+  <a href="mailto:omadjitov1@icloud.com">
+    <img src="https://img.shields.io/badge/Email-omadjitov1@icloud.com-red?style=flat&logo=gmail&logoColor=white">
+  </a>
+  
+</p>
 
-Clone this project and use it to create your own Astro blog. You can check the
-[Astro templates demo](https://creativedesignsguru.com/demo/astro-boilerplate/).
+<!-- About Me -->
+## 👨‍💻 About Me
 
-## Sponsors
+- 🎓 Master's student in Computer Science at Georgia State University
+- 🌟 Passionate about turning ideas into reality through code
+- 🚀 Always exploring new technologies and frameworks
+- 🎯 Focused on Machine Learning, Web Development, and Mobile Apps
+- 🌐 Fluent in English and Uzbek
 
-<table width="100%">
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/sentry-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/sentry-dark.png?raw=true">
-          <img alt="Sentry" src="public/assets/images/sentry-dark.png?raw=true">
-        </picture>
-      </a>
-      <a href="https://about.codecov.io/codecov-free-trial/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/codecov-white.svg?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/codecov-dark.svg?raw=true">
-          <img alt="Codecov" src="public/assets/images/codecov-dark.svg?raw=true">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/better-stack-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/better-stack-dark.png?raw=true">
-          <img alt="Better Stack" src="public/assets/images/better-stack-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
-    <td align="center" style=width="33%">
-      <a href="https://nextlessjs.com">
-        <img src="public/assets/images/nextlessjs.png?raw=true" alt="React SaaS Boilerplate Next.js" />
-      </a>
-    </td>
-  </tr>
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/a3cd2a25-377b-4c0d-a3d3-bce121df2c94">
-          <source media="(prefers-color-scheme: light)" srcset="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/3459074d-c3e2-46c5-8be4-b836cb7989ea">
-          <img alt="Clerk – Authentication & User Management for Next.js" src="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/3459074d-c3e2-46c5-8be4-b836cb7989ea">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://turso.tech/?utm_source=nextjsstarterbp">
-        <img src="public/assets/images/turso.png?raw=true" alt="SQLite Developer Experience">
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://l.crowdin.com/next-js">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/crowdin-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/crowdin-dark.png?raw=true">
-          <img alt="Crowdin" src="public/assets/images/crowdin-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
-  </tr>
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="mailto:contact@creativedesignsguru.com">
-        Add your logo here
-      </a>
-    </td>
-  </tr>
-</table>
+<!-- Tech Stack -->
+## 🛠 Tech Stack
 
-## Features
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/-Java-007396?style=flat&logo=java&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Swift](https://img.shields.io/badge/-Swift-FA7343?style=flat&logo=swift&logoColor=white)
 
-A complete Blog feature:
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
 
-- 🎈 Syntax Highlighting
-- 🤖 SEO friendly with sitemap.xml and robots.txt
-- ⚙️ RSS feed
-- 📖 Pagination
-- 🌈 Include a dark blog theme
-- ⬇️ Markdown
-- 📦 Image lazy loading
-- 💎 Responsive design
+![SwiftUI](https://img.shields.io/badge/-SwiftUI-FA7343?style=flat&logo=swift&logoColor=white)
+![Android](https://img.shields.io/badge/-Android-3DDC84?style=flat&logo=android&logoColor=white)
+![SQL](https://img.shields.io/badge/-SQL-4479A1?style=flat&logo=postgresql&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
 
-Developer experience first:
+<!-- Projects Showcase -->
+## 🔥 Projects
 
-- 🔥 Astro
-- 🎨 Tailwind CSS with aspect ratio and typography plugin
-- 🎉 TypeScript
-- ✏️ ESLint compatible with .astro files
-- 🛠 Prettier compatible with .astro files
-- 🦊 Husky
-- 🚫 lint-staged
-- 🚨 Commitlint
-- 🔧 One-click deploy on Netlify (or, manual if you prefer)
+### [Sequence Classification via Graph & SVM](https://github.com/workoholyguy/Sequence-Classification-Machine-Learning)
+Applied machine learning techniques to classify DNA sequences, overcoming challenges in high-dimensional data processing.
 
-ESLint with:
-
-- Airbnb styled guide
-- TypeScript compatible
-- Astro compatible
-- Automatically remove unused imports
-- Import sorting
-- Tailwind CSS plugin
-
-### Philosophy
-
-- Minimal code
-- SEO-friendly
-- 🚀 Production-ready
-
-### Requirements
-
-- Node.js and npm
-
-#### Optional
-
-- [nvm](https://github.com/nvm-sh/nvm)
-- [volta](https://volta.sh/)
-
-While Astro-boilerplate should work with the latest Node version, it has been
-tested with the versions in .nvmrc & the bottom of package.json. At current
-writing, that's Node v16.15.1
-
-### Getting started
-
-Run the following command on your local environment:
-
-``` bash
-git clone --depth=1 https://github.com/ixartz/Astro-boilerplate
-cd my-project-name
-npm install
-```
-
-Then, you can run locally in development mode with live reload:
-
-``` bash
-npm run dev
-```
-
-Open [http://localhost:4321](http://localhost:4321) with your favorite browser
-to see your project.
-
-### Deploy to production (manual)
-
-You can create an optimized production build with:
-
-```shell
-npm run build
-```
-
-Now, your blog is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
-
-### Deploy to Netlify
-
-Clone this repository on own GitHub account and deploy to Netlify:
-
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ixartz/Astro-boilerplate)
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:4321`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-| `npm run clean`   | Remove `./dist` folder                       |
-| `npm run lint`    | Run ESLint and report styling error          |
-
-### Contributions
-
-Everyone is welcome to contribute to this project.
-Feel free to open an issue if you have question or found a bug.
-
-### Additional Checks
-
-This README.md was linted with
-[markdownlint](https://github.com/igorshubovych/markdownlint-cli)
-
-### License
-
-Licensed under the MIT License, Copyright © 2024
-
-## Sponsors
-
-<table width="100%">
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/sentry-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/sentry-dark.png?raw=true">
-          <img alt="Sentry" src="public/assets/images/sentry-dark.png?raw=true">
-        </picture>
-      </a>
-      <a href="https://about.codecov.io/codecov-free-trial/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/codecov-white.svg?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/codecov-dark.svg?raw=true">
-          <img alt="Codecov" src="public/assets/images/codecov-dark.svg?raw=true">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/better-stack-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/better-stack-dark.png?raw=true">
-          <img alt="Better Stack" src="public/assets/images/better-stack-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
-    <td align="center" style=width="33%">
-      <a href="https://nextlessjs.com">
-        <img src="public/assets/images/nextlessjs.png?raw=true" alt="React SaaS Boilerplate Next.js" />
-      </a>
-    </td>
-  </tr>
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/a3cd2a25-377b-4c0d-a3d3-bce121df2c94">
-          <source media="(prefers-color-scheme: light)" srcset="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/3459074d-c3e2-46c5-8be4-b836cb7989ea">
-          <img alt="Clerk – Authentication & User Management for Next.js" src="https://github.com/ixartz/Next-js-Boilerplate/assets/1328388/3459074d-c3e2-46c5-8be4-b836cb7989ea">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://turso.tech/?utm_source=nextjsstarterbp">
-        <img src="public/assets/images/turso.png?raw=true" alt="SQLite Developer Experience">
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://l.crowdin.com/next-js">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/crowdin-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/crowdin-dark.png?raw=true">
-          <img alt="Crowdin" src="public/assets/images/crowdin-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
-  </tr>
-  <tr height="187px">
-    <td align="center" width="33%">
-      <a href="mailto:contact@creativedesignsguru.com">
-        Add your logo here
-      </a>
-    </td>
-  </tr>
-</table>
+**Technologies:** Python, NetworkX, Scikit-learn
 
 ---
 
-Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com)
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
+### [FORKIFY Modern Recipe App](https://github.com/workoholyguy/forkify-javascript-static-app)
+Developed a full-stack application featuring a searchable recipe database with user authentication and interactive functionalities.
 
-[![Sponsor Next JS Boilerplate](https://cdn.buymeacoffee.com/buttons/default-red.png)](https://github.com/sponsors/ixartz)
+**Technologies:** JavaScript, HTML5, CSS3, Forkify API
+
+---
+
+### [FITMAP Fitness Tracking Web App](https://github.com/workoholyguy/Fit-Map-Your-Workouts-on-a-Mapp-Web-App--HTML---CSS---JavaScript-)
+Created an interactive app to log running and cycling activities with metrics and map visualizations, ensuring consistent user experience across devices.
+
+**Technologies:** JavaScript, HTML5, CSS3, Leaflet.js
+
+---
+
+### [Real-Time Responsive Digital Fountain](https://github.com/workoholyguy/IOT-DIGITAL-FOUNTAIN-CONTROL-ANDRODI-PYTHON)
+Built an IoT project controlling a digital fountain using environmental data and decision tree models for real-time adjustments.
+
+**Technologies:** Java, Android Studio, Firebase, Python
+
+---
+
+<!-- GitHub Stats -->
+## 📊 GitHub Stats
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github-readme-stats.vercel.app/api?username=workoholyguy&show_icons=true&theme=tokyonight">
+    </td>
+    <td>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=workoholyguy&layout=compact&theme=tokyonight">
+    </td>
+  </tr>
+</table>
+
+<!-- Fun Fact -->
+## 🎮 Fun Fact
+
+When I'm not coding, you can find me exploring the latest in IoT gadgets, cooking up a storm in the kitchen, or going for a run to test out my own fitness app!
+
+<!-- Connect with me -->
+## 📫 How to Reach Me
+
+- **LinkedIn:** [linkedin.com/in/omar-madjitov-6b3a33234](https://linkedin.com/in/omar-madjitov-6b3a33234)
+- **Email:** [omadjitov1@icloud.com](mailto:omadjitov1@icloud.com)
+
+---
+
+*Let's connect and create something amazing together!*
