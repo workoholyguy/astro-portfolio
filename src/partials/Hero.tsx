@@ -10,54 +10,45 @@ const Hero = () => (
     <HeroAvatar
       title={
         <>
-          Hi there, I'm <GradientText>Ixartz</GradientText> 👋
+          Hi there, I'm <GradientText>Omar,</GradientText> the Founder of <GradientText>Avid Tech Usa !</GradientText> 👋
         </>
       }
       description={
         <>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            malesuada
-          </a>{' '}
-          nisi tellus, non imperdiet nisi tempor at. Lorem ipsum dolor sit amet,{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            consectetur
-          </a>{' '}
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+        Avid Tech USA empowers local businesses by bridging the gap between ideas and technology. We specialize in crafting stunning, <a className="text-cyan-400 hover:underline" href="/">
+        SEO-friendly
+          </a>{' '} websites that enhance online presence, ensuring businesses stand out in the digital landscape. <a className="text-cyan-400 hover:underline" href="/">
+          From concept to launch,
+          </a>{' '} we turn visions into functional, high-performing websites.{' '}
         </>
       }
       avatar={
         <img
-          className="h-80 w-64"
-          src="/assets/images/avatar.svg"
+          className="h-64 w-64"
+          src="../../public/assets/images/Profile Image.png"
           alt="Avatar image"
           loading="lazy"
         />
       }
       socialButtons={
         <>
-          <a href="/">
+          <a href="https://github.com/workoholyguy">
             <HeroSocial
-              src="/assets/images/twitter-icon.png"
-              alt="Twitter icon"
+              src="../../public/assets/images/github_2.png"
+              alt="GitHub icon"
             />
           </a>
-          <a href="/">
-            <HeroSocial
-              src="/assets/images/facebook-icon.png"
-              alt="Facebook icon"
-            />
-          </a>
-          <a href="/">
+          
+          <a href="https://www.linkedin.com/in/omar-madjitov-6b3a33234/">
             <HeroSocial
               src="/assets/images/linkedin-icon.png"
               alt="Linkedin icon"
             />
           </a>
-          <a href="/">
+          <a href="mailto:omadjitov1@icloud.com">
             <HeroSocial
-              src="/assets/images/youtube-icon.png"
-              alt="Youtube icon"
+              src="../../public/assets/images/mail-icon.png"
+              alt="email-icon"
             />
           </a>
         </>
