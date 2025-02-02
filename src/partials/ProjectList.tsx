@@ -34,6 +34,39 @@ const ProjectList = () => (
         }
       />
       <Project
+        name="UltraSound Georgia"
+        description="📍Designed and built a fully responsive website for a private ultrasound clinic, optimizing user experience and improving client engagement.
+        📍Implemented SEO strategies and performance optimizations to enhance search engine visibility.
+        📍Integrated email appointment scheduling and contact forms for client inquiries."
+        link="https://www.ultrasoundgeorgia.com/"
+        img={{ src: '/assets/images/ultrasound-machine.png', alt: 'Project Ultrasound' }}
+        category={
+          <>
+            <Tags color={ColorTags.ROSE}>Figma</Tags>
+            <Tags color={ColorTags.VIOLET}>HTML</Tags>
+            <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
+            <Tags color={ColorTags.PINK}>CSS</Tags>
+          </>
+        }
+      />
+      <Project
+        name="Black Friday Deals"
+        description="📍 Designed and built a bin store website optimized for high-traffic seasonal sales.
+📍 Integrated a user-friendly interface for browsing and purchasing discounted products.
+📍 Implemented performance enhancements to ensure fast loading speeds during peak shopping periods.
+📍 Designed a responsive layout for seamless shopping across desktop and mobile devices."
+        link="https://www.blackfridaydealstores.com/"
+        img={{ src: '/assets/images/bfd-logo.png', alt: 'Project Black Friday' }}
+        category={
+          <>
+            <Tags color={ColorTags.ROSE}>Figma</Tags>
+            <Tags color={ColorTags.VIOLET}>HTML</Tags>
+            <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
+            <Tags color={ColorTags.PINK}>CSS</Tags>
+          </>
+        }
+      />
+      <Project
         name="FORKIFY — Modern Recipe App "
         description="A modern web application designed for cooking enthusiasts, providing access to over 1,000,000 recipes from around the world. It features an intuitive interface for searching, viewing, and saving recipes, as well as the ability to upload and manage personal recipes. The app leverages the Forkify API to deliver rich content and supports bookmarking favorite recipes for easy access."
         link="https://github.com/workoholyguy/forkify-javascript-static-app?tab=readme-ov-file"
@@ -61,22 +94,8 @@ const ProjectList = () => (
           </>
         }
       />
-      <Project
-        name="UltraSound Georgia"
-        description="📍Designed and built a fully responsive website for a private ultrasound clinic, optimizing user experience and improving client engagement.
-        📍Implemented SEO strategies and performance optimizations to enhance search engine visibility.
-        📍Integrated email appointment scheduling and contact forms for client inquiries."
-        link="https://www.ultrasoundgeorgia.com/"
-        img={{ src: '/assets/images/ultrasound-machine.png', alt: 'Project Ultrasound' }}
-        category={
-          <>
-            <Tags color={ColorTags.ROSE}>Figma</Tags>
-            <Tags color={ColorTags.VIOLET}>HTML</Tags>
-            <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
-            <Tags color={ColorTags.PINK}>CSS</Tags>
-          </>
-        }
-      />
+      
+      
     </div>
   </Section>
 );
