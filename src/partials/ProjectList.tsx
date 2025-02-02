@@ -36,28 +36,44 @@ const ProjectList = () => (
       <Project
         name="FORKIFY — Modern Recipe App "
         description="A modern web application designed for cooking enthusiasts, providing access to over 1,000,000 recipes from around the world. It features an intuitive interface for searching, viewing, and saving recipes, as well as the ability to upload and manage personal recipes. The app leverages the Forkify API to deliver rich content and supports bookmarking favorite recipes for easy access."
-        link="/"
+        link="https://github.com/workoholyguy/forkify-javascript-static-app?tab=readme-ov-file"
         img={{ src: '/assets/images/forkify-project-icon.png', alt: 'Project Forkify' }}
         category={
           <>
-            <Tags color={ColorTags.VIOLET}>Next.js</Tags>
-            <Tags color={ColorTags.EMERALD}>Blog</Tags>
-            <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
+            <Tags color={ColorTags.YELLOW}>Vanilla JS</Tags>
+            <Tags color={ColorTags.VIOLET}>HTML</Tags>
+            <Tags color={ColorTags.PINK}>CSS</Tags>
+            <Tags color={ColorTags.EMERALD}>Web App</Tags>
           </>
         }
       />
       <Project
-        name="Project 3"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        bibendum. Nunc non posuere consectetur, justo erat semper enim, non
-        hendrerit dui odio id enim."
-        link="/"
+        name="Fit Map Your Workouts on a Map"
+        description="An interactive web app to log running and cycling activities with metrics and map visualizations, incorporating local storage for data persistence and a user-friendly dynamic interface."
+        link="https://github.com/workoholyguy/Fit-Map-Your-Workouts-on-a-Mapp-Web-App--HTML---CSS---JavaScript-"
         img={{ src: '/assets/images/project-maps.png', alt: 'Project Maps' }}
         category={
           <>
-            <Tags color={ColorTags.FUCHSIA}>Astro.js</Tags>
-            <Tags color={ColorTags.INDIGO}>Bootstrap</Tags>
-            <Tags color={ColorTags.ROSE}>TypeScript</Tags>
+            <Tags color={ColorTags.ROSE}>Map API</Tags>
+            <Tags color={ColorTags.YELLOW}>Vanilla JS</Tags>
+            <Tags color={ColorTags.VIOLET}>HTML</Tags>
+            <Tags color={ColorTags.PINK}>CSS</Tags>
+          </>
+        }
+      />
+      <Project
+        name="UltraSound Georgia"
+        description="📍Designed and built a fully responsive website for a private ultrasound clinic, optimizing user experience and improving client engagement.
+        📍Implemented SEO strategies and performance optimizations to enhance search engine visibility.
+        📍Integrated email appointment scheduling and contact forms for client inquiries."
+        link="https://www.ultrasoundgeorgia.com/"
+        img={{ src: '/assets/images/ultrasound-machine.png', alt: 'Project Ultrasound' }}
+        category={
+          <>
+            <Tags color={ColorTags.ROSE}>Figma</Tags>
+            <Tags color={ColorTags.VIOLET}>HTML</Tags>
+            <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
+            <Tags color={ColorTags.PINK}>CSS</Tags>
           </>
         }
       />
