@@ -38,8 +38,8 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
 
   return (
     <form
-      action="https://formsubmit.co/el/avidtechusa@gmail.com"
-      // action="https://formsubmit.co/el/kiyiwe"
+      // action="https://formsubmit.co/el/avidtechusa@gmail.com"
+      action="https://formsubmit.co/el/kiyiwe"
       method="POST"
       onSubmit={handleSubmit}
       className="mx-auto max-w-md space-y-6"
