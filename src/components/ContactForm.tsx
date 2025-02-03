@@ -40,6 +40,7 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
     <form
       // action="https://formsubmit.co/el/avidtechusa@gmail.com"
       action="https://formsubmit.co/el/kiyiwe"
+      target="_blank"
       method="POST"
       onSubmit={handleSubmit}
       className="mx-auto max-w-md space-y-6"
