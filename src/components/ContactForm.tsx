@@ -6,23 +6,9 @@ interface ContactFormProps {
   redirectUrl?: string;
 }
 
-// interface FormData = {
-//   name: string;
-//   email: string;
-//   message: string;
-// };
-
 const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [err, setErr] = useState('');
-
-  // const [formData, setFormData] = useState<FormData>({
-  //   name: '',
-  //   email: '',
-  //   message: ''
-  // });
-
-  // const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,7 +19,7 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
       const form = e.target as HTMLFormElement;
       const formData = new FormData(form);
 
-      const response = await fetch('https://formsubmit.co/el/kiyiwe', {
+      const response = await fetch('https://formsubmit.co/your-random-string', {
         method: 'POST',
         body: formData,
       });
@@ -43,7 +29,7 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
       } else {
         throw new Error('Failed to send message');
       }
-    } catch (er) {
+    } catch (error) {
       setErr('Failed to send message. Please try again');
     } finally {
       setIsSubmitting(false);
@@ -51,15 +37,32 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-6">
+    <form
+      action="https://formsubmit.co/el/avidtechusa@gmail.com"
+      // action="https://formsubmit.co/el/kiyiwe"
+      method="POST"
+      onSubmit={handleSubmit}
+      className="mx-auto max-w-md space-y-6"
+    >
       <h2 className="text-center text-3xl font-bold">
         Let's Build You <br />
         <GradientText>an Awesome Web-Site !</GradientText>
       </h2>
+
+      {/* Hidden fields for FormSubmit functionality */}
       <input type="hidden" name="_next" value={redirectUrl} />
       <input type="hidden" name="_captcha" value="false" />
-      {/* <input type="hidden" name="_next" value={redirectUrl} />
-    <input type="hidden" name="_captcha" value="false" /> */}
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Contact Form Submission!"
+      />
+      <input type="hidden" name="_cc" value="your@email.com" />
+      <input
+        type="hidden"
+        name="_autoresponse"
+        value="Thank you for reaching out! We will get back to you soon."
+      />
 
       <div>
         <label
@@ -85,7 +88,7 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
           Phone (required)
         </label>
         <input
-          type="phone"
+          type="tel"
           id="phone"
           name="phone"
           required
@@ -93,10 +96,11 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
           placeholder="(123) 456-7890"
         />
       </div>
+
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-500 "
+          className="block text-sm font-medium text-gray-500"
         >
           Email (required)
         </label>
@@ -124,6 +128,24 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
           className="mt-1 block w-full rounded-md border-gray-300 text-black shadow-sm"
         ></textarea>
       </div>
+
+      {/* File upload field (Optional) */}
+      <div>
+        <label
+          htmlFor="attachment"
+          className="block text-sm font-medium text-gray-500"
+        >
+          Attach a file (optional)
+        </label>
+        <input
+          type="file"
+          id="attachment"
+          name="attachment"
+          accept="image/png, image/jpeg, application/pdf"
+          className="mt-1 block w-full rounded-md border-gray-300 text-black shadow-sm"
+        />
+      </div>
+
       {err && <p className="text-sm text-red-600">{err}</p>}
 
       <button
@@ -131,11 +153,10 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
         disabled={isSubmitting}
         className="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-white shadow-sm hover:bg-indigo-700 disabled:opacity-50"
       >
-        {isSubmitting ? 'Sending' : 'Send Message'}
+        {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
     </form>
   );
-  // </FormData>
 };
 
 export { ContactForm };
