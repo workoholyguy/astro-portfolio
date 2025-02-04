@@ -19,6 +19,7 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
       const form = e.target as HTMLFormElement;
       const formData = new FormData(form);
 
+      // Make sure to replace the endpoint with your unique FormSubmit URL
       const response = await fetch('https://formsubmit.co/your-random-string', {
         method: 'POST',
         body: formData,
@@ -38,19 +39,18 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
 
   return (
     <form
-      // action="https://formsubmit.co/el/avidtechusa@gmail.com"
+      // action="https://formsubmit.co/your-random-string"  // fallback if JS is disabled
       action="https://formsubmit.co/el/kiyiwe"
-      target="_blank"
       method="POST"
       onSubmit={handleSubmit}
       className="mx-auto max-w-md space-y-6"
     >
       <h2 className="text-center text-3xl font-bold">
         Let's Build You <br />
-        <GradientText>an Awesome Web-Site !</GradientText>
+        <GradientText>an Awesome Web-Site!</GradientText>
       </h2>
 
-      {/* Hidden fields for FormSubmit functionality */}
+      {/* Hidden fields for FormSubmit */}
       <input type="hidden" name="_next" value={redirectUrl} />
       <input type="hidden" name="_captcha" value="false" />
       <input
@@ -65,6 +65,7 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
         value="Thank you for reaching out! We will get back to you soon."
       />
 
+      {/* Input fields */}
       <div>
         <label
           htmlFor="name"
@@ -130,7 +131,7 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
         ></textarea>
       </div>
 
-      {/* File upload field (Optional) */}
+      {/* Optional file upload */}
       <div>
         <label
           htmlFor="attachment"
