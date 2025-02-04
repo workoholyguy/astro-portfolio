@@ -6,7 +6,7 @@ interface ContactFormProps {
   redirectUrl?: string;
 }
 
-const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
+const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/' }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [err, setErr] = useState('');
 
