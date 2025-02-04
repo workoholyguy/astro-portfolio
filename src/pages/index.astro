@@ -9,6 +9,7 @@ import { RecentPosts } from "@/partials/RecentPosts";
 import Base from "@/templates/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
 import { sortByDate } from "@/utils/Posts";
+import { ContactForm } from "@/partials/ContactForm";
 
 const allPosts = await Astro.glob<IFrontmatter>("./posts/*.md");
 const sortedPosts = sortByDate(allPosts);
@@ -24,5 +25,6 @@ const { description } = AppConfig;
   <!-- <Sponsors /> -->
   <ProjectList client:load />
   <RecentPosts client:load postList={lastThreePosts} />
-  <CTA client:load />
+  <!-- <CTA client:load /> -->
+  <ContactForm client:load redirectUrl="/" />
 </Base>
