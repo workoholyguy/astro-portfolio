@@ -18,7 +18,7 @@ const ProjectList = () => (
       <Project
         name="Holly Handy Hub"
         description="The ultimate platform for DIY enthusiasts and professional handymen. Whether you're tackling a project or seeking expert advice, HandyHub connects you with a supportive community ready to help."
-        link="/"
+        link="https://holyhandyhub.netlify.app/"
         img={{
           src: '/assets/images/hhh-project-icon.png',
           alt: 'Project Web Design',
@@ -39,7 +39,10 @@ const ProjectList = () => (
         📍Implemented SEO strategies and performance optimizations to enhance search engine visibility.
         📍Integrated email appointment scheduling and contact forms for client inquiries."
         link="https://www.ultrasoundgeorgia.com/"
-        img={{ src: '/assets/images/ultrasound-machine.png', alt: 'Project Ultrasound' }}
+        img={{
+          src: '/assets/images/ultrasound-machine.png',
+          alt: 'Project Ultrasound',
+        }}
         category={
           <>
             <Tags color={ColorTags.ROSE}>Figma</Tags>
@@ -56,7 +59,10 @@ const ProjectList = () => (
 📍 Implemented performance enhancements to ensure fast loading speeds during peak shopping periods.
 📍 Designed a responsive layout for seamless shopping across desktop and mobile devices."
         link="https://www.blackfridaydealstores.com/"
-        img={{ src: '/assets/images/bfd-logo.png', alt: 'Project Black Friday' }}
+        img={{
+          src: '/assets/images/bfd-logo.png',
+          alt: 'Project Black Friday',
+        }}
         category={
           <>
             <Tags color={ColorTags.ROSE}>Figma</Tags>
@@ -70,7 +76,10 @@ const ProjectList = () => (
         name="FORKIFY — Modern Recipe App "
         description="A modern web application designed for cooking enthusiasts, providing access to over 1,000,000 recipes from around the world. It features an intuitive interface for searching, viewing, and saving recipes, as well as the ability to upload and manage personal recipes. The app leverages the Forkify API to deliver rich content and supports bookmarking favorite recipes for easy access."
         link="https://github.com/workoholyguy/forkify-javascript-static-app?tab=readme-ov-file"
-        img={{ src: '/assets/images/forkify-project-icon.png', alt: 'Project Forkify' }}
+        img={{
+          src: '/assets/images/forkify-project-icon.png',
+          alt: 'Project Forkify',
+        }}
         category={
           <>
             <Tags color={ColorTags.YELLOW}>Vanilla JS</Tags>
@@ -94,8 +103,6 @@ const ProjectList = () => (
           </>
         }
       />
-      
-      
     </div>
   </Section>
 );
