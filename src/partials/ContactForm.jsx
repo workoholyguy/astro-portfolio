@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GradientText } from "astro-boilerplate-components";
 
 const ContactForm = ({ redirectUrl = "/" }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,7 +39,7 @@ const ContactForm = ({ redirectUrl = "/" }) => {
     >
       <h2 className="text-center text-3xl font-bold">
         Let's Build You <br />
-        <>an Awesome Web-Site!</>
+        <GradientText>an Awesome Web-Site!</GradientText>
       </h2>
 
       <input type="hidden" name="_next" value={redirectUrl} />

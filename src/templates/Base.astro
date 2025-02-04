@@ -31,10 +31,10 @@ const {
     />
   </head>
   <body class="bg-slate-900 text-gray-100">
-    <Navbar />
+    <Navbar client:load />
 
-    <slot />
+    <slot client:load />
 
-    <Footer />
+    <Footer client:load />
   </body>
 </html>
