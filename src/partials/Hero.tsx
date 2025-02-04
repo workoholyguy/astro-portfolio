@@ -32,7 +32,7 @@ const Hero = () => (
       avatar={
         <img
           className="h-64 w-64"
-          src="../../public/assets/images/Profile Image.png"
+          src="/assets/images/Profile Image.png"
           alt="Avatar image"
           loading="lazy"
         />
@@ -40,10 +40,7 @@ const Hero = () => (
       socialButtons={
         <>
           <a href="https://github.com/workoholyguy">
-            <HeroSocial
-              src="../../public/assets/images/github_2.png"
-              alt="GitHub icon"
-            />
+            <HeroSocial src="/assets/images/github_2.png" alt="GitHub icon" />
           </a>
 
           <a href="https://www.linkedin.com/in/omar-madjitov-6b3a33234/">
@@ -53,10 +50,7 @@ const Hero = () => (
             />
           </a>
           <a href="mailto:omadjitov1@icloud.com">
-            <HeroSocial
-              src="../../public/assets/images/mail-icon.png"
-              alt="email-icon"
-            />
+            <HeroSocial src="/assets/images/mail-icon.png" alt="email-icon" />
           </a>
         </>
       }
