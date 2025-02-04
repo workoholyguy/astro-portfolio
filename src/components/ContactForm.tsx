@@ -42,6 +42,7 @@ const ContactForm: FC<ContactFormProps> = ({ redirectUrl = '/success' }) => {
       // action="https://formsubmit.co/your-random-string"  // fallback if JS is disabled
       action="https://formsubmit.co/el/kiyiwe"
       method="POST"
+      target="_blank"
       onSubmit={handleSubmit}
       className="mx-auto max-w-md space-y-6"
     >
