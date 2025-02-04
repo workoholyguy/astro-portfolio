@@ -20,9 +20,9 @@ const { description } = AppConfig;
 ---
 
 <Base head={{ title, description }}>
-  <Hero />
+  <Hero client:load />
   <!-- <Sponsors /> -->
-  <ProjectList />
-  <RecentPosts postList={lastThreePosts} />
+  <ProjectList client:load />
+  <RecentPosts client:load postList={lastThreePosts} />
   <CTA client:load />
 </Base>
