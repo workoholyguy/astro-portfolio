@@ -60,7 +60,7 @@ const ProjectList = () => (
 📍 Designed a responsive layout for seamless shopping across desktop and mobile devices."
         link="https://www.blackfridaydealstores.com/"
         img={{
-          src: '/assets/images/bfd-logo.png',
+          src: '/assets/images/bfd-logo-bag-2.png',
           alt: 'Project Black Friday',
         }}
         category={
