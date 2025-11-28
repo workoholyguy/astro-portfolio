@@ -1,10 +1,172 @@
 import {
   ColorTags,
   GradientText,
-  Project,
   Section,
   Tags,
 } from 'astro-boilerplate-components';
+
+type ProjectMeta = {
+  name: string;
+  description: string;
+  link: string;
+  img: {
+    src: string;
+    alt: string;
+  };
+  category: {
+    color: keyof typeof ColorTags;
+    label: string;
+  }[];
+};
+
+const projects: ProjectMeta[] = [
+  {
+    name: 'The Job Ledger',
+    description:
+      'Job Ledger is a hiring intelligence dashboard that logs every job application, surfaces follow-up reminders, compares competing offers, and centralizes conversations so your pipeline stays transparent and actionable.',
+    link: 'https://jobledger.app/',
+    img: {
+      src: '/assets/images/job-ledger-logo_1.png',
+      alt: 'Job Ledger',
+    },
+    category: [
+      { color: ColorTags.LIME, label: 'Express Js' },
+      { color: ColorTags.PINK, label: 'Tailwind CSS' },
+      { color: ColorTags.SKY, label: 'React Js' },
+      { color: ColorTags.GREEN, label: 'PostgreSQL' },
+    ],
+  },
+  {
+    name: '7Lines',
+    description:
+      '7Lines is a minimalist Next.js starter engineered for speed, clarity, and rapid iteration. It strips development down to seven core files—routing, layout, UI scaffold, and typed API hooks—so new projects spin up instantly with clean architecture, zero noise, and auto-optimized performance.',
+    link: 'https://github.com/workoholyguy/7lines', // or your deployment link
+    img: {
+      src: '../../public/assets/images/7linesinc_icon.png',
+      alt: '7Lines Project',
+    },
+    category: [
+      { color: ColorTags.LIME, label: 'Next.js' },
+      { color: ColorTags.SKY, label: 'TypeScript' },
+      { color: ColorTags.PINK, label: 'Tailwind CSS' },
+      { color: ColorTags.EMERALD, label: 'Vercel' },
+    ],
+  },
+  {
+    name: 'Holly Handy Hub',
+    description:
+      'Holly Handy Hub is a professional/maker community where home improvement ideas, proven techniques, and expert help converge, letting users crowdsource guidance or showcase finished projects with confidence.',
+    link: 'https://holyhandyhub.netlify.app/',
+    img: {
+      src: '/assets/images/hhh-project-icon.png',
+      alt: 'Project Web Design',
+    },
+    category: [
+      { color: ColorTags.LIME, label: 'Web design' },
+      { color: ColorTags.PINK, label: 'CSS' },
+      { color: ColorTags.SKY, label: 'React Js' },
+      { color: ColorTags.GREEN, label: 'SupaBase' },
+    ],
+  },
+  {
+    name: 'UltraSound Georgia',
+    description:
+      'Designed and developed a fully responsive site for UltraSound Georgia, combining performance and SEO enhancements with easy-to-use appointment scheduling and outreach forms to improve patient conversions.',
+    link: 'https://www.ultrasoundgeorgia.com/',
+    img: {
+      src: '/assets/images/ultrasound-machine.png',
+      alt: 'Project Ultrasound',
+    },
+    category: [
+      { color: ColorTags.ROSE, label: 'Figma' },
+      { color: ColorTags.VIOLET, label: 'HTML' },
+      { color: ColorTags.YELLOW, label: 'JavaScript' },
+      { color: ColorTags.PINK, label: 'CSS' },
+    ],
+  },
+  {
+    name: 'Black Friday Deals',
+    description:
+      'Crafted a high-velocity storefront for Black Friday Deals featuring a product-focused layout, streamlined checkout, and performance tuning to stay responsive during peak seasonal traffic.',
+    link: 'https://www.blackfridaydealstores.com/',
+    img: {
+      src: '/assets/images/bfd-logo-bag-2.png',
+      alt: 'Project Black Friday',
+    },
+    category: [
+      { color: ColorTags.ROSE, label: 'Figma' },
+      { color: ColorTags.VIOLET, label: 'HTML' },
+      { color: ColorTags.YELLOW, label: 'JavaScript' },
+      { color: ColorTags.PINK, label: 'CSS' },
+    ],
+  },
+  {
+    name: 'FORKIFY — Modern Recipe App ',
+    description:
+      'Forkify is a modern recipe experience built on the Forkify API, letting home cooks search from over a million recipes, save favorites, and upload their own menus through an intuitive, bookmark-friendly interface.',
+    link: 'https://github.com/workoholyguy/forkify-javascript-static-app?tab=readme-ov-file',
+    img: {
+      src: '/assets/images/forkify-project-icon.png',
+      alt: 'Project Forkify',
+    },
+    category: [
+      { color: ColorTags.YELLOW, label: 'Vanilla JS' },
+      { color: ColorTags.VIOLET, label: 'HTML' },
+      { color: ColorTags.PINK, label: 'CSS' },
+      { color: ColorTags.EMERALD, label: 'Web App' },
+    ],
+  },
+  {
+    name: 'Fit Map Your Workouts on a Map',
+    description:
+      'Fit Map logs running and cycling workouts with descriptive metrics and interactive map overlays, using local storage to persist personal routes and delivering a playful yet informative experience for every athlete.',
+    link: 'https://github.com/workoholyguy/Fit-Map-Your-Workouts-on-a-Mapp-Web-App--HTML---CSS---JavaScript-',
+    img: {
+      src: '/assets/images/project-maps.png',
+      alt: 'Project Maps',
+    },
+    category: [
+      { color: ColorTags.ROSE, label: 'Map API' },
+      { color: ColorTags.YELLOW, label: 'Vanilla JS' },
+      { color: ColorTags.VIOLET, label: 'HTML' },
+      { color: ColorTags.PINK, label: 'CSS' },
+    ],
+  },
+];
+
+const ProjectCard = ({ project }: { project: ProjectMeta }) => (
+  <a
+    className="flex w-full flex-col rounded-md bg-slate-800 p-3 transition hover:-translate-y-0.5 hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 md:flex-row"
+    href={project.link}
+  >
+    <div className="shrink-0">
+      <img
+        className="h-36 w-36 hover:translate-y-1"
+        src={project.img.src}
+        alt={project.img.alt}
+        loading="lazy"
+      />
+    </div>
+
+    <div>
+      <div className="flex flex-col items-center gap-y-2 md:flex-row">
+        <div className="text-xl font-semibold">{project.name}</div>
+
+        <div className="ml-3 flex flex-wrap gap-2">
+          {project.category.map((tag) => (
+            <Tags key={`${project.name}-${tag.label}`} color={tag.color}>
+              {tag.label}
+            </Tags>
+          ))}
+        </div>
+      </div>
+
+      <p className="mt-3 whitespace-pre-line text-gray-400">
+        {project.description}
+      </p>
+    </div>
+  </a>
+);
 
 const ProjectList = () => (
   <Section
@@ -15,94 +177,9 @@ const ProjectList = () => (
     }
   >
     <div className="flex flex-col gap-6">
-      <Project
-        name="Holly Handy Hub"
-        description="The ultimate platform for DIY enthusiasts and professional handymen. Whether you're tackling a project or seeking expert advice, HandyHub connects you with a supportive community ready to help."
-        link="https://holyhandyhub.netlify.app/"
-        img={{
-          src: '/assets/images/hhh-project-icon.png',
-          alt: 'Project Web Design',
-        }}
-        category={
-          <>
-            {/* <Tags color={ColorTags.FUCHSIA}>Astro.js</Tags> */}
-            <Tags color={ColorTags.LIME}>Web design</Tags>
-            <Tags color={ColorTags.PINK}>CSS</Tags>
-            <Tags color={ColorTags.SKY}>React Js</Tags>
-            <Tags color={ColorTags.GREEN}>SupaBase</Tags>
-          </>
-        }
-      />
-      <Project
-        name="UltraSound Georgia"
-        description="📍Designed and built a fully responsive website for a private ultrasound clinic, optimizing user experience and improving client engagement.
-        📍Implemented SEO strategies and performance optimizations to enhance search engine visibility.
-        📍Integrated email appointment scheduling and contact forms for client inquiries."
-        link="https://www.ultrasoundgeorgia.com/"
-        img={{
-          src: '/assets/images/ultrasound-machine.png',
-          alt: 'Project Ultrasound',
-        }}
-        category={
-          <>
-            <Tags color={ColorTags.ROSE}>Figma</Tags>
-            <Tags color={ColorTags.VIOLET}>HTML</Tags>
-            <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
-            <Tags color={ColorTags.PINK}>CSS</Tags>
-          </>
-        }
-      />
-      <Project
-        name="Black Friday Deals"
-        description="📍 Designed and built a bin store website optimized for high-traffic seasonal sales.
-📍 Integrated a user-friendly interface for browsing and purchasing discounted products.
-📍 Implemented performance enhancements to ensure fast loading speeds during peak shopping periods.
-📍 Designed a responsive layout for seamless shopping across desktop and mobile devices."
-        link="https://www.blackfridaydealstores.com/"
-        img={{
-          src: '/assets/images/bfd-logo-bag-2.png',
-          alt: 'Project Black Friday',
-        }}
-        category={
-          <>
-            <Tags color={ColorTags.ROSE}>Figma</Tags>
-            <Tags color={ColorTags.VIOLET}>HTML</Tags>
-            <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
-            <Tags color={ColorTags.PINK}>CSS</Tags>
-          </>
-        }
-      />
-      <Project
-        name="FORKIFY — Modern Recipe App "
-        description="A modern web application designed for cooking enthusiasts, providing access to over 1,000,000 recipes from around the world. It features an intuitive interface for searching, viewing, and saving recipes, as well as the ability to upload and manage personal recipes. The app leverages the Forkify API to deliver rich content and supports bookmarking favorite recipes for easy access."
-        link="https://github.com/workoholyguy/forkify-javascript-static-app?tab=readme-ov-file"
-        img={{
-          src: '/assets/images/forkify-project-icon.png',
-          alt: 'Project Forkify',
-        }}
-        category={
-          <>
-            <Tags color={ColorTags.YELLOW}>Vanilla JS</Tags>
-            <Tags color={ColorTags.VIOLET}>HTML</Tags>
-            <Tags color={ColorTags.PINK}>CSS</Tags>
-            <Tags color={ColorTags.EMERALD}>Web App</Tags>
-          </>
-        }
-      />
-      <Project
-        name="Fit Map Your Workouts on a Map"
-        description="An interactive web app to log running and cycling activities with metrics and map visualizations, incorporating local storage for data persistence and a user-friendly dynamic interface."
-        link="https://github.com/workoholyguy/Fit-Map-Your-Workouts-on-a-Mapp-Web-App--HTML---CSS---JavaScript-"
-        img={{ src: '/assets/images/project-maps.png', alt: 'Project Maps' }}
-        category={
-          <>
-            <Tags color={ColorTags.ROSE}>Map API</Tags>
-            <Tags color={ColorTags.YELLOW}>Vanilla JS</Tags>
-            <Tags color={ColorTags.VIOLET}>HTML</Tags>
-            <Tags color={ColorTags.PINK}>CSS</Tags>
-          </>
-        }
-      />
+      {projects.map((project) => (
+        <ProjectCard key={project.name} project={project} />
+      ))}
     </div>
   </Section>
 );
