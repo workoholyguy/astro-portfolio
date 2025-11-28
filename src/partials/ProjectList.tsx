@@ -21,7 +21,7 @@ type ProjectMeta = {
 
 const projects: ProjectMeta[] = [
   {
-    name: 'The Job Ledger',
+    name: 'The Job Ledger -- Fullstack Web App',
     description:
       'Job Ledger is a hiring intelligence dashboard that logs every job application, surfaces follow-up reminders, compares competing offers, and centralizes conversations so your pipeline stays transparent and actionable.',
     link: 'https://jobledger.app/',
@@ -36,8 +36,25 @@ const projects: ProjectMeta[] = [
       { color: ColorTags.GREEN, label: 'PostgreSQL' },
     ],
   },
+
   {
-    name: '7Lines',
+    name: 'House Prices vs Crime & School Quality - Data Science / ML ',
+    description:
+      'Led the GSU study that merged NCES, APD, and Zillow data to clean 50k+ ZIP-code records, visualize correlations, and train RF/KNN/NN/logistic models plus spatial choropleths for crime, school quality, and housing prices.',
+    link: 'https://github.com/workoholyguy/houses-schools-crimes',
+    img: {
+      src: '/assets/images/home_price_ml.png',
+      alt: 'House Pricing Analysis',
+    },
+    category: [
+      { color: ColorTags.SKY, label: 'GeoPandas' },
+      { color: ColorTags.LIME, label: 'Random Forest' },
+      { color: ColorTags.PINK, label: 'Spatial Analysis' },
+      { color: ColorTags.ROSE, label: 'Regression' },
+    ],
+  },
+  {
+    name: '7Lines - Logistics Organization Web App',
     description:
       '7Lines is a minimalist Next.js starter engineered for speed, clarity, and rapid iteration. It strips development down to seven core files—routing, layout, UI scaffold, and typed API hooks—so new projects spin up instantly with clean architecture, zero noise, and auto-optimized performance.',
     link: 'https://github.com/workoholyguy/7lines', // or your deployment link
@@ -52,8 +69,25 @@ const projects: ProjectMeta[] = [
       { color: ColorTags.EMERALD, label: 'Vercel' },
     ],
   },
+
   {
-    name: 'Holly Handy Hub',
+    name: 'Protein Clustering Machine Learning',
+    description:
+      'End-to-end CSC 6850 individual work implementing pure-NumPy EDA, missing-data pipelines, custom KNN, and gradient-descent neural nets plus reproducible exports for every dataset.',
+    link: 'https://github.com/workoholyguy/machine-learning-clustering?tab=readme-ov-file#csc-6850--machine-learning',
+    img: {
+      src: '/assets/images/calculator_ml.png',
+      alt: 'Machine Learning Project',
+    },
+    category: [
+      { color: ColorTags.SKY, label: 'NumPy' },
+      { color: ColorTags.LIME, label: 'Machine Learning' },
+      { color: ColorTags.PINK, label: 'Data Engineering' },
+      { color: ColorTags.EMERALD, label: 'Research' },
+    ],
+  },
+  {
+    name: 'Holly Handy Hub -- Fullstack Web Application',
     description:
       'Holly Handy Hub is a professional/maker community where home improvement ideas, proven techniques, and expert help converge, letting users crowdsource guidance or showcase finished projects with confidence.',
     link: 'https://holyhandyhub.netlify.app/',
