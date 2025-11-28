@@ -59,7 +59,7 @@ const projects: ProjectMeta[] = [
       '7Lines is a minimalist Next.js starter engineered for speed, clarity, and rapid iteration. It strips development down to seven core files—routing, layout, UI scaffold, and typed API hooks—so new projects spin up instantly with clean architecture, zero noise, and auto-optimized performance.',
     link: 'https://github.com/workoholyguy/7lines', // or your deployment link
     img: {
-      src: '../../public/assets/images/7linesinc_icon.png',
+      src: '/assets/images/7linesinc_icon.png',
       alt: '7Lines Project',
     },
     category: [
@@ -103,7 +103,7 @@ const projects: ProjectMeta[] = [
     ],
   },
   {
-    name: 'UltraSound Georgia',
+    name: 'UltraSound Georgia -- Ultrasound Clinic Website',
     description:
       'Designed and developed a fully responsive site for UltraSound Georgia, combining performance and SEO enhancements with easy-to-use appointment scheduling and outreach forms to improve patient conversions.',
     link: 'https://www.ultrasoundgeorgia.com/',
