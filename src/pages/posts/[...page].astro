@@ -12,7 +12,6 @@ import {
 
 import { CTA } from "@/partials/CTA";
 import Base from "@/templates/Base.astro";
-import { AppConfig } from "@/utils/AppConfig";
 import { sortByDate } from "@/utils/Posts";
 
 type GetStaticPaths = {
@@ -32,18 +31,18 @@ interface Props {
 }
 
 const { page } = Astro.props as Props;
-const titleSuffix = ` - ${AppConfig.site_name}`;
-const titleBase = `Blog page ${page.currentPage}`;
+const titleSuffix = ` | AVID TECH USA`;
+const titleBase = page.currentPage === 1 ? 'Web Design & Business Blog' : `Blog - Page ${page.currentPage}`;
 const title = titleBase + titleSuffix;
 const description =
-  "Pagination example built with Astro styled with Tailwind CSS.";
+  "Tips, guides, and insights for small business owners looking to build a better online presence. Web design, SEO, and digital marketing advice.";
 ---
 
 <Base head={{ title, description }}>
   <Section>
     <PaginationHeader
-      title="Let s Get to Know Each Other !"
-      description="Learn More about Web-Site Creation."
+      title="Web Design & Business Blog"
+      description="Tips, guides, and insights for small business owners looking to build a better online presence."
     />
   </Section>
 

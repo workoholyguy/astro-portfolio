@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear();
   <Container size="xl">
     <!-- Main footer content -->
     <div class="py-16 md:py-20">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
         <!-- Brand column -->
         <div class="lg:col-span-1">
           <a href="/" class="inline-block mb-4">
@@ -76,6 +76,23 @@ const currentYear = new Date().getFullYear();
           <h3 class="text-text font-semibold mb-4">Company</h3>
           <ul class="space-y-3">
             {siteConfig.navigation.footer.company.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-text-muted text-sm hover:text-accent-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Locations column -->
+        <div>
+          <h3 class="text-text font-semibold mb-4">Locations</h3>
+          <ul class="space-y-3">
+            {siteConfig.navigation.footer.locations.map((item) => (
               <li>
                 <a
                   href={item.href}

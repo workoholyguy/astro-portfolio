@@ -6,8 +6,8 @@ export const siteConfig = {
   url: 'https://avidtechusa.com',
 
   // Contact info
-  email: 'hello@avidtechusa.com',
-  phone: '(404) 555-0123',
+  email: 'omadjitov1@icloud.com',
+  phone: '(404) 496-7397',
 
   // Location (primary)
   location: {
@@ -29,8 +29,8 @@ export const siteConfig = {
     main: [
       { label: 'Services', href: '/services' },
       { label: 'Work', href: '/work' },
-      { label: 'Process', href: '/process' },
-      { label: 'Pricing', href: '/pricing' },
+      { label: 'Locations', href: '/locations' },
+      { label: 'Blog', href: '/posts' },
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
     ],
@@ -47,6 +47,14 @@ export const siteConfig = {
         { label: 'Our Process', href: '/process' },
         { label: 'Pricing', href: '/pricing' },
         { label: 'Contact', href: '/contact' },
+      ],
+      locations: [
+        { label: 'Atlanta', href: '/locations/georgia/atlanta' },
+        { label: 'Marietta', href: '/locations/georgia/marietta' },
+        { label: 'Sandy Springs', href: '/locations/georgia/sandy-springs' },
+        { label: 'Alpharetta', href: '/locations/georgia/alpharetta' },
+        { label: 'Savannah', href: '/locations/georgia/savannah' },
+        { label: 'All Georgia Cities', href: '/locations/georgia' },
       ],
       legal: [
         { label: 'Privacy Policy', href: '/privacy' },
