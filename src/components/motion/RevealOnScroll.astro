@@ -1,0 +1,57 @@
+---
+interface Props {
+  class?: string;
+  delay?: number;
+  duration?: number;
+  as?: 'div' | 'section' | 'article' | 'li' | 'span';
+  direction?: 'up' | 'down' | 'left' | 'right' | 'none';
+}
+
+const {
+  class: className = '',
+  delay = 0,
+  duration = 600,
+  as: Tag = 'div',
+  direction = 'up',
+} = Astro.props;
+
+const directionStyles = {
+  up: 'translate-y-5',
+  down: '-translate-y-5',
+  left: 'translate-x-5',
+  right: '-translate-x-5',
+  none: '',
+};
+---
+
+<Tag
+  class:list={['reveal-element', directionStyles[direction], className]}
+  data-reveal
+  data-reveal-delay={delay}
+  style={`--reveal-duration: ${duration}ms;`}
+>
+  <slot />
+</Tag>
+
+<style is:global>
+  .reveal-element {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: var(--reveal-duration, 600ms);
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-element.revealed {
+    opacity: 1;
+    transform: none !important;
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-element {
+      opacity: 1;
+      transform: none !important;
+      transition: none;
+    }
+  }
+</style>

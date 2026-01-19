@@ -1,0 +1,26 @@
+{
+  "slug": "bfd-uae",
+  "name": "BFD UAE",
+  "client": "Black Friday Deals UAE",
+  "description": "A high-performance Shopify e-commerce store built for seasonal sales events. The store handles high traffic volumes during peak shopping periods and features a streamlined checkout experience.",
+  "shortDescription": "Shopify e-commerce store for seasonal sales",
+  "url": "https://bfduae.com",
+  "image": {
+    "src": "/assets/images/projects/bfd-uae.png",
+    "alt": "BFD UAE Shopify store homepage"
+  },
+  "thumbnail": "/assets/images/projects/bfd-uae-thumb.png",
+  "tags": ["E-commerce", "Shopify", "Performance"],
+  "category": "ecommerce",
+  "featured": true,
+  "order": 2,
+  "deliverables": [
+    "Custom Shopify theme development",
+    "Product catalog organization",
+    "Optimized checkout flow",
+    "Performance optimization for high traffic",
+    "Mobile shopping experience",
+    "Payment gateway integration"
+  ],
+  "results": "Successfully handled peak traffic during sales events with fast load times and smooth checkout experience."
+}

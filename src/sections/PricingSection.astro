@@ -1,0 +1,145 @@
+---
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import GlassCard from '@/components/ui/GlassCard.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+import Button from '@/components/ui/Button.astro';
+import RevealOnScroll from '@/components/motion/RevealOnScroll.astro';
+
+const pricingTiers = [
+  {
+    name: 'Starter Website',
+    description: 'Perfect for small businesses just getting started online',
+    price: '$2,500',
+    suffix: 'starting at',
+    features: [
+      '5-7 page custom website',
+      'Mobile responsive design',
+      'Contact form setup',
+      'Basic SEO setup',
+      '2 rounds of revisions',
+      '30-day support',
+    ],
+    cta: 'Get Started',
+    highlighted: false,
+  },
+  {
+    name: 'Professional',
+    description: 'Ideal for growing businesses that need more features',
+    price: '$5,000',
+    suffix: 'starting at',
+    features: [
+      '10-15 page custom website',
+      'Advanced design & animations',
+      'Content management system',
+      'Full SEO optimization',
+      'Analytics setup',
+      '90-day support',
+    ],
+    cta: 'Most Popular',
+    highlighted: true,
+  },
+  {
+    name: 'E-commerce',
+    description: 'For businesses ready to sell products online',
+    price: '$7,500',
+    suffix: 'starting at',
+    features: [
+      'Shopify or custom store',
+      'Product catalog setup',
+      'Payment processing',
+      'Inventory management',
+      'Conversion optimization',
+      '90-day support',
+    ],
+    cta: 'Get Started',
+    highlighted: false,
+  },
+];
+---
+
+<Section id="pricing" padding="lg" background="default">
+  <Container size="xl">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <RevealOnScroll>
+        <p class="text-accent-primary text-sm font-medium tracking-wide uppercase mb-4">
+          Pricing
+        </p>
+      </RevealOnScroll>
+      <RevealOnScroll delay={100}>
+        <h2 class="text-display-lg md:text-display-xl text-text mb-6">
+          Transparent
+          <GradientText>pricing</GradientText>
+        </h2>
+      </RevealOnScroll>
+      <RevealOnScroll delay={200}>
+        <p class="text-lg text-text-muted">
+          No hidden fees, no surprises. Every project is unique, but here are
+          typical starting points to help you budget.
+        </p>
+      </RevealOnScroll>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {pricingTiers.map((tier, index) => (
+        <RevealOnScroll delay={index * 100}>
+          <div class:list={[
+            'relative h-full',
+            tier.highlighted && 'lg:-mt-4 lg:mb-4',
+          ]}>
+            {tier.highlighted && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span class="px-4 py-1 text-xs font-semibold bg-gradient-primary text-surface rounded-full">
+                  Most Popular
+                </span>
+              </div>
+            )}
+
+            <GlassCard
+              hover={true}
+              padding="lg"
+              class:list={[
+                'h-full flex flex-col',
+                tier.highlighted && 'border-accent-cyan/30 shadow-glow-cyan',
+              ]}
+            >
+              <div class="text-center mb-6">
+                <h3 class="text-xl font-semibold text-text mb-2">{tier.name}</h3>
+                <p class="text-text-muted text-sm mb-4">{tier.description}</p>
+                <div class="flex items-baseline justify-center gap-1">
+                  <span class="text-4xl font-bold text-text">{tier.price}</span>
+                </div>
+                <p class="text-text-subtle text-sm mt-1">{tier.suffix}</p>
+              </div>
+
+              <ul class="space-y-3 mb-8 flex-grow">
+                {tier.features.map((feature) => (
+                  <li class="flex items-start gap-3 text-sm">
+                    <svg class="w-5 h-5 text-accent-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-text-muted">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                href="/contact"
+                variant={tier.highlighted ? 'primary' : 'secondary'}
+                class="w-full"
+              >
+                {tier.cta}
+              </Button>
+            </GlassCard>
+          </div>
+        </RevealOnScroll>
+      ))}
+    </div>
+
+    <RevealOnScroll delay={400}>
+      <p class="text-center text-text-muted text-sm mt-12 max-w-2xl mx-auto">
+        Need something custom? Every business is different. <a href="/contact" class="text-accent-primary hover:underline">Get in touch</a> for a personalized quote based on your specific needs.
+      </p>
+    </RevealOnScroll>
+  </Container>
+</Section>

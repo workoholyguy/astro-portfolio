@@ -1,0 +1,72 @@
+{
+  "slug": "speed-technical-seo",
+  "name": "Speed & Technical SEO",
+  "shortDescription": "Make your website faster and fix technical issues hurting your rankings.",
+  "heroDescription": "Slow websites lose visitors and rank lower in search results. We optimize your site's performance, fix technical SEO issues, and improve your Core Web Vitals scores.",
+  "icon": "zap",
+  "deliverables": [
+    {
+      "title": "Performance Audit",
+      "description": "Comprehensive analysis of speed bottlenecks"
+    },
+    {
+      "title": "Image Optimization",
+      "description": "Compress and serve images in modern formats"
+    },
+    {
+      "title": "Code Optimization",
+      "description": "Minify CSS/JS and eliminate render-blocking resources"
+    },
+    {
+      "title": "Core Web Vitals",
+      "description": "Improve LCP, FID, and CLS scores"
+    },
+    {
+      "title": "Technical SEO Fixes",
+      "description": "Fix crawl errors, broken links, and indexing issues"
+    },
+    {
+      "title": "Caching Setup",
+      "description": "Configure browser and server caching"
+    }
+  ],
+  "whoItsFor": [
+    "Businesses with slow-loading websites",
+    "Sites penalized by Google's Core Web Vitals update",
+    "E-commerce stores losing sales due to speed",
+    "Anyone wanting better search rankings"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Audit",
+      "description": "We analyze performance and technical issues"
+    },
+    {
+      "step": 2,
+      "title": "Prioritize",
+      "description": "We identify quick wins and major fixes"
+    },
+    {
+      "step": 3,
+      "title": "Optimize",
+      "description": "We implement improvements systematically"
+    },
+    {
+      "step": 4,
+      "title": "Verify",
+      "description": "We measure improvements and document changes"
+    }
+  ],
+  "pricingRange": {
+    "from": 800,
+    "to": 2500,
+    "unit": "project"
+  },
+  "relatedServices": ["website-redesign", "local-seo", "maintenance-care"],
+  "seo": {
+    "title": "Speed & Technical SEO Services",
+    "description": "Make your website faster and fix technical SEO issues. Professional optimization for better Core Web Vitals and search rankings."
+  },
+  "order": 6
+}

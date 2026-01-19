@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import GlassCard from '@/components/ui/GlassCard.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+import Button from '@/components/ui/Button.astro';
+import RevealOnScroll from '@/components/motion/RevealOnScroll.astro';
+import CTABannerSection from '@/sections/CTABannerSection.astro';
+
+const services = await getCollection('services');
+const sortedServices = services.sort((a, b) => a.data.order - b.data.order);
+
+// Icon mapping
+const icons: Record<string, string> = {
+  'layout': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />`,
+  'refresh-cw': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />`,
+  'target': `<circle cx="12" cy="12" r="10" stroke-width="2" /><circle cx="12" cy="12" r="6" stroke-width="2" /><circle cx="12" cy="12" r="2" stroke-width="2" />`,
+  'shield': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+  'map-pin': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />`,
+  'zap': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />`,
+  'shopping-bag': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />`,
+  'palette': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />`,
+  'bar-chart': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />`,
+};
+---
+
+<BaseLayout
+  title="Our Services | Web Design & Development"
+  description="Professional web design, development, SEO, and maintenance services for small businesses. See how we can help your business grow online."
+>
+  <!-- Hero -->
+  <Section padding="lg" background="mesh">
+    <Container size="xl">
+      <div class="max-w-3xl">
+        <RevealOnScroll>
+          <p class="text-accent-primary text-sm font-medium tracking-wide uppercase mb-4">
+            Our Services
+          </p>
+        </RevealOnScroll>
+        <RevealOnScroll delay={100}>
+          <h1 class="text-display-xl md:text-display-2xl text-text mb-6">
+            Everything you need to
+            <GradientText>succeed online</GradientText>
+          </h1>
+        </RevealOnScroll>
+        <RevealOnScroll delay={200}>
+          <p class="text-xl text-text-muted leading-relaxed">
+            From custom website design to ongoing maintenance, we offer comprehensive
+            web services tailored to small businesses. Let us handle the technical stuff
+            so you can focus on what you do best.
+          </p>
+        </RevealOnScroll>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Services Grid -->
+  <Section padding="lg" background="default">
+    <Container size="xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedServices.map((service, index) => (
+          <RevealOnScroll delay={index * 80}>
+            <a href={`/services/${service.data.slug}/`} class="block h-full group">
+              <GlassCard hover={true} padding="lg" class="h-full">
+                <div class="flex flex-col h-full">
+                  {/* Icon */}
+                  <div class="w-14 h-14 rounded-xl bg-gradient-primary/10 flex items-center justify-center mb-5">
+                    <svg
+                      class="w-7 h-7 text-accent-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      set:html={icons[service.data.icon] || icons['layout']}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <h2 class="text-xl font-semibold text-text mb-3 group-hover:text-accent-primary transition-colors">
+                    {service.data.name}
+                  </h2>
+                  <p class="text-text-muted flex-grow mb-4">
+                    {service.data.shortDescription}
+                  </p>
+
+                  {/* Pricing hint */}
+                  <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                    <span class="text-sm text-text-subtle">
+                      From ${service.data.pricingRange.from.toLocaleString()}
+                      {service.data.pricingRange.unit === 'month' ? '/mo' : ''}
+                    </span>
+                    <span class="flex items-center text-accent-primary text-sm font-medium">
+                      Learn more
+                      <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </GlassCard>
+            </a>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <CTABannerSection />
+</BaseLayout>

@@ -1,0 +1,157 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import SEOHead from '@/components/seo/SEOHead.astro';
+import Schema from '@/components/seo/Schema.astro';
+import Navbar from '@/partials/Navbar.astro';
+import Footer from '@/partials/Footer.astro';
+import { siteConfig } from '@/data/site-config';
+import {
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+} from '@/utils/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  publishedTime?: string;
+  modifiedTime?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+  hideNavbar?: boolean;
+  hideFooter?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  ogType = 'website',
+  noindex = false,
+  publishedTime,
+  modifiedTime,
+  schema,
+  hideNavbar = false,
+  hideFooter = false,
+} = Astro.props;
+
+// Default schemas for all pages
+const defaultSchemas = [generateOrganizationSchema(), generateWebSiteSchema()];
+
+// Combine default schemas with page-specific schemas
+const allSchemas = schema
+  ? [...defaultSchemas, ...(Array.isArray(schema) ? schema : [schema])]
+  : defaultSchemas;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Inter font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      ogImage={ogImage}
+      ogType={ogType}
+      noindex={noindex}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+    />
+
+    <Schema schema={allSchemas} />
+
+    <ViewTransitions />
+  </head>
+
+  <body class="bg-surface text-text antialiased">
+    {!hideNavbar && <Navbar />}
+
+    <main>
+      <slot />
+    </main>
+
+    {!hideFooter && <Footer />}
+
+    <!-- Motion initialization script -->
+    <script>
+      import { initMotion } from '@/components/motion/motion';
+
+      // Initialize on DOM ready
+      document.addEventListener('DOMContentLoaded', () => {
+        initMotion({ once: true });
+      });
+
+      // Re-initialize on Astro page transitions (View Transitions API)
+      document.addEventListener('astro:page-load', () => {
+        initMotion({ once: true });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  /* Base styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: rgba(34, 211, 238, 0.3);
+    color: #fafafa;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid #22d3ee;
+    outline-offset: 2px;
+  }
+
+  /* Scrollbar styling (Webkit) */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+  }
+
+  /* Smooth image loading */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

@@ -1,0 +1,26 @@
+{
+  "slug": "s2m-cabinets",
+  "name": "S2M Cabinets",
+  "client": "S2M Cabinets",
+  "description": "A professional website for a custom cabinetry business showcasing their craftsmanship, portfolio of completed projects, and easy ways for homeowners to request quotes for their kitchen and bathroom renovations.",
+  "shortDescription": "Custom cabinetry business website with project gallery",
+  "url": "https://s2mcabinets.com",
+  "image": {
+    "src": "/assets/images/projects/s2m-cabinets.png",
+    "alt": "S2M Cabinets website homepage"
+  },
+  "thumbnail": "/assets/images/projects/s2m-cabinets-thumb.png",
+  "tags": ["Home Services", "Web Design", "Lead Generation"],
+  "category": "website",
+  "featured": true,
+  "order": 3,
+  "deliverables": [
+    "Custom website design",
+    "Project gallery with filtering",
+    "Quote request form",
+    "Service area pages",
+    "Mobile responsive design",
+    "Local SEO setup"
+  ],
+  "results": "Established strong online presence and streamlined quote request process for potential customers."
+}

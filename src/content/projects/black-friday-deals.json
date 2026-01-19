@@ -1,0 +1,25 @@
+{
+  "slug": "black-friday-deals",
+  "name": "Black Friday Deals",
+  "client": "Black Friday Deals Stores",
+  "description": "A high-velocity e-commerce storefront designed for seasonal sales. Built to handle traffic spikes during Black Friday and holiday shopping periods with a focus on fast load times and conversion optimization.",
+  "shortDescription": "E-commerce storefront for seasonal sales events",
+  "url": "https://www.blackfridaydealstores.com",
+  "image": {
+    "src": "/assets/images/bfd-logo-bag-2.png",
+    "alt": "Black Friday Deals storefront"
+  },
+  "thumbnail": "/assets/images/bfd-logo-bag-2.png",
+  "tags": ["E-commerce", "Web Design", "Performance"],
+  "category": "ecommerce",
+  "featured": false,
+  "order": 6,
+  "deliverables": [
+    "E-commerce website design",
+    "Product catalog system",
+    "Shopping cart and checkout",
+    "Performance optimization",
+    "Mobile shopping experience",
+    "SEO optimization"
+  ]
+}

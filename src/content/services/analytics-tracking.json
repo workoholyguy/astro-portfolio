@@ -1,0 +1,72 @@
+{
+  "slug": "analytics-tracking",
+  "name": "Analytics & Tracking Setup",
+  "shortDescription": "Understand your website visitors and track what matters.",
+  "heroDescription": "Stop guessing and start knowing. We set up analytics, conversion tracking, and reporting so you can see exactly how your website is performing and make data-driven decisions.",
+  "icon": "bar-chart",
+  "deliverables": [
+    {
+      "title": "Google Analytics 4",
+      "description": "Full GA4 setup with custom events"
+    },
+    {
+      "title": "Google Search Console",
+      "description": "Search performance monitoring"
+    },
+    {
+      "title": "Conversion Tracking",
+      "description": "Track form submissions, calls, and sales"
+    },
+    {
+      "title": "Goal Setup",
+      "description": "Define and track your key metrics"
+    },
+    {
+      "title": "Dashboard Creation",
+      "description": "Easy-to-read reports of key metrics"
+    },
+    {
+      "title": "Documentation",
+      "description": "Guide to understanding your data"
+    }
+  ],
+  "whoItsFor": [
+    "Businesses not tracking website performance",
+    "Companies needing to measure marketing ROI",
+    "Anyone wanting to understand their visitors better",
+    "Businesses making decisions without data"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Audit",
+      "description": "We review current tracking (if any)"
+    },
+    {
+      "step": 2,
+      "title": "Plan",
+      "description": "We identify what needs to be tracked"
+    },
+    {
+      "step": 3,
+      "title": "Implement",
+      "description": "We set up tracking and verify data"
+    },
+    {
+      "step": 4,
+      "title": "Train",
+      "description": "We show you how to read your data"
+    }
+  ],
+  "pricingRange": {
+    "from": 500,
+    "to": 1500,
+    "unit": "project"
+  },
+  "relatedServices": ["local-seo", "speed-technical-seo", "maintenance-care"],
+  "seo": {
+    "title": "Analytics & Tracking Setup Services",
+    "description": "Professional Google Analytics and conversion tracking setup. Understand your visitors and make data-driven decisions."
+  },
+  "order": 9
+}

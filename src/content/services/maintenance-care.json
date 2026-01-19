@@ -1,0 +1,72 @@
+{
+  "slug": "maintenance-care",
+  "name": "Maintenance & Care Plans",
+  "shortDescription": "Keep your website secure, updated, and performing at its best.",
+  "heroDescription": "Don't let your website become outdated or vulnerable. Our maintenance plans keep your site secure, fast, and always working perfectly so you can focus on your business.",
+  "icon": "shield",
+  "deliverables": [
+    {
+      "title": "Security Updates",
+      "description": "Regular security patches and vulnerability fixes"
+    },
+    {
+      "title": "Software Updates",
+      "description": "Keep all components up to date and compatible"
+    },
+    {
+      "title": "Daily Backups",
+      "description": "Automated backups so your data is always safe"
+    },
+    {
+      "title": "Uptime Monitoring",
+      "description": "24/7 monitoring with instant alerts if issues arise"
+    },
+    {
+      "title": "Content Updates",
+      "description": "Monthly content changes included in your plan"
+    },
+    {
+      "title": "Performance Reports",
+      "description": "Monthly reports on site health and performance"
+    }
+  ],
+  "whoItsFor": [
+    "Business owners who don't have time to manage their website",
+    "Companies needing regular content updates",
+    "Anyone wanting peace of mind that their site is secure",
+    "Businesses that can't afford downtime"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Onboarding",
+      "description": "We audit your site and set up monitoring"
+    },
+    {
+      "step": 2,
+      "title": "Ongoing Care",
+      "description": "We handle updates and maintenance weekly"
+    },
+    {
+      "step": 3,
+      "title": "Support",
+      "description": "You have a direct line for any requests"
+    },
+    {
+      "step": 4,
+      "title": "Reporting",
+      "description": "Monthly reports keep you informed"
+    }
+  ],
+  "pricingRange": {
+    "from": 99,
+    "to": 299,
+    "unit": "month"
+  },
+  "relatedServices": ["website-design", "speed-technical-seo", "analytics-tracking"],
+  "seo": {
+    "title": "Website Maintenance & Care Plans",
+    "description": "Keep your website secure and performing at its best. Professional maintenance plans with updates, backups, and monitoring."
+  },
+  "order": 4
+}

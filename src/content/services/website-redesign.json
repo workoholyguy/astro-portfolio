@@ -1,0 +1,72 @@
+{
+  "slug": "website-redesign",
+  "name": "Website Redesign",
+  "shortDescription": "Transform your outdated website into a modern, high-converting machine.",
+  "heroDescription": "Is your current website not performing? We'll redesign it with modern aesthetics, improved user experience, and conversion-focused elements that actually get results.",
+  "icon": "refresh-cw",
+  "deliverables": [
+    {
+      "title": "Modern Visual Design",
+      "description": "Fresh, contemporary look that builds trust and credibility"
+    },
+    {
+      "title": "Improved User Experience",
+      "description": "Intuitive navigation and clear calls-to-action"
+    },
+    {
+      "title": "Performance Optimization",
+      "description": "Faster load times and better Core Web Vitals scores"
+    },
+    {
+      "title": "Mobile Optimization",
+      "description": "Perfect display on phones, tablets, and desktops"
+    },
+    {
+      "title": "Content Migration",
+      "description": "Seamless transfer of your existing content"
+    },
+    {
+      "title": "SEO Preservation",
+      "description": "Maintain your search rankings during the transition"
+    }
+  ],
+  "whoItsFor": [
+    "Businesses with websites over 3 years old",
+    "Companies not getting leads from their current website",
+    "Brands that have evolved beyond their current web presence",
+    "Businesses with slow, outdated, or hard-to-update sites"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Audit",
+      "description": "We analyze your current site's strengths and weaknesses"
+    },
+    {
+      "step": 2,
+      "title": "Strategy",
+      "description": "We plan improvements based on your goals"
+    },
+    {
+      "step": 3,
+      "title": "Redesign",
+      "description": "We create and refine the new design"
+    },
+    {
+      "step": 4,
+      "title": "Migration",
+      "description": "We carefully transition to the new site"
+    }
+  ],
+  "pricingRange": {
+    "from": 3000,
+    "to": 12000,
+    "unit": "project"
+  },
+  "relatedServices": ["website-design", "speed-technical-seo", "local-seo"],
+  "seo": {
+    "title": "Website Redesign Services",
+    "description": "Transform your outdated website into a modern, conversion-focused site. Professional redesign services for small businesses."
+  },
+  "order": 2
+}

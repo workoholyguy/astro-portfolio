@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+import GlassCard from '../components/ui/GlassCard.astro';
+import GradientText from '../components/ui/GradientText.astro';
+import Button from '../components/ui/Button.astro';
+import RevealOnScroll from '../components/motion/RevealOnScroll.astro';
+
+const seo = {
+  title: 'Pricing | Web Design & Development Services',
+  description: 'Transparent pricing for web design, development, and digital marketing services. No hidden fees—know exactly what your project will cost.',
+};
+
+const services = [
+  {
+    name: 'Website Design & Build',
+    description: 'Custom website design and development from scratch.',
+    priceFrom: 2500,
+    priceTo: 8000,
+    unit: 'project',
+    includes: [
+      'Custom design (not templates)',
+      'Mobile-responsive',
+      '5-15 pages',
+      'Contact forms',
+      'Basic SEO setup',
+      '30-day support',
+    ],
+  },
+  {
+    name: 'Website Redesign',
+    description: 'Modernize and improve your existing website.',
+    priceFrom: 2000,
+    priceTo: 6000,
+    unit: 'project',
+    includes: [
+      'Fresh, modern design',
+      'Improved UX/UI',
+      'Speed optimization',
+      'Content migration',
+      'SEO preservation',
+      '30-day support',
+    ],
+  },
+  {
+    name: 'Landing Pages',
+    description: 'High-converting pages for campaigns and promotions.',
+    priceFrom: 800,
+    priceTo: 2000,
+    unit: 'page',
+    includes: [
+      'Conversion-focused design',
+      'A/B test ready',
+      'Fast load times',
+      'Form integration',
+      'Analytics setup',
+      'Mobile-optimized',
+    ],
+  },
+  {
+    name: 'Maintenance & Care',
+    description: 'Keep your website secure, fast, and up-to-date.',
+    priceFrom: 150,
+    priceTo: 500,
+    unit: 'month',
+    includes: [
+      'Security updates',
+      'Daily backups',
+      'Uptime monitoring',
+      'Content updates',
+      'Performance checks',
+      'Priority support',
+    ],
+  },
+  {
+    name: 'Local SEO Setup',
+    description: 'Get found by local customers searching for your services.',
+    priceFrom: 500,
+    priceTo: 1500,
+    unit: 'project',
+    includes: [
+      'Google Business Profile',
+      'Local citations',
+      'On-page optimization',
+      'Schema markup',
+      'Keyword research',
+      'Monthly reporting',
+    ],
+  },
+  {
+    name: 'Speed & Technical SEO',
+    description: 'Fix performance issues and improve search rankings.',
+    priceFrom: 500,
+    priceTo: 2000,
+    unit: 'project',
+    includes: [
+      'Speed audit',
+      'Core Web Vitals fix',
+      'Image optimization',
+      'Code cleanup',
+      'Technical SEO audit',
+      'Performance monitoring',
+    ],
+  },
+];
+
+const faqs = [
+  {
+    question: 'Why the price range?',
+    answer: 'Every project is different. The final price depends on the number of pages, complexity of features, and specific requirements. We\'ll give you a fixed quote after understanding your needs.',
+  },
+  {
+    question: 'Do you offer payment plans?',
+    answer: 'Yes. For larger projects, we typically split payments into milestones: 50% to start, 50% at launch. We can discuss other arrangements if needed.',
+  },
+  {
+    question: 'What\'s included in the price?',
+    answer: 'Everything listed under each service, plus basic revisions during the project. Hosting, domain, and premium third-party tools are separate costs (we\'ll tell you upfront).',
+  },
+  {
+    question: 'How long does a project take?',
+    answer: 'Most website projects take 2-4 weeks. Larger or more complex projects may take 6-8 weeks. We\'ll give you a timeline before we start.',
+  },
+];
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <Section class="pt-32 pb-20">
+    <Container>
+      <RevealOnScroll>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-accent-primary text-sm font-medium tracking-wider uppercase mb-4">
+            Pricing
+          </p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <GradientText>Transparent</GradientText> Pricing
+          </h1>
+          <p class="text-text-muted text-lg leading-relaxed">
+            No hidden fees, no surprises. These ranges give you a realistic idea of
+            what to budget. Every project gets a fixed quote before we start.
+          </p>
+        </div>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+
+  <Section class="pb-20">
+    <Container>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <RevealOnScroll delay={Math.min(index * 50, 200)}>
+            <GlassCard class="p-6 h-full flex flex-col">
+              <h3 class="text-xl font-bold mb-2">{service.name}</h3>
+              <p class="text-text-muted text-sm mb-4">{service.description}</p>
+
+              <div class="mb-6">
+                <span class="text-3xl font-bold text-gradient">
+                  ${service.priceFrom.toLocaleString()}
+                </span>
+                {service.priceTo && (
+                  <span class="text-text-muted">
+                    {' '}- ${service.priceTo.toLocaleString()}
+                  </span>
+                )}
+                <span class="text-text-subtle text-sm ml-1">
+                  /{service.unit}
+                </span>
+              </div>
+
+              <ul class="space-y-2 mb-6 flex-1">
+                {service.includes.map((item) => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <svg class="w-4 h-4 text-accent-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-text-muted">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button href="/contact" variant="secondary" size="sm" class="w-full">
+                Get a Quote
+              </Button>
+            </GlassCard>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-20">
+    <Container size="md">
+      <RevealOnScroll>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Common Questions</h2>
+        </div>
+      </RevealOnScroll>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <RevealOnScroll delay={index * 50}>
+            <details class="glass-card group" open={index === 0}>
+              <summary class="p-6 cursor-pointer list-none flex items-center justify-between">
+                <h3 class="font-semibold pr-4">{faq.question}</h3>
+                <svg
+                  class="w-5 h-5 text-text-subtle flex-shrink-0 transition-transform group-open:rotate-180"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-6 pb-6 text-text-muted">
+                {faq.answer}
+              </div>
+            </details>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-32">
+    <Container size="sm">
+      <RevealOnScroll>
+        <GlassCard class="p-8 md:p-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Need a Custom Quote?
+          </h2>
+          <p class="text-text-muted mb-8 max-w-xl mx-auto">
+            Every business is unique. Tell us about your project and we'll put
+            together a detailed quote with exactly what you need.
+          </p>
+          <Button href="/contact" variant="primary" size="lg">
+            Request a Quote
+          </Button>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+</BaseLayout>

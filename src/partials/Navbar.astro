@@ -1,0 +1,192 @@
+---
+import { siteConfig } from '@/data/site-config';
+import Container from '@/components/ui/Container.astro';
+import Button from '@/components/ui/Button.astro';
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  id="navbar"
+>
+  <Container size="xl">
+    <nav
+      class="flex items-center justify-between h-16 md:h-20"
+      aria-label="Main navigation"
+    >
+      <!-- Logo -->
+      <a
+        href="/"
+        class="flex items-center gap-2 text-text font-semibold text-lg hover:text-accent-primary transition-colors"
+      >
+        <span class="text-gradient font-bold">AVID</span>
+        <span class="hidden sm:inline">TECH USA</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-1">
+        {
+          siteConfig.navigation.main.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+                isActive(item.href)
+                  ? 'text-accent-primary bg-white/5'
+                  : 'text-text-muted hover:text-text hover:bg-white/5',
+              ]}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center gap-4">
+        <Button href="/contact" variant="primary" size="sm">
+          Get a Quote
+        </Button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        class="lg:hidden p-2 text-text-muted hover:text-text hover:bg-white/5 rounded-lg transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        id="mobile-menu-button"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          id="menu-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          class="w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          id="close-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </nav>
+  </Container>
+
+  <!-- Mobile Menu -->
+  <div
+    class="lg:hidden hidden absolute top-full left-0 right-0 glass border-t border-white/10"
+    id="mobile-menu"
+  >
+    <Container size="xl">
+      <div class="py-4 space-y-1">
+        {
+          siteConfig.navigation.main.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                'block px-4 py-3 text-base font-medium rounded-lg transition-colors',
+                isActive(item.href)
+                  ? 'text-accent-primary bg-white/5'
+                  : 'text-text-muted hover:text-text hover:bg-white/5',
+              ]}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+        <div class="pt-4 px-4">
+          <Button href="/contact" variant="primary" size="md" class="w-full">
+            Get a Quote
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </div>
+</header>
+
+<!-- Spacer for fixed navbar -->
+<div class="h-16 md:h-20"></div>
+
+<script>
+  function initNavbar() {
+    const navbar = document.getElementById('navbar');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (!navbar || !mobileMenuButton || !mobileMenu || !menuIcon || !closeIcon) return;
+
+    // Scroll behavior - add background on scroll
+    let lastScroll = 0;
+
+    function handleScroll() {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > 50) {
+        navbar.classList.add('glass', 'shadow-glass');
+      } else {
+        navbar.classList.remove('glass', 'shadow-glass');
+      }
+
+      lastScroll = currentScroll;
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    // Mobile menu toggle
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+
+      mobileMenu.classList.toggle('hidden', !isMenuOpen);
+      menuIcon.classList.toggle('hidden', isMenuOpen);
+      closeIcon.classList.toggle('hidden', !isMenuOpen);
+      mobileMenuButton.setAttribute('aria-expanded', String(isMenuOpen));
+
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    }
+
+    mobileMenuButton.addEventListener('click', toggleMenu);
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) toggleMenu();
+      });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) toggleMenu();
+    });
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initNavbar);
+  document.addEventListener('astro:page-load', initNavbar);
+</script>

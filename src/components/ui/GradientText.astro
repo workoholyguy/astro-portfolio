@@ -1,0 +1,15 @@
+---
+interface Props {
+  class?: string;
+  as?: 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'p';
+  reverse?: boolean;
+}
+
+const { class: className = '', as: Tag = 'span', reverse = false } = Astro.props;
+
+const gradientClass = reverse ? 'text-gradient-reverse' : 'text-gradient';
+---
+
+<Tag class:list={[gradientClass, className]}>
+  <slot />
+</Tag>

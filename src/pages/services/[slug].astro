@@ -1,0 +1,235 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import GlassCard from '@/components/ui/GlassCard.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+import Button from '@/components/ui/Button.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import RevealOnScroll from '@/components/motion/RevealOnScroll.astro';
+import CTABannerSection from '@/sections/CTABannerSection.astro';
+import { generateServiceSchema } from '@/utils/seo';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({
+    params: { slug: service.data.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { data } = service;
+
+// Get related services
+const allServices = await getCollection('services');
+const relatedServices = allServices.filter((s) =>
+  data.relatedServices.includes(s.data.slug)
+);
+
+// Generate schema
+const serviceSchema = generateServiceSchema({
+  name: data.name,
+  description: data.heroDescription,
+  url: `/services/${data.slug}/`,
+  priceRange: `From $${data.pricingRange.from}`,
+});
+
+const breadcrumbItems = [
+  { label: 'Services', href: '/services/' },
+  { label: data.name, href: `/services/${data.slug}/` },
+];
+---
+
+<BaseLayout
+  title={data.seo.title}
+  description={data.seo.description}
+  schema={serviceSchema}
+>
+  <!-- Hero -->
+  <Section padding="lg" background="mesh">
+    <Container size="xl">
+      <Breadcrumbs items={breadcrumbItems} class="mb-8" />
+
+      <div class="max-w-3xl">
+        <RevealOnScroll>
+          <p class="text-accent-primary text-sm font-medium tracking-wide uppercase mb-4">
+            Service
+          </p>
+        </RevealOnScroll>
+        <RevealOnScroll delay={100}>
+          <h1 class="text-display-lg md:text-display-xl text-text mb-6">
+            {data.name}
+          </h1>
+        </RevealOnScroll>
+        <RevealOnScroll delay={200}>
+          <p class="text-xl text-text-muted leading-relaxed mb-8">
+            {data.heroDescription}
+          </p>
+        </RevealOnScroll>
+        <RevealOnScroll delay={300}>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button href="/contact" variant="primary" size="lg">
+              Get a Quote
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Button>
+            <div class="flex items-center text-text-muted">
+              <span class="text-2xl font-bold text-text mr-2">
+                ${data.pricingRange.from.toLocaleString()}
+              </span>
+              <span>
+                {data.pricingRange.to
+                  ? `- $${data.pricingRange.to.toLocaleString()}`
+                  : '+'}
+                {data.pricingRange.unit === 'month' ? ' /month' : ''}
+              </span>
+            </div>
+          </div>
+        </RevealOnScroll>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What's Included -->
+  <Section padding="lg" background="elevated">
+    <Container size="xl">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div>
+          <RevealOnScroll>
+            <h2 class="text-display-md text-text mb-6">
+              What's <GradientText>included</GradientText>
+            </h2>
+          </RevealOnScroll>
+          <RevealOnScroll delay={100}>
+            <p class="text-text-muted text-lg">
+              Every project includes these core deliverables, ensuring you get
+              everything you need for a successful web presence.
+            </p>
+          </RevealOnScroll>
+        </div>
+
+        <div class="space-y-4">
+          {data.deliverables.map((item, index) => (
+            <RevealOnScroll delay={index * 80}>
+              <GlassCard hover={false} padding="md">
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-primary/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-text font-semibold mb-1">{item.title}</h3>
+                    <p class="text-text-muted text-sm">{item.description}</p>
+                  </div>
+                </div>
+              </GlassCard>
+            </RevealOnScroll>
+          ))}
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Who It's For -->
+  <Section padding="lg" background="default">
+    <Container size="xl">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <RevealOnScroll>
+          <h2 class="text-display-md text-text mb-4">
+            Who this is <GradientText>for</GradientText>
+          </h2>
+        </RevealOnScroll>
+        <RevealOnScroll delay={100}>
+          <p class="text-text-muted text-lg">
+            This service is ideal for businesses that fit these descriptions.
+          </p>
+        </RevealOnScroll>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {data.whoItsFor.map((item, index) => (
+          <RevealOnScroll delay={index * 80}>
+            <div class="flex items-start gap-4 p-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary/10 flex items-center justify-center">
+                <svg class="w-4 h-4 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p class="text-text-muted">{item}</p>
+            </div>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Process -->
+  <Section padding="lg" background="elevated">
+    <Container size="xl">
+      <div class="text-center mb-12">
+        <RevealOnScroll>
+          <h2 class="text-display-md text-text mb-4">
+            How we <GradientText>work</GradientText>
+          </h2>
+        </RevealOnScroll>
+        <RevealOnScroll delay={100}>
+          <p class="text-text-muted text-lg max-w-2xl mx-auto">
+            Our streamlined process keeps you informed every step of the way.
+          </p>
+        </RevealOnScroll>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {data.process.map((step, index) => (
+          <RevealOnScroll delay={index * 100}>
+            <div class="text-center">
+              <div class="text-5xl font-bold text-gradient mb-4">
+                {String(step.step).padStart(2, '0')}
+              </div>
+              <h3 class="text-xl font-semibold text-text mb-2">{step.title}</h3>
+              <p class="text-text-muted text-sm">{step.description}</p>
+            </div>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Related Services -->
+  {relatedServices.length > 0 && (
+    <Section padding="lg" background="default">
+      <Container size="xl">
+        <div class="text-center mb-12">
+          <RevealOnScroll>
+            <h2 class="text-display-md text-text mb-4">
+              Related <GradientText>services</GradientText>
+            </h2>
+          </RevealOnScroll>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {relatedServices.map((related, index) => (
+            <RevealOnScroll delay={index * 80}>
+              <a href={`/services/${related.data.slug}/`} class="block group">
+                <GlassCard hover={true} padding="md">
+                  <h3 class="text-text font-semibold mb-2 group-hover:text-accent-primary transition-colors">
+                    {related.data.name}
+                  </h3>
+                  <p class="text-text-muted text-sm line-clamp-2">
+                    {related.data.shortDescription}
+                  </p>
+                </GlassCard>
+              </a>
+            </RevealOnScroll>
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <CTABannerSection />
+</BaseLayout>

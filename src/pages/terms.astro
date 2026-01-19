@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+
+const seo = {
+  title: 'Terms of Service | AVID TECH USA',
+  description: 'Terms of service for AVID TECH USA web design and development services.',
+};
+
+const lastUpdated = 'January 2025';
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <Section class="pt-32 pb-20">
+    <Container size="md">
+      <h1 class="text-4xl font-bold mb-4">Terms of Service</h1>
+      <p class="text-text-muted mb-12">Last updated: {lastUpdated}</p>
+
+      <div class="prose prose-invert prose-lg max-w-none">
+        <h2>Agreement to Terms</h2>
+        <p>
+          By accessing or using the services provided by AVID TECH USA ("we", "our", or "us"),
+          you agree to be bound by these Terms of Service. If you do not agree to these terms,
+          please do not use our services.
+        </p>
+
+        <h2>Services</h2>
+        <p>
+          AVID TECH USA provides web design, development, and related digital services. The
+          specific scope, deliverables, timeline, and pricing for each project will be outlined
+          in a separate project proposal or agreement.
+        </p>
+
+        <h2>Project Terms</h2>
+        <h3>Proposals and Agreements</h3>
+        <p>
+          All projects require a signed proposal or agreement before work begins. The proposal
+          will include project scope, timeline, pricing, and payment terms.
+        </p>
+
+        <h3>Payment</h3>
+        <p>
+          Payment terms are specified in each project proposal. Typically, we require a 50%
+          deposit before beginning work, with the remaining balance due upon project completion.
+          Late payments may result in project delays or additional fees.
+        </p>
+
+        <h3>Revisions</h3>
+        <p>
+          Each project includes a specified number of revision rounds as outlined in the proposal.
+          Additional revisions beyond the included rounds may incur additional charges.
+        </p>
+
+        <h3>Project Timeline</h3>
+        <p>
+          We commit to delivering projects within the agreed timeline. However, delays caused by
+          late content delivery, feedback delays, or scope changes from the client may extend
+          the timeline accordingly.
+        </p>
+
+        <h2>Intellectual Property</h2>
+        <h3>Client Materials</h3>
+        <p>
+          You retain ownership of all materials you provide (content, images, logos). You
+          represent that you have the right to use these materials.
+        </p>
+
+        <h3>Deliverables</h3>
+        <p>
+          Upon full payment, you own the final deliverables (website code, designs) created
+          specifically for your project. We retain the right to showcase the work in our
+          portfolio unless otherwise agreed.
+        </p>
+
+        <h3>Third-Party Assets</h3>
+        <p>
+          Some projects may include licensed third-party assets (fonts, stock images, plugins).
+          These remain subject to their respective licenses.
+        </p>
+
+        <h2>Client Responsibilities</h2>
+        <p>You agree to:</p>
+        <ul>
+          <li>Provide accurate and timely content, feedback, and approvals</li>
+          <li>Designate a single point of contact for project communication</li>
+          <li>Review and test deliverables before final approval</li>
+          <li>Make timely payments according to the agreed terms</li>
+        </ul>
+
+        <h2>Warranties and Limitations</h2>
+        <p>
+          We warrant that our work will be performed professionally and meet the specifications
+          outlined in the project agreement. We do not guarantee specific business results
+          (traffic, sales, rankings) from our work.
+        </p>
+        <p>
+          Our liability is limited to the amount paid for the specific service in question.
+          We are not liable for indirect, incidental, or consequential damages.
+        </p>
+
+        <h2>Termination</h2>
+        <p>
+          Either party may terminate a project with written notice. If you terminate, you are
+          responsible for payment for work completed up to the termination date. If we terminate
+          for reasons other than your breach, we will refund any unused deposit.
+        </p>
+
+        <h2>Confidentiality</h2>
+        <p>
+          We treat all client information as confidential and will not disclose it to third
+          parties without your consent, except as required by law or as necessary to perform
+          our services.
+        </p>
+
+        <h2>Changes to Terms</h2>
+        <p>
+          We may update these Terms of Service from time to time. Continued use of our services
+          after changes constitutes acceptance of the new terms.
+        </p>
+
+        <h2>Governing Law</h2>
+        <p>
+          These terms are governed by the laws of the State of Georgia, United States. Any
+          disputes will be resolved in the courts of Georgia.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For questions about these Terms of Service, please contact us at:
+        </p>
+        <p>
+          Email: <a href="mailto:hello@avidtechusa.com">hello@avidtechusa.com</a>
+        </p>
+      </div>
+    </Container>
+  </Section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    @apply text-2xl font-bold text-text mt-10 mb-4;
+  }
+  .prose h3 {
+    @apply text-xl font-semibold text-text mt-6 mb-3;
+  }
+  .prose p {
+    @apply text-text-muted mb-4;
+  }
+  .prose ul {
+    @apply text-text-muted mb-4 ml-6 list-disc;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose a {
+    @apply text-accent-primary hover:underline;
+  }
+</style>

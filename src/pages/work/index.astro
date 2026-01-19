@@ -1,0 +1,114 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import GlassCard from '@/components/ui/GlassCard.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+import Badge from '@/components/ui/Badge.astro';
+import RevealOnScroll from '@/components/motion/RevealOnScroll.astro';
+import CTABannerSection from '@/sections/CTABannerSection.astro';
+
+const projects = await getCollection('projects');
+const sortedProjects = projects.sort((a, b) => a.data.order - b.data.order);
+
+// Get unique categories
+const categories = [...new Set(projects.map((p) => p.data.category))];
+
+const categoryLabels: Record<string, string> = {
+  'web-app': 'Web Apps',
+  'website': 'Websites',
+  'ecommerce': 'E-commerce',
+  'landing-page': 'Landing Pages',
+};
+---
+
+<BaseLayout
+  title="Our Work | Portfolio & Case Studies"
+  description="Browse our portfolio of web design and development projects. See how we've helped small businesses create professional, high-performing websites."
+>
+  <!-- Hero -->
+  <Section padding="lg" background="mesh">
+    <Container size="xl">
+      <div class="max-w-3xl">
+        <RevealOnScroll>
+          <p class="text-accent-primary text-sm font-medium tracking-wide uppercase mb-4">
+            Our Work
+          </p>
+        </RevealOnScroll>
+        <RevealOnScroll delay={100}>
+          <h1 class="text-display-xl md:text-display-2xl text-text mb-6">
+            Projects we're
+            <GradientText>proud of</GradientText>
+          </h1>
+        </RevealOnScroll>
+        <RevealOnScroll delay={200}>
+          <p class="text-xl text-text-muted leading-relaxed">
+            From local service businesses to e-commerce stores, we've helped companies
+            across industries build websites that drive results. Take a look at some
+            of our recent work.
+          </p>
+        </RevealOnScroll>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Projects Grid -->
+  <Section padding="lg" background="default">
+    <Container size="xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedProjects.map((project, index) => (
+          <RevealOnScroll delay={index * 80}>
+            <a href={`/work/${project.data.slug}/`} class="block group h-full">
+              <GlassCard hover={true} padding="none" class="h-full overflow-hidden">
+                {/* Project Image */}
+                <div class="aspect-video relative overflow-hidden bg-surface-200">
+                  <img
+                    src={project.data.thumbnail || project.data.image.src}
+                    alt={project.data.image.alt}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+
+                  {/* Category badge */}
+                  <div class="absolute top-4 left-4">
+                    <Badge variant="default" size="sm">
+                      {categoryLabels[project.data.category] || project.data.category}
+                    </Badge>
+                  </div>
+                </div>
+
+                {/* Project Info */}
+                <div class="p-6">
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    {project.data.tags.slice(0, 3).map((tag) => (
+                      <Badge variant="outline" size="sm">{tag}</Badge>
+                    ))}
+                  </div>
+
+                  <h2 class="text-lg font-semibold text-text mb-2 group-hover:text-accent-primary transition-colors">
+                    {project.data.name}
+                  </h2>
+
+                  <p class="text-text-muted text-sm line-clamp-2 mb-4">
+                    {project.data.shortDescription}
+                  </p>
+
+                  <div class="flex items-center text-accent-primary text-sm font-medium">
+                    View Project
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </GlassCard>
+            </a>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <CTABannerSection />
+</BaseLayout>

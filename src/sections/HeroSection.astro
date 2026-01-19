@@ -1,0 +1,275 @@
+---
+import Container from '@/components/ui/Container.astro';
+import Button from '@/components/ui/Button.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+---
+
+<section class="relative min-h-[100vh] flex items-center bg-surface overflow-hidden" id="hero">
+  <!-- Animated gradient orbs -->
+  <div class="hero-orb hero-orb-1 absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-0"></div>
+  <div class="hero-orb hero-orb-2 absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-0"></div>
+  <div class="hero-orb hero-orb-3 absolute w-[400px] h-[400px] rounded-full blur-[80px] opacity-0"></div>
+
+  <!-- Subtle grid pattern -->
+  <div class="absolute inset-0 bg-[url('/assets/images/grid.svg')] opacity-[0.03]"></div>
+
+  <!-- Animated lines -->
+  <div class="hero-lines absolute inset-0 overflow-hidden opacity-0">
+    <div class="hero-line absolute h-[1px] bg-gradient-to-r from-transparent via-accent-primary/20 to-transparent"></div>
+    <div class="hero-line absolute h-[1px] bg-gradient-to-r from-transparent via-accent-orange/20 to-transparent"></div>
+  </div>
+
+  <Container size="xl" class="relative z-10 py-20 md:py-28">
+    <div class="max-w-4xl">
+      <!-- Tagline -->
+      <p class="hero-tagline text-accent-primary text-sm font-medium tracking-wider uppercase mb-6 opacity-0 translate-y-8">
+        Web Design & Development
+      </p>
+
+      <!-- Main headline - split into words for animation -->
+      <h1 class="text-display-xl md:text-display-2xl text-text mb-8">
+        <span class="hero-word inline-block opacity-0 translate-y-12">We</span>
+        <span class="hero-word inline-block opacity-0 translate-y-12">build</span>
+        <span class="hero-word inline-block opacity-0 translate-y-12">websites</span>
+        <span class="hero-word inline-block opacity-0 translate-y-12">that</span>
+        <br class="hidden md:block" />
+        <span class="hero-word-gradient inline-block opacity-0 translate-y-12">
+          <GradientText>grow your business</GradientText>
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="hero-subhead text-xl md:text-2xl text-text-muted leading-relaxed mb-10 max-w-2xl opacity-0 translate-y-8">
+        Professional web design for small businesses in Georgia.
+        Get more leads, faster load times, and a website that actually works.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-cta flex flex-col sm:flex-row gap-4 mb-14 opacity-0 translate-y-8">
+        <Button href="/contact" variant="primary" size="lg" class="hero-btn-primary group">
+          <span>Get a Free Quote</span>
+          <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Button>
+        <Button href="/work" variant="secondary" size="lg" class="hero-btn-secondary">
+          See Our Work
+        </Button>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="hero-trust flex flex-wrap items-center gap-8 text-sm text-text-muted opacity-0">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-accent-primary animate-pulse"></div>
+          <span>Local businesses</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-accent-primary animate-pulse" style="animation-delay: 0.2s"></div>
+          <span>Healthcare clinics</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-accent-primary animate-pulse" style="animation-delay: 0.4s"></div>
+          <span>E-commerce brands</span>
+        </div>
+      </div>
+    </div>
+  </Container>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0">
+    <div class="flex flex-col items-center gap-2 text-text-subtle">
+      <span class="text-xs uppercase tracking-widest">Scroll</span>
+      <div class="w-6 h-10 border border-white/20 rounded-full flex justify-center pt-2">
+        <div class="w-1 h-2 bg-accent-primary rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-orb-1 {
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+    top: 10%;
+    left: 20%;
+  }
+  .hero-orb-2 {
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
+    bottom: 20%;
+    right: 15%;
+  }
+  .hero-orb-3 {
+    background: radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-line:nth-child(1) {
+    top: 30%;
+    width: 100%;
+    animation: lineMove 8s ease-in-out infinite;
+  }
+  .hero-line:nth-child(2) {
+    top: 70%;
+    width: 100%;
+    animation: lineMove 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes lineMove {
+    0%, 100% { transform: translateX(-50%); }
+    50% { transform: translateX(50%); }
+  }
+
+  /* Prevent FOUC - hide until JS runs */
+  .hero-word,
+  .hero-word-gradient {
+    will-change: transform, opacity;
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+
+  function initHeroAnimation() {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      // Just show everything immediately
+      gsap.set('.hero-orb, .hero-lines, .hero-tagline, .hero-word, .hero-word-gradient, .hero-subhead, .hero-cta, .hero-trust, .hero-scroll', {
+        opacity: 1,
+        y: 0,
+      });
+      return;
+    }
+
+    // Create the timeline
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    // Background orbs fade in and float
+    tl.to('.hero-orb', {
+      opacity: 1,
+      duration: 1.5,
+      stagger: 0.2,
+    })
+    .to('.hero-orb-1', {
+      y: -30,
+      x: 20,
+      duration: 6,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+    }, '<')
+    .to('.hero-orb-2', {
+      y: 20,
+      x: -30,
+      duration: 8,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+    }, '<')
+    .to('.hero-orb-3', {
+      scale: 1.1,
+      duration: 5,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+    }, '<');
+
+    // Lines fade in
+    tl.to('.hero-lines', {
+      opacity: 1,
+      duration: 1,
+    }, 0.3);
+
+    // Tagline
+    tl.to('.hero-tagline', {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+    }, 0.4);
+
+    // Words stagger in
+    tl.to('.hero-word', {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.1,
+    }, 0.6);
+
+    // Gradient text (slightly delayed)
+    tl.to('.hero-word-gradient', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    }, 1.0);
+
+    // Subheadline
+    tl.to('.hero-subhead', {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+    }, 1.2);
+
+    // CTA buttons with slight bounce
+    tl.to('.hero-cta', {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+    }, 1.4);
+
+    // Trust indicators
+    tl.to('.hero-trust', {
+      opacity: 1,
+      duration: 0.8,
+    }, 1.6);
+
+    // Scroll indicator
+    tl.to('.hero-scroll', {
+      opacity: 1,
+      duration: 0.8,
+    }, 1.8);
+
+    // Button hover effects
+    const primaryBtn = document.querySelector('.hero-btn-primary');
+    const secondaryBtn = document.querySelector('.hero-btn-secondary');
+
+    if (primaryBtn) {
+      primaryBtn.addEventListener('mouseenter', () => {
+        gsap.to(primaryBtn, {
+          scale: 1.02,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      });
+      primaryBtn.addEventListener('mouseleave', () => {
+        gsap.to(primaryBtn, {
+          scale: 1,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      });
+    }
+
+    if (secondaryBtn) {
+      secondaryBtn.addEventListener('mouseenter', () => {
+        gsap.to(secondaryBtn, {
+          scale: 1.02,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      });
+      secondaryBtn.addEventListener('mouseleave', () => {
+        gsap.to(secondaryBtn, {
+          scale: 1,
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      });
+    }
+  }
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', initHeroAnimation);
+  document.addEventListener('astro:page-load', initHeroAnimation);
+</script>

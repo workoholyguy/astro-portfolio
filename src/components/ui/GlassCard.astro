@@ -1,0 +1,45 @@
+---
+interface Props {
+  class?: string;
+  hover?: boolean;
+  glow?: 'cyan' | 'purple' | 'none';
+  as?: 'div' | 'article' | 'a' | 'li';
+  href?: string;
+  padding?: 'none' | 'sm' | 'md' | 'lg';
+}
+
+const {
+  class: className = '',
+  hover = true,
+  glow = 'none',
+  as: Tag = 'div',
+  href,
+  padding = 'md',
+} = Astro.props;
+
+const isLink = Tag === 'a' && href;
+
+const baseClasses = hover ? 'glass-card' : 'glass-card-static';
+
+const glowClasses = {
+  cyan: 'shadow-glow-cyan',
+  purple: 'shadow-glow-purple',
+  none: '',
+};
+
+const paddingClasses = {
+  none: '',
+  sm: 'p-4',
+  md: 'p-6',
+  lg: 'p-8',
+};
+
+const linkProps = isLink ? { href } : {};
+---
+
+<Tag
+  class:list={[baseClasses, glowClasses[glow], paddingClasses[padding], className]}
+  {...linkProps}
+>
+  <slot />
+</Tag>

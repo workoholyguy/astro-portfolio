@@ -1,0 +1,631 @@
+REACT + VITE:
+> npm create vite@latest APP_NAME
+> cd .\APP_NAME\
+> npm install
+> npm run dev
+> git init 
+> git config --global --add safe.directory 'D:/HOMEWORK/CODEPATH/WEB102 FALL 2024/UNIT 1/APP_NAME'
+> git remote add origin https://github.com/workoholyguy/REPOSITORY_NAME.git
+> git add .
+> git commit -m "first commit" | git branch -M main
+> git commit -m "first commit" 
+> git pull origin main --rebase
+> git push -u origin main  
+
+NPM BABEL PARCEL COMMANDS:
+
+npm init (to create "package.json")
+npm i <library name>
+npm install <library name> {npm install lodash --> import into a .js}
+npm i parcel --save-dev ( --> Downloads parcel)
+
+TO USE PARCEL:
+npx parcel index.html
+npm i core-js
+
+Backend:
+npm init -y 
+npm install express body-parser nodemailer
+========================================
+GIT COMMANDS: 
+
+git init
+git remote add origin https://github.com/workoholyguy/vova-ultrasound.git
+git branch -M main
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+
+git status
+git add -add
+git commit -am 'Commit Message'
+git push origin 'branch name = master'
+========================================
+NPM COMMANDS:
+
+npm run clean
+npm run build
+npm run start
+
+"start": "parcel index.html",
+"clean": "rimraf .parcel-cache",
+"build": "parcel build index.html --dist-dir ./dist"
+========================================
+SURGE COMMANDS: 
+
+npm install --global surge
+
+Navigate to the folder where the project folder is locatedand run: 
+surge
+surge --domain forkify-omar.surge.sh  
+========================================
+
+Email template:
+{
+    <p>Hello {{recepient}},</p>
+<p>You got a new message from {{user_name}} , who requested a contact to {{user_email}}. Customer Phone Number:{{user_phone}}:</p>
+<p style="padding: 12px; border-left: 4px solid #d0d0d0; font-style: italic;">{{user_message}}</p>
+<p>Best wishes,<br>Avid Tech USA and EmailJS team</p>
+}
+
+=================================================================
+
+CONTINUOUS DEPLOYMENT: 
+
+1) Set Up A project locally. Create a a github Repository: 
+git init
+git remote add origin https://github.com/workoholyguy/vova-ultrasound.git
+git branch -M main
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+Sure, here is a detailed step-by-step workflow to set up continuous deployment from GitHub to IONOS using GitHub Actions:
+
+## Step-by-Step Workflow for Continuous Deployment
+
+### Prerequisites
+
+1. **GitHub Account**: Ensure you have a GitHub account and repository.
+2. **IONOS Account**: Ensure you have an IONOS hosting account with SSH access.
+3. **SSH Key Pair**: Generate an SSH key pair on your local machine if you don't already have one. (Using Git Bash: 
+{
+    omadj@OmarXPS MINGW64 /d/WEB DEV/ULTRASOUNDGEORGIA/SAMPLE
+$ cd PROJECT/
+
+omadj@OmarXPS MINGW64 /d/WEB DEV/ULTRASOUNDGEORGIA/SAMPLE/PROJECT (main)
+$ ls
+ 62e81d372195492a46391bbe.jpg   package-lock.json
+ 6446b3a37f01453a82a7b6c1.jpg  'project compress.zip'
+ dist/                          server.js
+ node_modules/                  src/
+ package.json                   UsefulCommands.txt
+
+omadj@OmarXPS MINGW64 /d/WEB DEV/ULTRASOUNDGEORGIA/SAMPLE/PROJECT (main)
+$ ssh-keygen -t rsa -b 4096 -C "orules00@icloud.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/omadj/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/omadj/.ssh/id_rsa
+Your public key has been saved in /c/Users/omadj/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:TQLXKQTihMF616X7nbswxuS1Husp0qOcvK8uOAK5go4 orules00@icloud.com
+The key's randomart image is:
++---[RSA 4096]----+
+| ..oo ooo. .     |
+|  oo . oo o      |
+| .  .. o...      |
+|. . . o  +       |
+| o .   .S o      |
+|o     .+ . .     |
+|o. .   o*.o.     |
+|* o .o.o=+o+     |
+|Eo . oO*.+Bo     |
++----[SHA256]-----+
+
+omadj@OmarXPS MINGW64 /d/WEB DEV/ULTRASOUNDGEORGIA/SAMPLE/PROJECT (main)
+$ [200~cat /c/Users/omadj/.ssh/id_rsa.pub
+bash: [200~cat: command not found
+
+omadj@OmarXPS MINGW64 /d/WEB DEV/ULTRASOUNDGEORGIA/SAMPLE/PROJECT (main)
+$ 
+
+omadj@OmarXPS MINGW64 /d/WEB DEV/ULTRASOUNDGEORGIA/SAMPLE/PROJECT (main)
+$ cat /c/Users/omadj/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCUlqRFv5LMHAg4h9pyHVsxC+L+6NIOkpsCboE+4Lk4EFpLRtbz0lybjfinL0wKLOVXXOhN3+fMI6tjTBnDauRFpcFc5eh8ZlBU013QftblcjzQ5aXxsA1kcE5+cguBw5O/CqjfQL9dAPeaqHQbKTe0MaQ0ErstTNqOtyv70RUoBJs+VTBOXvHYSkGGBAvchuKWM6C1tarRcqAV6Ot1nB+IV7OPwBlS6m5fBqoL7j+OiajcO0BZHIg1BkD5fAXLcgfyvLWY9OBNVIPl4g3q3K3EsBM1wjvQmf8TuVgN+UaHo1bx6EUt8N8Yv2YcucHllFREGSdNjZ3HDRxrsi7DaXy9CGTTJZ+uEIQay6tIfJbCjCpSWOqvv1bD9IP8+Mme4JRZHDktC9wO6Q7X7pAlm0W8dgeBFSzq+ocYefOLzgEhkUIjaxFJR0B9V4CWGuFTuXuOD2/TV/j5rV7UVsfWBLOD9dW++X717LhS5EFbzoBL/L0IHhpnYUJ+LMFWUmL+XQX0nrCyxCytvPKQEBkEwYU5RcLfdb/Cf/0MAjXrc8Pulbb0DsEz3rllu9K9Qgo3bPf+p7shgt7EyZ7hA4W66vyvTOsdYGMDzBnCeK4XUDP+OI3RxIq6Jm6Lr2na6nqB6jV/CFAW279LxtKZtITBk+Hsoml4gb2rhqO+J4mghGwZmQ== orules00@icloud.com
+
+omadj@OmarXPS MINGW64 /d/WEB DEV/ULTRASOUNDGEORGIA/SAMPLE/PROJECT (main)
+$ cat /c/Users/omadj/.ssh/id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+tvMWgK
+EiFRiMGnhwVkefAAABAQC+J/RBCtxszaasKwFFbMqGOtZRhJeivNIhkDecwfooORxRKTR6
+dSc70AT7rea2T8YvREultD9JYzOR8b28OSwfa4UC2XmJJ5NjBS+uQVSvovNC8iZiKLuivV
+Ukqzm9eIgmAitXwlttHigCBOKa9RfXM1CEMl2vWKOvbm7I7yrDhgtBTId95rEo4qyxHRL8
+WhzBT+/XLBMcWNSmIMIbifGBX6FGKmYS8x68T1Ppk+y6mmDTGkqc6MzYgRHiDvY7Tva9oc
+dYILCCBCD6MOp1LQFunyyJQeF2n5yHXNQ9go6tdZjXYWqNBrNbwIqv27/ijZA7sMFRW9pG
++tWa4gTaEnPHAAAAE29ydWxlczAwQGljbG91ZC5jb20BAgMEBQYH
+-----END OPENSSH PRIVATE KEY-----
+})
+
+### Step 1: Set Up Your GitHub Repository
+
+1. **Create a new GitHub repository** or navigate to your existing one.
+2. **Clone the repository locally**:
+
+   ```sh
+   git clone https://github.com/<your-username>/<your-repository>.git
+   cd <your-repository>
+   ```
+
+### Step 2: Generate SSH Key Pair on IONOS Server
+
+1. **SSH into your IONOS server Using Putty**:
+
+    -> https://www.ionos.com/help/?id=2923 
+
+    {
+        IONOS — SFTP and SSH master user
+
+        Username: 
+        u116436539
+        1370774Omar
+
+        Use these settings in your favorite FTP program or in the console for SSH access:
+
+        Server / Host
+        access1006262289.webspace-data.io
+        Port
+        22
+        Protocol
+        SFTP + SSH
+        User name
+        u116436539
+        Password
+        (The password for this access)
+
+    }
+
+
+2. **Generate an SSH key pair**:
+
+   ```sh
+   ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
+   ```
+
+3. **Add the public key to the `authorized_keys` file**:
+
+   ```sh
+   cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+   ```
+
+4. **Copy the contents of your public key** (`~/.ssh/id_rsa.pub`).
+
+### Step 3: Add SSH Key to GitHub
+
+1. **Go to your GitHub repository**.
+2. **Navigate to "Settings" > "Deploy keys"**.
+3. **Click "Add deploy key"**.
+4. **Title the key appropriately** and paste the contents of your public key.
+5. **Check "Allow write access"** and click "Add key".
+
+### Step 4: Add SSH Key and Other Secrets to GitHub Actions
+
+1. **Go to your GitHub repository**.
+2. **Navigate to "Settings" > "Secrets and variables" > "Actions"**.
+3. **Add the following secrets**:
+   - `IONOS_HOST`: Your IONOS host (e.g., `access1006262289.webspace-data.io`)
+   - `IONOS_USERNAME`: Your IONOS username (e.g., `u116436539`)
+   - `IONOS_SSH_PRIVATE_KEY`: The contents of your private SSH key (`~/.ssh/id_rsa` on your IONOS server)
+   - `GH_PAT`: Your GitHub Personal Access Token with repository permissions
+
+### Step 5: Create GitHub Actions Workflow
+
+1. **Create a `.github/workflows/deploy.yml` file** in your repository:
+
+   ```yaml
+   name: Deploy Website
+
+   on:
+     push:
+       branches:
+         - main  # Deploy when changes are pushed to the main branch
+
+   jobs:
+     deploy:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout code
+           uses: actions/checkout@v2
+           with:
+             token: ${{ secrets.GH_PAT }}
+
+         - name: Execute SSH command to deploy
+           uses: appleboy/ssh-action@master
+           with:
+             host: ${{ secrets.IONOS_HOST }}
+             username: ${{ secrets.IONOS_USERNAME }}
+             key: ${{ secrets.IONOS_SSH_PRIVATE_KEY }}
+             port: 22
+             script: |
+               cd /kunden/homepages/44/d1006262289/htdocs/test
+               ./deploy.sh
+   ```
+
+### Step 6: Create Deployment Script on IONOS Server
+
+1. **SSH into your IONOS server**:
+
+   ```sh
+   ssh u<IONOS-username>@<IONOS-host>
+   ```
+
+2. **Navigate to your project directory** and create a `deploy.sh` script:
+
+   ```sh
+   cd /kunden/homepages/44/d1006262289/htdocs/test
+   nano deploy.sh
+   ```
+
+3. **Add the following content to `deploy.sh`**:
+
+   ```sh
+   #!/bin/bash
+   # Navigate to your web directory
+   cd /kunden/homepages/44/d1006262289/htdocs/test
+
+   # Start the SSH agent and add the SSH key
+   eval "$(ssh-agent -s)"
+   ssh-add /kunden/homepages/44/d1006262289/htdocs/.ssh/id_rsa
+
+   # Pull the latest changes from the main branch
+   git pull origin main
+   ```
+
+4. **Make the script executable**:
+
+   ```sh
+   chmod +x deploy.sh
+   ```
+
+### Step 7: Commit and Push Changes to GitHub
+
+1. **Commit and push the changes to your GitHub repository**:
+
+   ```sh
+   git add -A
+   git commit -m "Setup continuous deployment"
+   git push origin main
+   ```
+
+### Step 8: Verify the Deployment
+
+1. **Go to your GitHub repository**.
+2. **Navigate to the "Actions" tab**.
+3. **Monitor the deployment workflow to ensure it completes successfully**.
+
+### Step 9: Making Future Changes
+
+1. **Make changes to your project locally**.
+2. **Commit and push the changes**:
+
+   ```sh
+   git add -A
+   git commit -am 'Testing continuous deployment'
+   git push origin main
+   ```
+
+3. **The GitHub Actions workflow will automatically deploy the changes to your IONOS server**.
+
+### Summary
+
+- **Set up your GitHub repository** and generate an SSH key pair on the IONOS server.
+- **Add the public key to GitHub deploy keys** and **add secrets to GitHub Actions**.
+- **Create a GitHub Actions workflow** to deploy changes to the IONOS server.
+- **Create a deployment script on the IONOS server** to pull the latest changes.
+- **Commit and push changes** to trigger the deployment process automatically.
+
+This detailed workflow should help you set up and maintain continuous deployment from GitHub to your IONOS server. If you have any questions or need further assistance, feel free to ask!
+
+===========================================
+
+ADDING EMAILJS
+
+### Step-by-Step Guide to Adding EmailJS Functionality to Your Website
+
+This guide will walk you through adding EmailJS functionality to your website to send form submissions via email. We'll use the exact steps and commands that worked during our conversation.
+
+#### Prerequisites
+
+1. **EmailJS Account**: Sign up for an EmailJS account.
+2. **IONOS Hosting**: Ensure you have IONOS hosting for deploying your website.
+
+### Step 1: Set Up EmailJS Account
+
+1. **Sign up** for an EmailJS account at [EmailJS](https://www.emailjs.com/).
+2. **Create a new Email Service**:
+   - Go to the "Email Services" section.
+   - Click on "Add new service".
+   - Select your email provider (e.g., IONOS) and follow the instructions to connect your email account.
+3. **Create an Email Template**:
+   - Navigate to "Email Templates".
+   - Click on "Create new template".
+   - Configure the template:
+     - **Name**: Contact Form
+     - **Template ID**: `contact_form`
+     - **Subject**: `New message from {{from_name}}`
+     - **Message Content**:
+       ```
+       {{message}}
+
+       {{from_name}} ({{from_email}})
+       ```
+   - Save the template.
+
+### Step 2: Add EmailJS to Your HTML
+
+1. **Modify your `index.html`**:
+   - Include the EmailJS SDK and initialize it with your public key.
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+     <head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <title>Ultrasound Private Practice</title>
+       <link rel="stylesheet" href="styles.css" />
+     </head>
+     <body>
+       <header>
+         <h1>Ultrasound Georgia</h1>
+         <nav>
+           <ul>
+             <li><a href="#services">Services</a></li>
+             <li><a href="#about">About Us</a></li>
+             <li><a href="#doctor">Dr. Sobolevskiy</a></li>
+             <li><a href="#contact">Contact</a></li>
+           </ul>
+         </nav>
+       </header>
+
+       <main>
+         <section id="services">
+           <h2>Our Services</h2>
+           <ul>
+             <!-- List of services -->
+           </ul>
+         </section>
+
+         <section id="about">
+           <h2>About Us</h2>
+           <p>
+             <!-- About Us content -->
+           </p>
+         </section>
+
+         <section id="doctor">
+           <h2>Dr. Vladimir Sobolevskiy</h2>
+           <p>
+             <!-- Dr. Sobolevskiy's details -->
+           </p>
+         </section>
+
+         <section id="contact">
+           <h2>Contact Us</h2>
+           <form id="contactForm">
+             <label for="name">Name:</label>
+             <input type="text" id="name" name="name" required />
+
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email" required />
+
+             <label for="message">Message:</label>
+             <textarea id="message" name="message" required></textarea>
+
+             <button type="submit">Send</button>
+           </form>
+         </section>
+       </main>
+
+       <footer>
+         <p>&copy; 2024 Ultrasound Private Practice. All rights reserved.</p>
+       </footer>
+
+       <!-- Include EmailJS SDK -->
+       <script
+         type="text/javascript"
+         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+       ></script>
+       <script type="text/javascript">
+         (function () {
+           emailjs.init("3y7wWJ8ASIgRkx-xr"); // Replace with your actual EmailJS public key
+         })();
+       </script>
+       <script src="scripts.js"></script>
+     </body>
+   </html>
+   ```
+
+### Step 3: Create and Modify `scripts.js`
+
+1. **Create a `scripts.js`** file if it doesn't exist.
+2. **Add the EmailJS functionality**:
+
+   ```javascript
+   document.querySelector("#contactForm").addEventListener("submit", function (event) {
+     event.preventDefault();
+
+     const name = document.querySelector("#name").value;
+     const email = document.querySelector("#email").value;
+     const message = document.querySelector("#message").value;
+
+     // Collect form data
+     const formData = {
+       from_name: name,
+       from_email: email,
+       message: message,
+     };
+
+     // Send form data via EmailJS
+     emailjs.send("service_ukzmh4f", "template_ayoqabc", formData).then(
+       (response) => {
+         console.log("SUCCESS!", response.status, response.text);
+         alert("Thank you for contacting us. We will get back to you shortly.");
+         document.querySelector("#contactForm").reset();
+       },
+       (error) => {
+         console.error("FAILED...", error);
+         alert("An error occurred while sending your message. Please try again later.");
+       }
+     );
+   });
+   ```
+
+### Step 4: Deploy to IONOS
+
+1. **Set Up Continuous Deployment with GitHub Actions**:
+   - Create a `.github/workflows/deploy.yml` file:
+
+     ```yaml
+     name: Deploy Website
+
+     on:
+       push:
+         branches:
+           - main  # Deploy when changes are pushed to the main branch
+
+     jobs:
+       deploy:
+         runs-on: ubuntu-latest
+
+         steps:
+           - name: Checkout code
+             uses: actions/checkout@v2
+             with:
+               token: ${{ secrets.GH_PAT }}
+
+           - name: Execute SSH command to deploy
+             uses: appleboy/ssh-action@master
+             with:
+               host: ${{ secrets.IONOS_HOST }}
+               username: ${{ secrets.IONOS_USERNAME }}
+               key: ${{ secrets.IONOS_SSH_PRIVATE_KEY }}
+               port: 22
+               script: |
+                 cd /kunden/homepages/44/d1006262289/htdocs/test
+                 ./deploy.sh
+     ```
+
+2. **Create Deployment Script on IONOS Server**:
+   - SSH into your IONOS server:
+
+     ```sh
+     ssh u116436539@access1006262289.webspace-data.io
+     ```
+
+   - Navigate to your project directory and create `deploy.sh`:
+
+     ```sh
+     cd /kunden/homepages/44/d1006262289/htdocs/test
+     nano deploy.sh
+     ```
+
+   - Add the following content to `deploy.sh`:
+
+     ```sh
+     #!/bin/bash
+     # Navigate to your web directory
+     cd /kunden/homepages/44/d1006262289/htdocs/test
+
+     # Start the SSH agent and add the SSH key
+     eval "$(ssh-agent -s)"
+     ssh-add /kunden/homepages/44/d1006262289/htdocs/.ssh/id_rsa
+
+     # Pull the latest changes from the main branch
+     git pull origin main
+     ```
+
+   - Make the script executable:
+
+     ```sh
+     chmod +x deploy.sh
+     ```
+
+3. **Ensure Your Local Repository is on the Correct Branch**:
+   - Rename the branch if necessary:
+
+     ```sh
+     git branch -m master main
+     ```
+
+   - Push the changes to GitHub:
+
+     ```sh
+     git add -A
+     git commit -m "Setup continuous deployment"
+     git push origin main
+     ```
+
+### Step 5: Verify the Deployment
+
+1. **Go to your GitHub repository**.
+2. **Navigate to the "Actions" tab**.
+3. **Monitor the deployment workflow to ensure it completes successfully**.
+
+### Step 6: Making Future Changes
+
+1. **Make changes to your project locally**.
+2. **Commit and push the changes**:
+
+   ```sh
+   git add -A
+   git commit -am 'Testing continuous deployment'
+   git push origin main
+   ```
+
+3. **The GitHub Actions workflow will automatically deploy the changes to your IONOS server**.
+
+### Summary
+
+1. **Set up your EmailJS account and create an email service and template**.
+2. **Modify your HTML to include EmailJS SDK and initialization code**.
+3. **Create and modify `scripts.js` to handle form submission using EmailJS**.
+4. **Set up continuous deployment with GitHub Actions and a deployment script on your IONOS server**.
+5. **Commit and push changes to trigger the deployment process automatically**.
+
+By following these detailed steps with the exact commands used in our chat, you can set up and maintain EmailJS functionality and continuous deployment from GitHub to your IONOS server. If you have any questions or need further assistance, feel free to ask!

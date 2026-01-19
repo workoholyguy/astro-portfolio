@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+  staggerDelay?: number;
+  as?: 'div' | 'ul' | 'ol' | 'section';
+}
+
+const { class: className = '', staggerDelay = 80, as: Tag = 'div' } = Astro.props;
+---
+
+<Tag class:list={[className]} data-stagger data-stagger-delay={staggerDelay}>
+  <slot />
+</Tag>

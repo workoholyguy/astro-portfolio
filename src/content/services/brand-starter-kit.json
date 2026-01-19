@@ -1,0 +1,72 @@
+{
+  "slug": "brand-starter-kit",
+  "name": "Brand Starter Kit",
+  "shortDescription": "Get a professional logo, colors, and brand identity for your business.",
+  "heroDescription": "Starting fresh or need a brand refresh? We create a cohesive brand identity with logo, color palette, and typography that makes your business look professional and memorable.",
+  "icon": "palette",
+  "deliverables": [
+    {
+      "title": "Logo Design",
+      "description": "Professional logo with multiple variations"
+    },
+    {
+      "title": "Color Palette",
+      "description": "Primary and secondary colors that work together"
+    },
+    {
+      "title": "Typography",
+      "description": "Font selections for headings and body text"
+    },
+    {
+      "title": "Brand Guidelines",
+      "description": "Simple guide for consistent usage"
+    },
+    {
+      "title": "Social Assets",
+      "description": "Profile images and cover photos"
+    },
+    {
+      "title": "File Package",
+      "description": "All files in formats you need (PNG, SVG, etc.)"
+    }
+  ],
+  "whoItsFor": [
+    "New businesses without professional branding",
+    "Companies with outdated or inconsistent branding",
+    "Entrepreneurs launching their first venture",
+    "Anyone needing a cohesive visual identity"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Discovery",
+      "description": "We learn about your business and preferences"
+    },
+    {
+      "step": 2,
+      "title": "Concepts",
+      "description": "We present 2-3 logo directions"
+    },
+    {
+      "step": 3,
+      "title": "Refine",
+      "description": "We refine your chosen direction"
+    },
+    {
+      "step": 4,
+      "title": "Deliver",
+      "description": "We package all files and guidelines"
+    }
+  ],
+  "pricingRange": {
+    "from": 800,
+    "to": 2000,
+    "unit": "project"
+  },
+  "relatedServices": ["website-design", "landing-pages", "shopify-customization"],
+  "seo": {
+    "title": "Brand Starter Kit Services",
+    "description": "Professional logo and brand identity design for small businesses. Get a cohesive visual identity that makes your business memorable."
+  },
+  "order": 8
+}

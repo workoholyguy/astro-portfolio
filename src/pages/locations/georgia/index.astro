@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Container from '../../../components/ui/Container.astro';
+import Section from '../../../components/ui/Section.astro';
+import GlassCard from '../../../components/ui/GlassCard.astro';
+import GradientText from '../../../components/ui/GradientText.astro';
+import Button from '../../../components/ui/Button.astro';
+import RevealOnScroll from '../../../components/motion/RevealOnScroll.astro';
+import Breadcrumbs from '../../../components/seo/Breadcrumbs.astro';
+import { getMetroCities, getOtherCities, sortByPopulation } from '../../../utils/locations';
+
+const metroCities = sortByPopulation(getMetroCities());
+const otherCities = sortByPopulation(getOtherCities());
+
+const seo = {
+  title: 'Web Design & Development Services in Georgia | All Cities',
+  description: 'Professional web design and development services for businesses across Georgia. Find local web services in Atlanta, Savannah, Augusta, Macon, and more.',
+};
+
+const breadcrumbs = [
+  { label: 'Locations', href: '/locations' },
+  { label: 'Georgia', href: '/locations/georgia' },
+];
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <Section class="pt-32 pb-8">
+    <Container>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <RevealOnScroll>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-accent-primary text-sm font-medium tracking-wider uppercase mb-4">
+            Georgia Service Areas
+          </p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Web Services in <GradientText>Georgia</GradientText>
+          </h1>
+          <p class="text-text-muted text-lg">
+            We provide professional web design, development, SEO, and digital marketing
+            services to businesses across Georgia. Select your city to learn more about
+            our local services.
+          </p>
+        </div>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+
+  <Section class="pb-16">
+    <Container>
+      <RevealOnScroll>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Atlanta Metro Area</h2>
+          <p class="text-text-muted">Major cities in the greater Atlanta metropolitan region</p>
+        </div>
+      </RevealOnScroll>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {metroCities.map((city, index) => (
+          <RevealOnScroll delay={Math.min(index * 30, 300)}>
+            <a
+              href={`/locations/georgia/${city.slug}`}
+              class="glass-card p-4 flex items-center justify-between group"
+            >
+              <div>
+                <h3 class="font-semibold group-hover:text-accent-primary transition-colors">
+                  {city.name}
+                </h3>
+                <p class="text-text-subtle text-sm">
+                  {city.population.toLocaleString()} residents
+                </p>
+              </div>
+              <svg
+                class="w-5 h-5 text-text-subtle group-hover:text-accent-primary group-hover:translate-x-1 transition-all"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-16">
+    <Container>
+      <RevealOnScroll>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Other Major Georgia Cities</h2>
+          <p class="text-text-muted">Cities across the state of Georgia</p>
+        </div>
+      </RevealOnScroll>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {otherCities.map((city, index) => (
+          <RevealOnScroll delay={Math.min(index * 30, 300)}>
+            <a
+              href={`/locations/georgia/${city.slug}`}
+              class="glass-card p-4 flex items-center justify-between group"
+            >
+              <div>
+                <h3 class="font-semibold group-hover:text-accent-primary transition-colors">
+                  {city.name}
+                </h3>
+                <p class="text-text-subtle text-sm">
+                  {city.population.toLocaleString()} residents
+                </p>
+              </div>
+              <svg
+                class="w-5 h-5 text-text-subtle group-hover:text-accent-primary group-hover:translate-x-1 transition-all"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-16">
+    <Container>
+      <RevealOnScroll>
+        <GlassCard class="p-8">
+          <h2 class="text-2xl font-bold mb-6">Our Services</h2>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <a href="/services/website-design" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">🎨</span>
+              <span class="group-hover:text-accent-primary transition-colors">Website Design</span>
+            </a>
+            <a href="/services/website-redesign" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">🔄</span>
+              <span class="group-hover:text-accent-primary transition-colors">Website Redesign</span>
+            </a>
+            <a href="/services/landing-pages" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">📄</span>
+              <span class="group-hover:text-accent-primary transition-colors">Landing Pages</span>
+            </a>
+            <a href="/services/maintenance-care" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">🛡️</span>
+              <span class="group-hover:text-accent-primary transition-colors">Maintenance & Care</span>
+            </a>
+            <a href="/services/local-seo" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">📍</span>
+              <span class="group-hover:text-accent-primary transition-colors">Local SEO</span>
+            </a>
+            <a href="/services/speed-technical-seo" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">⚡</span>
+              <span class="group-hover:text-accent-primary transition-colors">Speed & Technical SEO</span>
+            </a>
+            <a href="/services/shopify-customization" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">🛒</span>
+              <span class="group-hover:text-accent-primary transition-colors">Shopify Customization</span>
+            </a>
+            <a href="/services/brand-starter-kit" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">✨</span>
+              <span class="group-hover:text-accent-primary transition-colors">Brand Starter Kit</span>
+            </a>
+            <a href="/services/analytics-tracking" class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group">
+              <span class="text-2xl">📊</span>
+              <span class="group-hover:text-accent-primary transition-colors">Analytics & Tracking</span>
+            </a>
+          </div>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+
+  <Section class="pb-32">
+    <Container size="sm">
+      <RevealOnScroll>
+        <GlassCard class="p-8 md:p-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Don't See Your City?
+          </h2>
+          <p class="text-text-muted mb-8 max-w-xl mx-auto">
+            We serve businesses throughout Georgia, even if your city isn't listed above.
+            Remote collaboration means we can work together from anywhere in the state.
+          </p>
+          <Button href="/contact" variant="primary" size="lg">
+            Contact Us Today
+          </Button>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+</BaseLayout>

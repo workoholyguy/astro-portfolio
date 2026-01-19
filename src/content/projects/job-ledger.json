@@ -1,0 +1,25 @@
+{
+  "slug": "job-ledger",
+  "name": "The Job Ledger",
+  "client": "Internal Project",
+  "description": "A fullstack hiring intelligence dashboard that helps job seekers track applications, set follow-up reminders, and compare job offers. Built with React, Express, and PostgreSQL for a seamless user experience.",
+  "shortDescription": "Job application tracking and management platform",
+  "url": "https://jobledger.app",
+  "image": {
+    "src": "/assets/images/job-ledger-logo_1.png",
+    "alt": "The Job Ledger dashboard"
+  },
+  "thumbnail": "/assets/images/job-ledger-logo_1.png",
+  "tags": ["Web App", "React", "PostgreSQL"],
+  "category": "web-app",
+  "featured": false,
+  "order": 5,
+  "deliverables": [
+    "Full-stack application development",
+    "User authentication system",
+    "Dashboard with job tracking",
+    "Reminder and notification system",
+    "Offer comparison tools",
+    "Responsive design"
+  ]
+}

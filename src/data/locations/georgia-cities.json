@@ -1,0 +1,330 @@
+[
+  {
+    "name": "Atlanta",
+    "slug": "atlanta",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 498715
+  },
+  {
+    "name": "Marietta",
+    "slug": "marietta",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 60972
+  },
+  {
+    "name": "Decatur",
+    "slug": "decatur",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 24928
+  },
+  {
+    "name": "Sandy Springs",
+    "slug": "sandy-springs",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 108080
+  },
+  {
+    "name": "Roswell",
+    "slug": "roswell",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 94786
+  },
+  {
+    "name": "Alpharetta",
+    "slug": "alpharetta",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 66566
+  },
+  {
+    "name": "Johns Creek",
+    "slug": "johns-creek",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 84551
+  },
+  {
+    "name": "Dunwoody",
+    "slug": "dunwoody",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 51683
+  },
+  {
+    "name": "Brookhaven",
+    "slug": "brookhaven",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 55554
+  },
+  {
+    "name": "Smyrna",
+    "slug": "smyrna",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 56666
+  },
+  {
+    "name": "Kennesaw",
+    "slug": "kennesaw",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 34077
+  },
+  {
+    "name": "Lawrenceville",
+    "slug": "lawrenceville",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 30493
+  },
+  {
+    "name": "Duluth",
+    "slug": "duluth",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 29538
+  },
+  {
+    "name": "Peachtree City",
+    "slug": "peachtree-city",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 37039
+  },
+  {
+    "name": "Woodstock",
+    "slug": "woodstock",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 35039
+  },
+  {
+    "name": "Acworth",
+    "slug": "acworth",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 24034
+  },
+  {
+    "name": "Canton",
+    "slug": "canton",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 32540
+  },
+  {
+    "name": "Douglasville",
+    "slug": "douglasville",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 35374
+  },
+  {
+    "name": "Newnan",
+    "slug": "newnan",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 43568
+  },
+  {
+    "name": "Carrollton",
+    "slug": "carrollton",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 28468
+  },
+  {
+    "name": "Gainesville",
+    "slug": "gainesville",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 43435
+  },
+  {
+    "name": "Buford",
+    "slug": "buford",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 16322
+  },
+  {
+    "name": "Suwanee",
+    "slug": "suwanee",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 21501
+  },
+  {
+    "name": "Tucker",
+    "slug": "tucker",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 36195
+  },
+  {
+    "name": "Chamblee",
+    "slug": "chamblee",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 31126
+  },
+  {
+    "name": "East Point",
+    "slug": "east-point",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 38358
+  },
+  {
+    "name": "College Park",
+    "slug": "college-park",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "metro",
+    "population": 14891
+  },
+  {
+    "name": "Savannah",
+    "slug": "savannah",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 147780
+  },
+  {
+    "name": "Augusta",
+    "slug": "augusta",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 202081
+  },
+  {
+    "name": "Columbus",
+    "slug": "columbus",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 206922
+  },
+  {
+    "name": "Macon",
+    "slug": "macon",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 157346
+  },
+  {
+    "name": "Athens",
+    "slug": "athens",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 127315
+  },
+  {
+    "name": "Warner Robins",
+    "slug": "warner-robins",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 80308
+  },
+  {
+    "name": "Valdosta",
+    "slug": "valdosta",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 56457
+  },
+  {
+    "name": "Albany",
+    "slug": "albany",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 69647
+  },
+  {
+    "name": "Rome",
+    "slug": "rome",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 37713
+  },
+  {
+    "name": "Dalton",
+    "slug": "dalton",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 34221
+  },
+  {
+    "name": "LaGrange",
+    "slug": "lagrange",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 30346
+  },
+  {
+    "name": "Brunswick",
+    "slug": "brunswick",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 16346
+  },
+  {
+    "name": "Hinesville",
+    "slug": "hinesville",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 33437
+  },
+  {
+    "name": "Statesboro",
+    "slug": "statesboro",
+    "state": "georgia",
+    "stateAbbr": "GA",
+    "region": "other",
+    "population": 33640
+  }
+]

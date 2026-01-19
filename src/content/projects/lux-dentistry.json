@@ -1,0 +1,26 @@
+{
+  "slug": "lux-dentistry",
+  "name": "Lux Dentistry Group",
+  "client": "Lux Dentistry Group",
+  "description": "A modern, patient-focused website for a premium dental practice. The site showcases their services, team, and state-of-the-art facilities while making it easy for patients to book appointments online.",
+  "shortDescription": "Premium dental practice website with online booking",
+  "url": "https://luxdentistrygroup.com",
+  "image": {
+    "src": "/assets/images/projects/lux-dentistry.png",
+    "alt": "Lux Dentistry Group website homepage"
+  },
+  "thumbnail": "/assets/images/projects/lux-dentistry-thumb.png",
+  "tags": ["Healthcare", "Web Design", "SEO"],
+  "category": "website",
+  "featured": true,
+  "order": 1,
+  "deliverables": [
+    "Custom responsive website design",
+    "Online appointment booking system",
+    "Service pages for each dental treatment",
+    "Team and about pages",
+    "Local SEO optimization",
+    "Mobile-first development"
+  ],
+  "results": "Increased online appointment bookings and improved local search visibility for key dental services."
+}

@@ -1,30 +1,32 @@
 ---
-import type { IFrontmatter } from "astro-boilerplate-components";
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import HeroSection from '@/sections/HeroSection.astro';
+import WhatWeDoSection from '@/sections/WhatWeDoSection.astro';
+import SelectedWorkSection from '@/sections/SelectedWorkSection.astro';
+import ProcessSection from '@/sections/ProcessSection.astro';
+import PricingSection from '@/sections/PricingSection.astro';
+import TestimonialsSection from '@/sections/TestimonialsSection.astro';
+import CTABannerSection from '@/sections/CTABannerSection.astro';
+import { siteConfig } from '@/data/site-config';
+import { generateLocalBusinessSchema } from '@/utils/seo';
 
-// import { CTA } from "@/partials/CTA";
-import { Hero } from "@/partials/Hero";
-import { ProjectList } from "@/partials/ProjectList";
-import { RecentPosts } from "@/partials/RecentPosts";
-// import { Sponsors } from "@/partials/Sponsors";
-import Base from "@/templates/Base.astro";
-import { AppConfig } from "@/utils/AppConfig";
-import { sortByDate } from "@/utils/Posts";
-import { ContactForm } from "@/partials/ContactForm";
+const pageTitle = 'Web Design & Development for Small Businesses in Georgia';
+const pageDescription = siteConfig.description;
 
-const allPosts = await Astro.glob<IFrontmatter>("./posts/*.md");
-const sortedPosts = sortByDate(allPosts);
-const lastThreePosts = sortedPosts.slice(0, 3);
-
-const { title } = AppConfig;
-// const { title } = AppConfig;
-const { description } = AppConfig;
+// Add LocalBusiness schema for homepage
+const localBusinessSchema = generateLocalBusinessSchema();
 ---
 
-<Base head={{ title, description }}>
-  <Hero client:load />
-  <!-- <Sponsors /> -->
-  <ProjectList client:load />
-  <RecentPosts client:load postList={lastThreePosts} />
-  <!-- <CTA client:load /> -->
-  <ContactForm client:load redirectUrl="/" />
-</Base>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={localBusinessSchema}
+>
+  <HeroSection />
+  <WhatWeDoSection />
+  <SelectedWorkSection />
+  <ProcessSection />
+  <PricingSection />
+  <TestimonialsSection />
+  <CTABannerSection />
+</BaseLayout>

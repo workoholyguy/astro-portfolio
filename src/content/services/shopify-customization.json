@@ -1,0 +1,72 @@
+{
+  "slug": "shopify-customization",
+  "name": "Shopify Customization",
+  "shortDescription": "Customize your Shopify store to stand out and sell more.",
+  "heroDescription": "Make your Shopify store uniquely yours. We customize themes, add features, and optimize your store for conversions so you can sell more and stand out from competitors.",
+  "icon": "shopping-bag",
+  "deliverables": [
+    {
+      "title": "Theme Customization",
+      "description": "Modify your theme to match your brand perfectly"
+    },
+    {
+      "title": "Custom Features",
+      "description": "Add functionality your theme doesn't have"
+    },
+    {
+      "title": "Conversion Optimization",
+      "description": "Improve product pages and checkout flow"
+    },
+    {
+      "title": "Mobile Optimization",
+      "description": "Ensure great shopping experience on phones"
+    },
+    {
+      "title": "App Integration",
+      "description": "Connect and configure essential Shopify apps"
+    },
+    {
+      "title": "Speed Optimization",
+      "description": "Make your store load faster for better sales"
+    }
+  ],
+  "whoItsFor": [
+    "Shopify store owners wanting a unique look",
+    "E-commerce businesses not happy with their theme",
+    "Stores needing custom features or functionality",
+    "Anyone wanting to improve their conversion rates"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Review",
+      "description": "We audit your current store and discuss goals"
+    },
+    {
+      "step": 2,
+      "title": "Plan",
+      "description": "We outline customizations and features needed"
+    },
+    {
+      "step": 3,
+      "title": "Customize",
+      "description": "We implement changes on a staging environment"
+    },
+    {
+      "step": 4,
+      "title": "Launch",
+      "description": "We deploy to your live store and test"
+    }
+  ],
+  "pricingRange": {
+    "from": 1500,
+    "to": 5000,
+    "unit": "project"
+  },
+  "relatedServices": ["website-design", "speed-technical-seo", "analytics-tracking"],
+  "seo": {
+    "title": "Shopify Customization Services",
+    "description": "Custom Shopify theme design and development. Make your store unique, fast, and optimized for conversions."
+  },
+  "order": 7
+}

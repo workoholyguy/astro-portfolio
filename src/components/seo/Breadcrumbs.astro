@@ -1,0 +1,56 @@
+---
+import { siteConfig } from '@/data/site-config';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  class?: string;
+}
+
+const { items, class: className = '' } = Astro.props;
+
+// Always include Home as the first item
+const allItems: BreadcrumbItem[] = [{ label: 'Home', href: '/' }, ...items];
+
+// Generate schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: allItems.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href, siteConfig.url).href,
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class:list={['text-sm', className]}>
+  <ol class="flex flex-wrap items-center gap-2">
+    {allItems.map((item, index) => (
+      <li class="flex items-center gap-2">
+        {index > 0 && (
+          <span class="text-text-subtle" aria-hidden="true">/</span>
+        )}
+        {index === allItems.length - 1 ? (
+          <span class="text-text-muted" aria-current="page">
+            {item.label}
+          </span>
+        ) : (
+          <a
+            href={item.href}
+            class="text-text-subtle hover:text-accent-primary transition-colors"
+          >
+            {item.label}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

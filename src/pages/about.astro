@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+import GlassCard from '../components/ui/GlassCard.astro';
+import GradientText from '../components/ui/GradientText.astro';
+import Button from '../components/ui/Button.astro';
+import RevealOnScroll from '../components/motion/RevealOnScroll.astro';
+
+const seo = {
+  title: 'About AVID TECH USA | Web Design & Development Agency',
+  description: 'Learn about AVID TECH USA - a web design and development agency helping small businesses in Georgia build professional websites that drive results.',
+};
+
+const values = [
+  {
+    title: 'Results-Driven',
+    description: 'We measure success by your business outcomes, not just deliverables. Every decision is made with your ROI in mind.',
+    icon: '📈',
+  },
+  {
+    title: 'Transparent',
+    description: 'No hidden fees, no surprises. You\'ll always know exactly what you\'re getting and what it costs.',
+    icon: '🔍',
+  },
+  {
+    title: 'Reliable',
+    description: 'We deliver on time, every time. Your business depends on it, and we take that responsibility seriously.',
+    icon: '🤝',
+  },
+  {
+    title: 'Modern',
+    description: 'We stay current with the latest technologies and best practices to give you a competitive edge.',
+    icon: '⚡',
+  },
+];
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <Section class="pt-32 pb-20">
+    <Container>
+      <RevealOnScroll>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-accent-primary text-sm font-medium tracking-wider uppercase mb-4">
+            About Us
+          </p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Building Websites That <GradientText>Drive Results</GradientText>
+          </h1>
+          <p class="text-text-muted text-lg leading-relaxed">
+            We're a web design and development agency focused on helping small businesses
+            in Georgia establish a powerful online presence. No fluff, no jargon—just
+            websites that work.
+          </p>
+        </div>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+
+  <Section class="pb-20">
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <RevealOnScroll>
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              Our Mission
+            </h2>
+            <p class="text-text-muted text-lg leading-relaxed mb-6">
+              Too many small businesses struggle with outdated, slow, or ineffective websites.
+              We're here to change that.
+            </p>
+            <p class="text-text-muted leading-relaxed mb-6">
+              We believe every business deserves a professional online presence—one that
+              actually generates leads and grows revenue. That's why we focus on building
+              fast, conversion-optimized websites at prices small businesses can afford.
+            </p>
+            <p class="text-text-muted leading-relaxed">
+              Based in Georgia, we serve businesses across the state with remote-first
+              collaboration. This means you get top-tier talent without the premium
+              price tag of big-city agencies.
+            </p>
+          </div>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={100}>
+          <GlassCard class="p-8">
+            <h3 class="text-2xl font-bold mb-6">Why Work With Us?</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
+                <span class="text-accent-primary text-xl">✓</span>
+                <div>
+                  <span class="font-semibold">No bloated teams or overhead</span>
+                  <p class="text-text-muted text-sm mt-1">
+                    You work directly with experienced developers, not account managers.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-accent-primary text-xl">✓</span>
+                <div>
+                  <span class="font-semibold">Fixed pricing, no surprises</span>
+                  <p class="text-text-muted text-sm mt-1">
+                    You'll know exactly what your project costs before we start.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-accent-primary text-xl">✓</span>
+                <div>
+                  <span class="font-semibold">Built for performance</span>
+                  <p class="text-text-muted text-sm mt-1">
+                    Fast load times and SEO best practices are included, not upsells.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-accent-primary text-xl">✓</span>
+                <div>
+                  <span class="font-semibold">Long-term partnership</span>
+                  <p class="text-text-muted text-sm mt-1">
+                    We're here to support your growth, not just deliver and disappear.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </GlassCard>
+        </RevealOnScroll>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-20">
+    <Container>
+      <RevealOnScroll>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
+          <p class="text-text-muted max-w-2xl mx-auto">
+            These principles guide everything we do, from how we work to what we deliver.
+          </p>
+        </div>
+      </RevealOnScroll>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {values.map((value, index) => (
+          <RevealOnScroll delay={index * 100}>
+            <GlassCard class="p-6 h-full text-center">
+              <span class="text-4xl mb-4 block">{value.icon}</span>
+              <h3 class="text-lg font-semibold mb-2">{value.title}</h3>
+              <p class="text-text-muted text-sm">{value.description}</p>
+            </GlassCard>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-32">
+    <Container size="sm">
+      <RevealOnScroll>
+        <GlassCard class="p-8 md:p-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Ready to Work Together?
+          </h2>
+          <p class="text-text-muted mb-8 max-w-xl mx-auto">
+            Let's discuss your project and see how we can help your business grow.
+            No pressure, no obligation—just a straightforward conversation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" variant="primary" size="lg">
+              Get in Touch
+            </Button>
+            <Button href="/work" variant="secondary" size="lg">
+              View Our Work
+            </Button>
+          </div>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,344 @@
+{
+  "website-design": [
+    {
+      "question": "How long does it take to build a website?",
+      "answer": "Most websites take 4-8 weeks from kickoff to launch, depending on the complexity and how quickly you can provide content and feedback. We'll give you a specific timeline during our initial consultation."
+    },
+    {
+      "question": "What do I need to provide for my website?",
+      "answer": "You'll need to provide your logo, brand colors (if you have them), photos of your business, and the content for your pages. Don't worry if you don't have everything—we can help guide you through the process."
+    },
+    {
+      "question": "Will my website work on mobile phones?",
+      "answer": "Absolutely. Every website we build is fully responsive, meaning it automatically adjusts to look great on smartphones, tablets, and desktop computers."
+    },
+    {
+      "question": "Can I update the website myself after it's built?",
+      "answer": "Yes! We build websites with user-friendly content management systems that make it easy to update text, images, and basic content without any technical knowledge."
+    },
+    {
+      "question": "Do you provide hosting for the website?",
+      "answer": "We can recommend reliable hosting providers and help you set everything up. If you prefer, we also offer hosting as part of our maintenance plans."
+    },
+    {
+      "question": "What's included in the website design process?",
+      "answer": "Our process includes discovery and planning, custom design mockups, development, content integration, testing, and launch. We also provide training on how to manage your site."
+    },
+    {
+      "question": "How much does a website cost?",
+      "answer": "Website costs vary based on your needs. A basic business website typically starts around $2,500, while more complex sites with custom features can range from $5,000-$10,000+. We provide detailed quotes after understanding your requirements."
+    },
+    {
+      "question": "Will my website be optimized for search engines?",
+      "answer": "Yes, we build every website with SEO best practices in mind, including proper heading structure, meta tags, fast loading speeds, and mobile optimization. This gives you a solid foundation for ranking in search results."
+    },
+    {
+      "question": "What if I need changes after the website launches?",
+      "answer": "We include a revision period after launch to make any needed adjustments. For ongoing changes, we offer maintenance plans or can make updates on an hourly basis."
+    },
+    {
+      "question": "Do you work with businesses outside of {city}?",
+      "answer": "Yes! While we're based in Georgia and serve many {city} businesses, we work with clients throughout the state and across the country. Most of our communication happens via video calls and email."
+    },
+    {
+      "question": "What platform do you build websites on?",
+      "answer": "We choose the best platform for your specific needs. For most business websites, we use modern frameworks like Astro or WordPress. For e-commerce, we often recommend Shopify."
+    },
+    {
+      "question": "Can you help write content for my website?",
+      "answer": "We can provide guidance on content structure and help edit your content, but we recommend working with a professional copywriter for the best results. We can refer you to trusted partners if needed."
+    },
+    {
+      "question": "What happens if I'm not happy with the design?",
+      "answer": "We include revision rounds in our process specifically to refine the design until you love it. We won't move forward with development until you're completely satisfied with the design direction."
+    },
+    {
+      "question": "Do you offer payment plans?",
+      "answer": "Yes, we typically structure payments in milestones: a deposit to begin, a payment at design approval, and final payment at launch. We can discuss options that work for your budget."
+    },
+    {
+      "question": "How do we communicate during the project?",
+      "answer": "We use a combination of video calls for key discussions, email for detailed feedback, and project management tools to track progress. You'll always know where your project stands."
+    }
+  ],
+  "website-redesign": [
+    {
+      "question": "How do you handle my existing website content during a redesign?",
+      "answer": "We carefully migrate all your existing content to the new site. This includes text, images, blog posts, and any other important information. Nothing gets lost in the transition."
+    },
+    {
+      "question": "Will a redesign affect my search engine rankings?",
+      "answer": "We take special care to preserve your SEO during a redesign. This includes setting up proper redirects, maintaining your URL structure where possible, and ensuring all SEO elements are properly transferred."
+    },
+    {
+      "question": "How long will my current website be down during the redesign?",
+      "answer": "Your current website stays live throughout the entire redesign process. We build the new site on a staging server and only switch over once everything is ready and tested."
+    },
+    {
+      "question": "What if I want to change my branding during the redesign?",
+      "answer": "A redesign is a perfect opportunity to refresh your branding. We can incorporate new logos, colors, and brand elements into the new design, or we can help you develop a brand starter kit."
+    },
+    {
+      "question": "How do you determine what to keep and what to change?",
+      "answer": "We start with a thorough audit of your current site, analyzing what's working and what isn't. We also look at your analytics data and user feedback to make data-driven decisions."
+    },
+    {
+      "question": "Can you add new features during the redesign?",
+      "answer": "Absolutely. A redesign is an ideal time to add new functionality like booking systems, e-commerce, member areas, or whatever your business needs."
+    },
+    {
+      "question": "What's the difference between a redesign and just updating my current site?",
+      "answer": "A redesign involves rebuilding your site from scratch with new design, structure, and often new technology. It's more comprehensive than making updates to an existing site and produces better long-term results."
+    },
+    {
+      "question": "How much does a website redesign cost?",
+      "answer": "Redesign costs depend on the current state of your site and your goals for the new one. Most redesigns range from $3,000 to $12,000. We provide detailed quotes after reviewing your needs."
+    },
+    {
+      "question": "Will my redesigned site be faster than my current one?",
+      "answer": "Yes, improved performance is a key benefit of redesigning. We use modern development practices and optimization techniques to ensure your new site loads quickly."
+    },
+    {
+      "question": "How often should I redesign my website?",
+      "answer": "Most websites benefit from a redesign every 3-5 years to keep up with design trends, technology changes, and evolving user expectations. However, this depends on your industry and how quickly it changes."
+    }
+  ],
+  "landing-pages": [
+    {
+      "question": "What makes a landing page different from a regular website page?",
+      "answer": "Landing pages are focused on a single goal with minimal distractions. Unlike regular pages, they don't have navigation menus or links to other pages—everything is designed to drive one specific action."
+    },
+    {
+      "question": "How quickly can you create a landing page?",
+      "answer": "Simple landing pages can be completed in 1-2 weeks. More complex pages with custom features may take 2-3 weeks. Rush projects are possible for an additional fee."
+    },
+    {
+      "question": "Can I use the landing page with my existing website?",
+      "answer": "Yes, landing pages work alongside your main website. They can be on a subdomain, a subfolder, or even a completely separate URL depending on your campaign needs."
+    },
+    {
+      "question": "Do you help with the landing page copy?",
+      "answer": "We can provide guidance on structure and help refine your messaging, but for best results, we recommend working with a professional copywriter. We can make referrals if needed."
+    },
+    {
+      "question": "How do you measure landing page success?",
+      "answer": "We set up tracking for key metrics like conversion rate, bounce rate, and time on page. You'll be able to see exactly how your page is performing and compare it to industry benchmarks."
+    },
+    {
+      "question": "Can landing pages be A/B tested?",
+      "answer": "Yes, we build landing pages with A/B testing in mind. This allows you to test different headlines, images, or layouts to find what converts best for your audience."
+    },
+    {
+      "question": "What platforms do you use for landing pages?",
+      "answer": "We typically build custom landing pages for maximum flexibility and performance, but we can also work with platforms like Unbounce or Leadpages if that fits your workflow better."
+    },
+    {
+      "question": "How much does a landing page cost?",
+      "answer": "Landing pages typically range from $800 to $2,500 depending on complexity, custom features, and whether copywriting assistance is included."
+    }
+  ],
+  "maintenance-care": [
+    {
+      "question": "What's included in a maintenance plan?",
+      "answer": "Our maintenance plans include security updates, software updates, daily backups, uptime monitoring, performance optimization, and a set number of content updates each month."
+    },
+    {
+      "question": "How often do you update my website?",
+      "answer": "We perform security and software updates weekly, backups daily, and performance reviews monthly. Content updates are made as you request them within your plan limits."
+    },
+    {
+      "question": "What happens if my website goes down?",
+      "answer": "Our monitoring systems alert us immediately if your site goes down. We investigate and work to resolve the issue as quickly as possible, typically within hours."
+    },
+    {
+      "question": "Are backups included in the maintenance plan?",
+      "answer": "Yes, we perform daily automated backups and store them securely off-site. If anything ever goes wrong, we can restore your site quickly."
+    },
+    {
+      "question": "Can I make content changes myself, or do you handle everything?",
+      "answer": "You can absolutely make changes yourself if you prefer. The maintenance plan also includes a set number of changes we make for you each month, so you have flexibility."
+    },
+    {
+      "question": "How much do maintenance plans cost?",
+      "answer": "Our maintenance plans range from $99 to $299 per month depending on the level of service and included content updates. We can customize a plan that fits your needs and budget."
+    },
+    {
+      "question": "What if I need help outside of the maintenance plan?",
+      "answer": "We're here to help. For requests beyond what's included in your plan, we offer additional support at an hourly rate. Maintenance clients receive priority response times."
+    },
+    {
+      "question": "Do I need a maintenance plan if I have a new website?",
+      "answer": "New websites still need regular updates and monitoring to stay secure and perform well. We recommend maintenance plans for any business-critical website."
+    }
+  ],
+  "local-seo": [
+    {
+      "question": "What is local SEO and why does my business need it?",
+      "answer": "Local SEO helps your business appear in search results when people in your area search for your services. It's essential for any business that serves local customers."
+    },
+    {
+      "question": "How long does it take to see results from local SEO?",
+      "answer": "Local SEO is a long-term strategy. You may see some improvements within a few weeks, but significant results typically take 3-6 months of consistent effort."
+    },
+    {
+      "question": "What's a Google Business Profile and why is it important?",
+      "answer": "Google Business Profile is your free business listing on Google. It appears in Google Maps and local search results, and it's often the first thing potential customers see about your business."
+    },
+    {
+      "question": "Do you guarantee first-page rankings?",
+      "answer": "No reputable SEO provider can guarantee specific rankings because search algorithms are complex and constantly changing. We focus on implementing best practices that improve your visibility over time."
+    },
+    {
+      "question": "What are local citations and why do they matter?",
+      "answer": "Citations are mentions of your business name, address, and phone number on other websites like directories and social platforms. Consistent citations help Google trust your business information."
+    },
+    {
+      "question": "Can you help me get more Google reviews?",
+      "answer": "We can set up systems and provide guidance on getting more reviews ethically. This includes review request workflows and making it easy for customers to leave feedback."
+    },
+    {
+      "question": "How much does local SEO cost?",
+      "answer": "Our local SEO setup packages range from $1,000 to $3,000 depending on your needs. This is typically a one-time setup fee, though ongoing SEO services are available."
+    },
+    {
+      "question": "Do I need both local SEO and a good website?",
+      "answer": "Yes, they work together. Local SEO helps people find you, but your website is what converts them into customers. Both are important for online success."
+    }
+  ],
+  "speed-technical-seo": [
+    {
+      "question": "How do I know if my website is slow?",
+      "answer": "You can test your site speed using free tools like Google PageSpeed Insights or GTmetrix. If your site takes more than 3 seconds to load, it's likely losing you visitors and rankings."
+    },
+    {
+      "question": "What are Core Web Vitals?",
+      "answer": "Core Web Vitals are Google's metrics for measuring user experience: loading performance (LCP), interactivity (FID), and visual stability (CLS). They affect your search rankings."
+    },
+    {
+      "question": "Will speed optimization change how my website looks?",
+      "answer": "No, speed optimization happens behind the scenes. Your website will look exactly the same—it will just load much faster."
+    },
+    {
+      "question": "How much faster will my website be after optimization?",
+      "answer": "Results vary depending on your starting point and website platform, but most sites see 30-60% improvement in load times. Some see even greater improvements."
+    },
+    {
+      "question": "Can speed optimization help my search rankings?",
+      "answer": "Yes, page speed is a confirmed Google ranking factor. Faster sites tend to rank better, especially on mobile searches."
+    },
+    {
+      "question": "How much does speed and technical SEO optimization cost?",
+      "answer": "Speed optimization projects typically range from $800 to $2,500 depending on your website's complexity and the issues that need to be addressed."
+    },
+    {
+      "question": "Will I need ongoing speed optimization?",
+      "answer": "After initial optimization, your site should stay fast with proper maintenance. However, adding new content or features may require periodic re-optimization."
+    },
+    {
+      "question": "What platforms can you optimize?",
+      "answer": "We can optimize websites on most platforms including WordPress, Shopify, custom-built sites, and more. Some platforms have more optimization options than others."
+    }
+  ],
+  "shopify-customization": [
+    {
+      "question": "Can you customize any Shopify theme?",
+      "answer": "Yes, we can customize most Shopify themes. Some themes are more flexible than others, but we can typically achieve your goals regardless of which theme you're using."
+    },
+    {
+      "question": "Will customizations break when Shopify or my theme updates?",
+      "answer": "We write clean, well-documented code that's designed to survive updates. However, major theme updates occasionally require minor adjustments, which we can help with."
+    },
+    {
+      "question": "Can you add features that aren't available in Shopify?",
+      "answer": "Many features can be added through custom code or apps. We'll assess your needs and recommend the best approach, whether that's custom development or app integration."
+    },
+    {
+      "question": "How long does Shopify customization take?",
+      "answer": "Simple customizations can be done in days, while more extensive projects take 2-4 weeks. We'll provide a timeline based on your specific requirements."
+    },
+    {
+      "question": "Do you work with Shopify Plus?",
+      "answer": "Yes, we work with both standard Shopify and Shopify Plus stores. Plus stores have additional customization options that we can take advantage of."
+    },
+    {
+      "question": "How much does Shopify customization cost?",
+      "answer": "Shopify customization projects typically range from $1,500 to $5,000+ depending on scope. Simple changes cost less; full store redesigns cost more."
+    },
+    {
+      "question": "Can you help migrate my store to Shopify?",
+      "answer": "Yes, we can help migrate your existing store from other platforms to Shopify, including products, customers, and order history where possible."
+    },
+    {
+      "question": "Will customizations affect my store's speed?",
+      "answer": "We optimize our customizations for performance. In fact, we often improve store speed as part of customization projects through image optimization and code cleanup."
+    }
+  ],
+  "brand-starter-kit": [
+    {
+      "question": "What's included in a brand starter kit?",
+      "answer": "Our brand starter kit includes a professional logo in multiple formats, color palette, typography selections, basic brand guidelines, and social media profile images."
+    },
+    {
+      "question": "How many logo concepts will I see?",
+      "answer": "We typically present 2-3 logo concepts for you to choose from. Once you select a direction, we refine it based on your feedback until you're completely satisfied."
+    },
+    {
+      "question": "What if I don't like any of the logo options?",
+      "answer": "That's rare, but if it happens, we'll dig deeper into your preferences and create additional concepts. We won't finalize until you have a logo you love."
+    },
+    {
+      "question": "Can I use the logo on anything I want?",
+      "answer": "Yes, you own full rights to your logo and brand assets. You can use them anywhere—website, business cards, signage, marketing materials, merchandise, etc."
+    },
+    {
+      "question": "What file formats will I receive?",
+      "answer": "You'll receive your logo in all common formats: PNG (with transparent background), JPG, SVG (vector), and PDF. This covers virtually any use case."
+    },
+    {
+      "question": "How long does the branding process take?",
+      "answer": "Most brand starter kit projects take 2-3 weeks from kickoff to final delivery, depending on how quickly you can provide feedback during the revision process."
+    },
+    {
+      "question": "How much does a brand starter kit cost?",
+      "answer": "Our brand starter kits range from $800 to $2,000 depending on the scope. Basic packages focus on logo and colors; premium packages include more assets and applications."
+    },
+    {
+      "question": "Can you match my existing brand colors?",
+      "answer": "If you have existing brand colors you want to keep, we can absolutely work with them. We can also help refine or expand your color palette if needed."
+    }
+  ],
+  "analytics-tracking": [
+    {
+      "question": "What's the difference between Google Analytics and Google Search Console?",
+      "answer": "Google Analytics shows how people behave on your website, while Search Console shows how your site performs in Google search results. Both are important and we set up both."
+    },
+    {
+      "question": "Why do I need analytics tracking?",
+      "answer": "Without analytics, you're making business decisions blindly. Tracking shows you what's working, where visitors come from, and what content converts—essential data for growth."
+    },
+    {
+      "question": "What is GA4 and do I need it?",
+      "answer": "GA4 is Google Analytics 4, the latest version of Google Analytics. It replaced Universal Analytics and offers better insights. All new setups should use GA4."
+    },
+    {
+      "question": "Can you track phone calls from my website?",
+      "answer": "Yes, we can set up call tracking so you know when phone calls come from your website. This is especially valuable for service businesses."
+    },
+    {
+      "question": "Will I be able to understand the data?",
+      "answer": "We create custom dashboards that highlight the metrics that matter most to your business. We also provide training so you can interpret your data confidently."
+    },
+    {
+      "question": "How much does analytics setup cost?",
+      "answer": "Analytics and tracking setup typically ranges from $500 to $1,500 depending on the complexity of your needs and whether you need advanced features like e-commerce tracking."
+    },
+    {
+      "question": "Do you provide ongoing analytics support?",
+      "answer": "Yes, we offer monthly reporting and analysis as an add-on service. We can also train you to run your own reports if you prefer."
+    },
+    {
+      "question": "Is my data private and secure?",
+      "answer": "Yes, we follow best practices for data privacy. Your analytics data is stored in your own Google account, and we set up appropriate data retention and privacy settings."
+    }
+  ]
+}

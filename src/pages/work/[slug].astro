@@ -1,0 +1,217 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import GlassCard from '@/components/ui/GlassCard.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+import Button from '@/components/ui/Button.astro';
+import Badge from '@/components/ui/Badge.astro';
+import Breadcrumbs from '@/components/seo/Breadcrumbs.astro';
+import RevealOnScroll from '@/components/motion/RevealOnScroll.astro';
+import CTABannerSection from '@/sections/CTABannerSection.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { data } = project;
+
+// Get other projects for "More Work" section
+const allProjects = await getCollection('projects');
+const otherProjects = allProjects
+  .filter((p) => p.data.slug !== data.slug)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+const breadcrumbItems = [
+  { label: 'Work', href: '/work/' },
+  { label: data.name, href: `/work/${data.slug}/` },
+];
+
+const categoryLabels: Record<string, string> = {
+  'web-app': 'Web Application',
+  'website': 'Website',
+  'ecommerce': 'E-commerce Store',
+  'landing-page': 'Landing Page',
+};
+---
+
+<BaseLayout
+  title={`${data.name} | Case Study`}
+  description={data.shortDescription}
+>
+  <!-- Hero -->
+  <Section padding="lg" background="mesh">
+    <Container size="xl">
+      <Breadcrumbs items={breadcrumbItems} class="mb-8" />
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <RevealOnScroll>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <Badge variant="gradient" size="md">
+                {categoryLabels[data.category] || data.category}
+              </Badge>
+              {data.tags.slice(0, 2).map((tag) => (
+                <Badge variant="outline" size="md">{tag}</Badge>
+              ))}
+            </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={100}>
+            <h1 class="text-display-lg md:text-display-xl text-text mb-4">
+              {data.name}
+            </h1>
+          </RevealOnScroll>
+
+          {data.client && (
+            <RevealOnScroll delay={150}>
+              <p class="text-text-muted mb-4">
+                Client: <span class="text-text">{data.client}</span>
+              </p>
+            </RevealOnScroll>
+          )}
+
+          <RevealOnScroll delay={200}>
+            <p class="text-lg text-text-muted leading-relaxed mb-8">
+              {data.description}
+            </p>
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={300}>
+            <div class="flex flex-wrap gap-4">
+              {data.url && (
+                <Button href={data.url} variant="primary" external>
+                  Visit Website
+                  <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </Button>
+              )}
+              <Button href="/contact" variant="secondary">
+                Start a Similar Project
+              </Button>
+            </div>
+          </RevealOnScroll>
+        </div>
+
+        <RevealOnScroll delay={200}>
+          <div class="relative">
+            <div class="aspect-video rounded-2xl overflow-hidden glass">
+              <img
+                src={data.image.src}
+                alt={data.image.alt}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            {/* Decorative glow */}
+            <div class="absolute -inset-4 bg-gradient-primary opacity-10 blur-3xl -z-10 rounded-3xl"></div>
+          </div>
+        </RevealOnScroll>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Deliverables -->
+  {data.deliverables && data.deliverables.length > 0 && (
+    <Section padding="lg" background="elevated">
+      <Container size="xl">
+        <div class="max-w-4xl mx-auto">
+          <RevealOnScroll>
+            <h2 class="text-display-md text-text mb-8 text-center">
+              What we <GradientText>delivered</GradientText>
+            </h2>
+          </RevealOnScroll>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            {data.deliverables.map((item, index) => (
+              <RevealOnScroll delay={index * 60}>
+                <div class="flex items-start gap-4 p-4 glass rounded-xl">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-accent-primary/10 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="text-text-muted">{item}</p>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Results -->
+  {data.results && (
+    <Section padding="lg" background="default">
+      <Container size="lg">
+        <RevealOnScroll>
+          <GlassCard padding="lg" hover={false} glow="cyan" class="text-center">
+            <h2 class="text-display-md text-text mb-4">
+              The <GradientText>Results</GradientText>
+            </h2>
+            <p class="text-xl text-text-muted leading-relaxed max-w-2xl mx-auto">
+              {data.results}
+            </p>
+          </GlassCard>
+        </RevealOnScroll>
+      </Container>
+    </Section>
+  )}
+
+  <!-- More Work -->
+  {otherProjects.length > 0 && (
+    <Section padding="lg" background="elevated">
+      <Container size="xl">
+        <div class="flex items-center justify-between mb-12">
+          <RevealOnScroll>
+            <h2 class="text-display-md text-text">
+              More <GradientText>work</GradientText>
+            </h2>
+          </RevealOnScroll>
+          <RevealOnScroll delay={100}>
+            <Button href="/work" variant="secondary" size="sm">
+              View All
+            </Button>
+          </RevealOnScroll>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {otherProjects.map((proj, index) => (
+            <RevealOnScroll delay={index * 80}>
+              <a href={`/work/${proj.data.slug}/`} class="block group">
+                <GlassCard hover={true} padding="none" class="overflow-hidden">
+                  <div class="aspect-video relative overflow-hidden bg-surface-200">
+                    <img
+                      src={proj.data.thumbnail || proj.data.image.src}
+                      alt={proj.data.image.alt}
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="text-text font-semibold group-hover:text-accent-primary transition-colors">
+                      {proj.data.name}
+                    </h3>
+                    <p class="text-text-muted text-sm mt-1 line-clamp-1">
+                      {proj.data.shortDescription}
+                    </p>
+                  </div>
+                </GlassCard>
+              </a>
+            </RevealOnScroll>
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <CTABannerSection />
+</BaseLayout>

@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Container from '../../../../components/ui/Container.astro';
+import Section from '../../../../components/ui/Section.astro';
+import GlassCard from '../../../../components/ui/GlassCard.astro';
+import GradientText from '../../../../components/ui/GradientText.astro';
+import Button from '../../../../components/ui/Button.astro';
+import RevealOnScroll from '../../../../components/motion/RevealOnScroll.astro';
+import Breadcrumbs from '../../../../components/seo/Breadcrumbs.astro';
+import { getAllCityServicePaths, getCityBySlug, getNearbyCities, getLocationBreadcrumbs, formatLocationTitle } from '../../../../utils/locations';
+import { getLocationContent } from '../../../../utils/content-selector';
+import { getEntry } from 'astro:content';
+import { siteConfig } from '../../../../data/site-config';
+
+export async function getStaticPaths() {
+  const paths = getAllCityServicePaths();
+  return paths.map(({ city, service }) => ({
+    params: { city, service },
+  }));
+}
+
+const { city: citySlug, service: serviceSlug } = Astro.params;
+const city = getCityBySlug(citySlug);
+const serviceEntry = await getEntry('services', serviceSlug);
+
+if (!city || !serviceEntry) {
+  return Astro.redirect('/404');
+}
+
+const service = serviceEntry.data;
+const nearbyCities = getNearbyCities(city.slug);
+const content = getLocationContent(city.slug, city.name, service.slug);
+const breadcrumbs = getLocationBreadcrumbs(city, service.name, service.slug);
+
+const pageTitle = formatLocationTitle(service.name, city);
+
+const seo = {
+  title: `${pageTitle} | Professional ${service.name} Services`,
+  description: `${service.shortDescription} Serving businesses in ${city.name}, ${city.stateAbbr}. Get a professional website that attracts local customers.`,
+};
+
+// Schema markup for this page
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${service.name} in ${city.name}`,
+  description: seo.description,
+  provider: {
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: city.name,
+    containedInPlace: {
+      '@type': 'State',
+      name: 'Georgia',
+    },
+  },
+  serviceType: service.name,
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: content.faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <Section class="pt-32 pb-8">
+    <Container>
+      <Breadcrumbs items={breadcrumbs} />
+
+      <RevealOnScroll>
+        <div class="max-w-3xl mb-12">
+          <p class="text-accent-primary text-sm font-medium tracking-wider uppercase mb-4">
+            {service.name} Services
+          </p>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            <GradientText>{service.name}</GradientText> in {city.name}, {city.stateAbbr}
+          </h1>
+          <p class="text-text-muted text-lg leading-relaxed">
+            {content.intro}
+          </p>
+        </div>
+      </RevealOnScroll>
+
+      <RevealOnScroll delay={100}>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/contact" variant="primary" size="lg">
+            Get a Free Quote
+          </Button>
+          <Button href={`/services/${service.slug}`} variant="secondary" size="lg">
+            Learn More About This Service
+          </Button>
+        </div>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+
+  <Section class="pb-16">
+    <Container>
+      <RevealOnScroll>
+        <h2 class="text-2xl md:text-3xl font-bold mb-8">
+          What You Get
+        </h2>
+      </RevealOnScroll>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {service.deliverables.map((deliverable, index) => (
+          <RevealOnScroll delay={Math.min(index * 50, 200)}>
+            <GlassCard class="p-6 h-full">
+              <h3 class="text-lg font-semibold mb-2">{deliverable.title}</h3>
+              <p class="text-text-muted text-sm">{deliverable.description}</p>
+            </GlassCard>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-16">
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <RevealOnScroll>
+            <h2 class="text-2xl md:text-3xl font-bold mb-8">
+              Benefits for Your {city.name} Business
+            </h2>
+          </RevealOnScroll>
+
+          <ul class="space-y-4">
+            {content.benefits.map((benefit, index) => (
+              <RevealOnScroll delay={Math.min(index * 50, 200)}>
+                <li class="flex items-start gap-4">
+                  <div class="w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span class="text-text-muted">{benefit}</span>
+                </li>
+              </RevealOnScroll>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <RevealOnScroll>
+            <GlassCard class="p-8">
+              <h3 class="text-xl font-bold mb-6">This Service is Perfect For</h3>
+              <ul class="space-y-3">
+                {service.whoItsFor.map((who) => (
+                  <li class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-accent-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-text-muted">{who}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-8 pt-6 border-t border-white/10">
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span class="text-text-muted text-sm">Starting at</span>
+                  <span class="text-3xl font-bold text-gradient">
+                    ${service.pricingRange.from.toLocaleString()}
+                  </span>
+                  {service.pricingRange.to && (
+                    <span class="text-text-muted">
+                      - ${service.pricingRange.to.toLocaleString()}
+                    </span>
+                  )}
+                  <span class="text-text-subtle text-sm">
+                    /{service.pricingRange.unit}
+                  </span>
+                </div>
+                <Button href="/contact" variant="primary" class="w-full">
+                  Get Your Free Quote
+                </Button>
+              </div>
+            </GlassCard>
+          </RevealOnScroll>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-16">
+    <Container>
+      <RevealOnScroll>
+        <h2 class="text-2xl md:text-3xl font-bold mb-8">
+          Frequently Asked Questions
+        </h2>
+      </RevealOnScroll>
+
+      <div class="space-y-4 max-w-3xl">
+        {content.faqs.map((faq, index) => (
+          <RevealOnScroll delay={Math.min(index * 50, 200)}>
+            <details class="glass-card group" open={index === 0}>
+              <summary class="p-6 cursor-pointer list-none flex items-center justify-between">
+                <h3 class="font-semibold pr-4">{faq.question}</h3>
+                <svg
+                  class="w-5 h-5 text-text-subtle flex-shrink-0 transition-transform group-open:rotate-180"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-6 pb-6 text-text-muted">
+                {faq.answer}
+              </div>
+            </details>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  {nearbyCities.length > 0 && (
+    <Section class="pb-16">
+      <Container>
+        <RevealOnScroll>
+          <h2 class="text-2xl font-bold mb-6">
+            {service.name} in Nearby Cities
+          </h2>
+        </RevealOnScroll>
+        <div class="flex flex-wrap gap-3">
+          {nearbyCities.map((nearbyCity, index) => (
+            <RevealOnScroll delay={index * 50}>
+              <a
+                href={`/locations/georgia/${nearbyCity.slug}/${service.slug}`}
+                class="px-4 py-2 rounded-full glass hover:bg-white/10 transition-colors"
+              >
+                {nearbyCity.name}
+              </a>
+            </RevealOnScroll>
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <Section class="pb-16">
+    <Container>
+      <RevealOnScroll>
+        <h2 class="text-2xl font-bold mb-6">Related Services</h2>
+      </RevealOnScroll>
+      <div class="flex flex-wrap gap-3">
+        {service.relatedServices.map((relatedSlug, index) => (
+          <RevealOnScroll delay={index * 50}>
+            <a
+              href={`/locations/georgia/${city.slug}/${relatedSlug}`}
+              class="px-4 py-2 rounded-full glass hover:bg-white/10 transition-colors capitalize"
+            >
+              {relatedSlug.replace(/-/g, ' ')}
+            </a>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-32">
+    <Container size="sm">
+      <RevealOnScroll>
+        <GlassCard class="p-8 md:p-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Ready for {service.name} in {city.name}?
+          </h2>
+          <p class="text-text-muted mb-8 max-w-xl mx-auto">
+            Let's discuss your project and create something that helps your
+            {city.name} business grow. Free consultation, no obligation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" variant="primary" size="lg">
+              Get Your Free Quote
+            </Button>
+            <Button href="/work" variant="secondary" size="lg">
+              See Our Work
+            </Button>
+          </div>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+</BaseLayout>

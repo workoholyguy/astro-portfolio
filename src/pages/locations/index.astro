@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/ui/Container.astro';
+import Section from '../../components/ui/Section.astro';
+import GlassCard from '../../components/ui/GlassCard.astro';
+import GradientText from '../../components/ui/GradientText.astro';
+import Button from '../../components/ui/Button.astro';
+import RevealOnScroll from '../../components/motion/RevealOnScroll.astro';
+
+const seo = {
+  title: 'Service Areas | Web Design & Development in Georgia',
+  description: 'Professional web design and development services across Georgia. Serving businesses in Atlanta, Savannah, Augusta, and cities throughout the state.',
+};
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <Section class="pt-32 pb-20">
+    <Container>
+      <RevealOnScroll>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-accent-primary text-sm font-medium tracking-wider uppercase mb-4">
+            Service Areas
+          </p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Web Services Across <GradientText>Georgia</GradientText>
+          </h1>
+          <p class="text-text-muted text-lg">
+            We provide professional web design, development, and digital marketing services
+            to businesses throughout Georgia. Remote collaboration means you get expert
+            service no matter where you're located.
+          </p>
+        </div>
+      </RevealOnScroll>
+
+      <RevealOnScroll delay={100}>
+        <GlassCard class="p-8 md:p-12" hover>
+          <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center">
+                  <svg class="w-6 h-6 text-surface" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold">Georgia</h2>
+              </div>
+              <p class="text-text-muted mb-6">
+                From the Atlanta metro area to Savannah's historic coast, we serve businesses
+                across Georgia with professional web design and development services.
+                Browse our service areas to find local solutions for your business.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 rounded-full text-sm bg-white/5 text-text-muted">
+                  41 Cities
+                </span>
+                <span class="px-3 py-1 rounded-full text-sm bg-white/5 text-text-muted">
+                  9 Services
+                </span>
+                <span class="px-3 py-1 rounded-full text-sm bg-white/5 text-text-muted">
+                  Remote Friendly
+                </span>
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <Button href="/locations/georgia" variant="primary" size="lg">
+                Browse Georgia Cities
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Button>
+            </div>
+          </div>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+
+  <Section class="pb-20">
+    <Container>
+      <RevealOnScroll>
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Why Work With a Remote Team?
+          </h2>
+          <p class="text-text-muted">
+            Location shouldn't limit your access to great web design. Here's why businesses
+            across Georgia choose to work with us remotely.
+          </p>
+        </div>
+      </RevealOnScroll>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <RevealOnScroll delay={0}>
+          <GlassCard class="p-6 h-full">
+            <div class="w-10 h-10 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Access Top Talent</h3>
+            <p class="text-text-muted text-sm">
+              Work with experienced designers and developers regardless of geography.
+              Get the expertise your project deserves.
+            </p>
+          </GlassCard>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={100}>
+          <GlassCard class="p-6 h-full">
+            <div class="w-10 h-10 rounded-lg bg-accent-orange/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Better Value</h3>
+            <p class="text-text-muted text-sm">
+              Lower overhead means more competitive pricing without sacrificing quality.
+              Your budget goes further with remote collaboration.
+            </p>
+          </GlassCard>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={200}>
+          <GlassCard class="p-6 h-full">
+            <div class="w-10 h-10 rounded-lg bg-accent-primary/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-accent-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Faster Delivery</h3>
+            <p class="text-text-muted text-sm">
+              No scheduling in-person meetings means we can start work sooner and
+              iterate faster. Your project moves at the speed of modern collaboration.
+            </p>
+          </GlassCard>
+        </RevealOnScroll>
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-32">
+    <Container size="sm">
+      <RevealOnScroll>
+        <GlassCard class="p-8 md:p-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Ready to Get Started?
+          </h2>
+          <p class="text-text-muted mb-8 max-w-xl mx-auto">
+            Whether you're in downtown Atlanta or rural Georgia, we're ready to help
+            your business succeed online. Let's talk about your project.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" variant="primary" size="lg">
+              Get a Free Quote
+            </Button>
+            <Button href="/services" variant="secondary" size="lg">
+              View Services
+            </Button>
+          </div>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+</BaseLayout>

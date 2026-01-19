@@ -1,0 +1,25 @@
+{
+  "slug": "7lines",
+  "name": "7Lines",
+  "client": "7Lines Inc",
+  "description": "A minimalist logistics organization web application built with Next.js and TypeScript. Designed for rapid iteration and scalability with a clean, efficient codebase.",
+  "shortDescription": "Logistics organization web application",
+  "url": "https://github.com/workoholyguy/7lines",
+  "image": {
+    "src": "/assets/images/7linesinc_icon.png",
+    "alt": "7Lines application"
+  },
+  "thumbnail": "/assets/images/7linesinc_icon.png",
+  "tags": ["Web App", "Next.js", "TypeScript"],
+  "category": "web-app",
+  "featured": false,
+  "order": 8,
+  "deliverables": [
+    "Next.js application setup",
+    "TypeScript configuration",
+    "Tailwind CSS styling",
+    "Vercel deployment",
+    "Clean architecture",
+    "Documentation"
+  ]
+}

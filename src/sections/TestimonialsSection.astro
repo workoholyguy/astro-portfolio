@@ -1,0 +1,77 @@
+---
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import GlassCard from '@/components/ui/GlassCard.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+import RevealOnScroll from '@/components/motion/RevealOnScroll.astro';
+
+// Placeholder testimonials - replace with real ones
+const testimonials = [
+  {
+    quote: "Working with AVID TECH was a great experience. They understood our vision and delivered a website that truly represents our practice. Our patients love how easy it is to book appointments now.",
+    name: "Dr. Sarah Mitchell",
+    title: "Owner, Lux Dentistry Group",
+    image: "/assets/images/testimonials/placeholder-1.jpg",
+  },
+  {
+    quote: "They transformed our online store and the results speak for themselves. The new design is clean, fast, and our customers find it much easier to shop. Highly recommend!",
+    name: "Ahmed Hassan",
+    title: "Founder, BFD UAE",
+    image: "/assets/images/testimonials/placeholder-2.jpg",
+  },
+  {
+    quote: "Professional, responsive, and delivered on time. Our new website has helped us reach more homeowners in the area. The project gallery feature is exactly what we needed.",
+    name: "Mike Stevens",
+    title: "Owner, S2M Cabinets",
+    image: "/assets/images/testimonials/placeholder-3.jpg",
+  },
+];
+---
+
+<Section id="testimonials" padding="lg" background="elevated">
+  <Container size="xl">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <RevealOnScroll>
+        <p class="text-accent-primary text-sm font-medium tracking-wide uppercase mb-4">
+          Testimonials
+        </p>
+      </RevealOnScroll>
+      <RevealOnScroll delay={100}>
+        <h2 class="text-display-lg md:text-display-xl text-text mb-6">
+          What our clients
+          <GradientText>say</GradientText>
+        </h2>
+      </RevealOnScroll>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <RevealOnScroll delay={index * 100}>
+          <GlassCard hover={false} padding="lg" class="h-full flex flex-col">
+            {/* Quote icon */}
+            <svg class="w-10 h-10 text-accent-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+
+            {/* Quote */}
+            <blockquote class="text-text-muted leading-relaxed flex-grow mb-6">
+              "{testimonial.quote}"
+            </blockquote>
+
+            {/* Author */}
+            <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+              <div class="w-12 h-12 rounded-full bg-surface-300 overflow-hidden">
+                {/* Placeholder avatar - replace with real images */}
+                <div class="w-full h-full bg-gradient-primary opacity-50"></div>
+              </div>
+              <div>
+                <p class="text-text font-medium">{testimonial.name}</p>
+                <p class="text-text-subtle text-sm">{testimonial.title}</p>
+              </div>
+            </div>
+          </GlassCard>
+        </RevealOnScroll>
+      ))}
+    </div>
+  </Container>
+</Section>

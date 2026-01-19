@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+import GlassCard from '../components/ui/GlassCard.astro';
+import GradientText from '../components/ui/GradientText.astro';
+import Button from '../components/ui/Button.astro';
+import RevealOnScroll from '../components/motion/RevealOnScroll.astro';
+
+const seo = {
+  title: 'Our Process | How We Build Your Website',
+  description: 'Our proven 4-step process for building high-performing websites: Discovery, Design, Build, and Launch. See how we work with clients.',
+};
+
+const steps = [
+  {
+    number: '01',
+    title: 'Discovery',
+    description: 'We start by understanding your business, goals, and target audience. This isn\'t just a form—it\'s a real conversation to make sure we build the right thing.',
+    details: [
+      'Business goals and success metrics',
+      'Target audience and competitors',
+      'Brand guidelines and preferences',
+      'Technical requirements and integrations',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Design',
+    description: 'Based on our discovery, we create designs that align with your brand and convert visitors. You\'ll see mockups before any code is written.',
+    details: [
+      'Wireframes and user flow',
+      'Visual design mockups',
+      'Mobile-responsive layouts',
+      'Revision rounds until you\'re happy',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Build',
+    description: 'We bring the designs to life with clean, fast code. You\'ll have access to a staging site to review progress throughout development.',
+    details: [
+      'Modern, maintainable code',
+      'Speed and performance optimization',
+      'SEO best practices built in',
+      'Content management training',
+    ],
+  },
+  {
+    number: '04',
+    title: 'Launch',
+    description: 'After thorough testing, we launch your site and make sure everything runs smoothly. We don\'t disappear after launch—we\'re here to support you.',
+    details: [
+      'Pre-launch testing and QA',
+      'Domain and hosting setup',
+      'Analytics and tracking configured',
+      'Post-launch support period',
+    ],
+  },
+];
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <Section class="pt-32 pb-20">
+    <Container>
+      <RevealOnScroll>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-accent-primary text-sm font-medium tracking-wider uppercase mb-4">
+            How We Work
+          </p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            A Process That <GradientText>Delivers</GradientText>
+          </h1>
+          <p class="text-text-muted text-lg leading-relaxed">
+            Every successful project follows our proven 4-step process. It keeps us
+            organized, keeps you informed, and ensures we deliver on time and on budget.
+          </p>
+        </div>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+
+  <Section class="pb-20">
+    <Container>
+      <div class="space-y-12">
+        {steps.map((step, index) => (
+          <RevealOnScroll delay={index * 100}>
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+              <div class="lg:col-span-2">
+                <span class="text-6xl md:text-7xl font-bold text-gradient opacity-50">
+                  {step.number}
+                </span>
+              </div>
+              <div class="lg:col-span-10">
+                <GlassCard class="p-8">
+                  <h2 class="text-2xl md:text-3xl font-bold mb-4">{step.title}</h2>
+                  <p class="text-text-muted text-lg mb-6">{step.description}</p>
+                  <ul class="grid sm:grid-cols-2 gap-3">
+                    {step.details.map((detail) => (
+                      <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-accent-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="text-text-muted">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </GlassCard>
+              </div>
+            </div>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </Container>
+  </Section>
+
+  <Section class="pb-20">
+    <Container>
+      <RevealOnScroll>
+        <GlassCard class="p-8 md:p-12">
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">2-4</div>
+              <p class="text-text-muted">weeks average timeline</p>
+            </div>
+            <div>
+              <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">100%</div>
+              <p class="text-text-muted">fixed-price projects</p>
+            </div>
+            <div>
+              <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">30</div>
+              <p class="text-text-muted">days post-launch support</p>
+            </div>
+          </div>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+
+  <Section class="pb-32">
+    <Container size="sm">
+      <RevealOnScroll>
+        <GlassCard class="p-8 md:p-12 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Ready to Get Started?
+          </h2>
+          <p class="text-text-muted mb-8 max-w-xl mx-auto">
+            Let's talk about your project. We'll walk you through our process and
+            give you a clear timeline and quote.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" variant="primary" size="lg">
+              Start Your Project
+            </Button>
+            <Button href="/pricing" variant="secondary" size="lg">
+              View Pricing
+            </Button>
+          </div>
+        </GlassCard>
+      </RevealOnScroll>
+    </Container>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,25 @@
+{
+  "slug": "forkify",
+  "name": "FORKIFY",
+  "client": "Personal Project",
+  "description": "A modern recipe web application with search functionality, favorites system, and user-uploaded recipes. Built with vanilla JavaScript to demonstrate core web development skills without framework dependencies.",
+  "shortDescription": "Modern recipe search and management app",
+  "url": "https://github.com/workoholyguy/forkify-javascript-static-app",
+  "image": {
+    "src": "/assets/images/forkify-project-icon.png",
+    "alt": "FORKIFY recipe application"
+  },
+  "thumbnail": "/assets/images/forkify-project-icon.png",
+  "tags": ["Web App", "JavaScript", "API Integration"],
+  "category": "web-app",
+  "featured": false,
+  "order": 9,
+  "deliverables": [
+    "Recipe search functionality",
+    "Favorites and bookmarks system",
+    "User recipe uploads",
+    "Responsive design",
+    "API integration",
+    "Local storage persistence"
+  ]
+}

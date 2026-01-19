@@ -1,0 +1,72 @@
+{
+  "slug": "landing-pages",
+  "name": "Landing Pages",
+  "shortDescription": "High-converting landing pages designed to capture leads and drive action.",
+  "heroDescription": "Need a focused page for a specific campaign, product, or promotion? We create conversion-optimized landing pages that turn visitors into leads and customers.",
+  "icon": "target",
+  "deliverables": [
+    {
+      "title": "Conversion-Focused Design",
+      "description": "Every element designed to drive action"
+    },
+    {
+      "title": "Compelling Copy",
+      "description": "Persuasive messaging that speaks to your audience"
+    },
+    {
+      "title": "Lead Capture Forms",
+      "description": "Optimized forms that maximize conversions"
+    },
+    {
+      "title": "A/B Testing Ready",
+      "description": "Built for testing and optimization"
+    },
+    {
+      "title": "Analytics Integration",
+      "description": "Track performance and conversions"
+    },
+    {
+      "title": "Fast Load Times",
+      "description": "Optimized for speed to reduce bounce rates"
+    }
+  ],
+  "whoItsFor": [
+    "Businesses running paid advertising campaigns",
+    "Companies launching new products or services",
+    "Businesses promoting special offers or events",
+    "Anyone needing a focused page for lead generation"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Goal Setting",
+      "description": "We define the conversion goal and target audience"
+    },
+    {
+      "step": 2,
+      "title": "Wireframe",
+      "description": "We map out the page structure and flow"
+    },
+    {
+      "step": 3,
+      "title": "Design & Copy",
+      "description": "We create visuals and persuasive content"
+    },
+    {
+      "step": 4,
+      "title": "Launch & Track",
+      "description": "We deploy and set up conversion tracking"
+    }
+  ],
+  "pricingRange": {
+    "from": 800,
+    "to": 2500,
+    "unit": "page"
+  },
+  "relatedServices": ["website-design", "analytics-tracking", "local-seo"],
+  "seo": {
+    "title": "Landing Page Design Services",
+    "description": "High-converting landing pages for campaigns and lead generation. Professional design focused on driving action and capturing leads."
+  },
+  "order": 3
+}

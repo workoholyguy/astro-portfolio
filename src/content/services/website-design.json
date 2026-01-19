@@ -1,0 +1,72 @@
+{
+  "slug": "website-design",
+  "name": "Website Design & Build",
+  "shortDescription": "Custom websites designed to convert visitors into customers and grow your business.",
+  "heroDescription": "Get a professional, custom-designed website that represents your brand, converts visitors into leads, and helps your business grow. We handle everything from design to launch.",
+  "icon": "layout",
+  "deliverables": [
+    {
+      "title": "Custom Design",
+      "description": "A unique design tailored to your brand, not a generic template"
+    },
+    {
+      "title": "Mobile-First Development",
+      "description": "Responsive design that looks great on all devices"
+    },
+    {
+      "title": "SEO Foundation",
+      "description": "Built-in SEO best practices for better search visibility"
+    },
+    {
+      "title": "Fast Loading Speed",
+      "description": "Optimized performance for better user experience and rankings"
+    },
+    {
+      "title": "Contact Forms",
+      "description": "Lead capture forms to convert visitors into customers"
+    },
+    {
+      "title": "Content Management",
+      "description": "Easy-to-update system so you can make changes yourself"
+    }
+  ],
+  "whoItsFor": [
+    "Small businesses needing their first professional website",
+    "Service businesses wanting to attract more local customers",
+    "Companies with outdated websites that no longer represent their brand",
+    "Entrepreneurs launching a new business or product"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Discovery",
+      "description": "We learn about your business, goals, and target audience"
+    },
+    {
+      "step": 2,
+      "title": "Design",
+      "description": "We create mockups and refine until you love it"
+    },
+    {
+      "step": 3,
+      "title": "Build",
+      "description": "We develop your site with modern, fast technology"
+    },
+    {
+      "step": 4,
+      "title": "Launch",
+      "description": "We deploy, test, and hand over the keys"
+    }
+  ],
+  "pricingRange": {
+    "from": 2500,
+    "to": 10000,
+    "unit": "project"
+  },
+  "relatedServices": ["website-redesign", "local-seo", "maintenance-care"],
+  "seo": {
+    "title": "Website Design & Build Services",
+    "description": "Professional website design and development for small businesses. Get a custom, fast-loading website that converts visitors into customers."
+  },
+  "order": 1
+}

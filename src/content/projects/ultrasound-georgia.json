@@ -1,0 +1,26 @@
+{
+  "slug": "ultrasound-georgia",
+  "name": "UltraSound Georgia",
+  "client": "UltraSound Georgia",
+  "description": "A fully responsive medical clinic website featuring appointment scheduling, service information, and SEO optimization. Built to help expectant parents easily find and book ultrasound services.",
+  "shortDescription": "Medical clinic website with appointment scheduling",
+  "url": "https://www.ultrasoundgeorgia.com",
+  "image": {
+    "src": "/assets/images/ultrasound-machine.png",
+    "alt": "UltraSound Georgia website"
+  },
+  "thumbnail": "/assets/images/ultrasound-machine.png",
+  "tags": ["Healthcare", "Web Design", "Local SEO"],
+  "category": "website",
+  "featured": true,
+  "order": 4,
+  "deliverables": [
+    "Responsive website design",
+    "Online appointment scheduling",
+    "Service information pages",
+    "Contact and location pages",
+    "SEO optimization",
+    "Mobile-friendly design"
+  ],
+  "results": "Improved online visibility and streamlined appointment booking process for patients."
+}

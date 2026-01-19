@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import GlassCard from '@/components/ui/GlassCard.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+import RevealOnScroll from '@/components/motion/RevealOnScroll.astro';
+import StaggerChildren from '@/components/motion/StaggerChildren.astro';
+
+// Get featured services (first 6)
+const allServices = await getCollection('services');
+const services = allServices
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 6);
+
+// Icon mapping
+const icons: Record<string, string> = {
+  'layout': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />`,
+  'refresh-cw': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />`,
+  'target': `<circle cx="12" cy="12" r="10" stroke-width="2" /><circle cx="12" cy="12" r="6" stroke-width="2" /><circle cx="12" cy="12" r="2" stroke-width="2" />`,
+  'shield': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />`,
+  'map-pin': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />`,
+  'zap': `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />`,
+};
+---
+
+<Section id="services" padding="lg" background="elevated">
+  <Container size="xl">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <RevealOnScroll>
+        <p class="text-accent-primary text-sm font-medium tracking-wide uppercase mb-4">
+          What We Do
+        </p>
+      </RevealOnScroll>
+      <RevealOnScroll delay={100}>
+        <h2 class="text-display-lg md:text-display-xl text-text mb-6">
+          Everything you need to
+          <GradientText>succeed online</GradientText>
+        </h2>
+      </RevealOnScroll>
+      <RevealOnScroll delay={200}>
+        <p class="text-lg text-text-muted">
+          From design to launch and beyond, we handle every aspect of your web presence
+          so you can focus on running your business.
+        </p>
+      </RevealOnScroll>
+    </div>
+
+    <StaggerChildren staggerDelay={100}>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <RevealOnScroll delay={index * 100}>
+            <a href={`/services/${service.data.slug}`} class="block h-full">
+              <GlassCard hover={true} padding="lg" class="h-full">
+                <div class="flex flex-col h-full">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-primary/10 flex items-center justify-center mb-4">
+                    <svg
+                      class="w-6 h-6 text-accent-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      set:html={icons[service.data.icon] || icons['layout']}
+                    />
+                  </div>
+                  <h3 class="text-lg font-semibold text-text mb-2">
+                    {service.data.name}
+                  </h3>
+                  <p class="text-text-muted text-sm flex-grow">
+                    {service.data.shortDescription}
+                  </p>
+                  <div class="mt-4 flex items-center text-accent-primary text-sm font-medium">
+                    Learn more
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </GlassCard>
+            </a>
+          </RevealOnScroll>
+        ))}
+      </div>
+    </StaggerChildren>
+  </Container>
+</Section>

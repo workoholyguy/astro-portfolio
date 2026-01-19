@@ -1,0 +1,79 @@
+---
+import Container from '@/components/ui/Container.astro';
+import Section from '@/components/ui/Section.astro';
+import GradientText from '@/components/ui/GradientText.astro';
+import RevealOnScroll from '@/components/motion/RevealOnScroll.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Discovery',
+    description: 'We learn about your business, goals, target audience, and what makes you unique. This shapes everything that follows.',
+  },
+  {
+    number: '02',
+    title: 'Design',
+    description: 'We create mockups that match your brand and convert visitors. You give feedback, we refine until it\'s perfect.',
+  },
+  {
+    number: '03',
+    title: 'Build',
+    description: 'We develop your site with modern, fast technology. Every page is responsive, accessible, and optimized for search.',
+  },
+  {
+    number: '04',
+    title: 'Launch',
+    description: 'We deploy your site, test everything, and hand over the keys. Plus ongoing support to keep things running smooth.',
+  },
+];
+---
+
+<Section id="process" padding="lg" background="elevated">
+  <Container size="xl">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <RevealOnScroll>
+        <p class="text-accent-primary text-sm font-medium tracking-wide uppercase mb-4">
+          Our Process
+        </p>
+      </RevealOnScroll>
+      <RevealOnScroll delay={100}>
+        <h2 class="text-display-lg md:text-display-xl text-text mb-6">
+          How we
+          <GradientText>work together</GradientText>
+        </h2>
+      </RevealOnScroll>
+      <RevealOnScroll delay={200}>
+        <p class="text-lg text-text-muted">
+          A straightforward process that keeps you informed every step of the way.
+          No surprises, no jargon, just results.
+        </p>
+      </RevealOnScroll>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step, index) => (
+        <RevealOnScroll delay={index * 100}>
+          <div class="relative">
+            {/* Connection line for desktop */}
+            {index < steps.length - 1 && (
+              <div class="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-white/20 to-transparent -translate-x-4"></div>
+            )}
+
+            {/* Step number */}
+            <div class="text-5xl font-bold text-gradient mb-4">
+              {step.number}
+            </div>
+
+            {/* Content */}
+            <h3 class="text-xl font-semibold text-text mb-3">
+              {step.title}
+            </h3>
+            <p class="text-text-muted">
+              {step.description}
+            </p>
+          </div>
+        </RevealOnScroll>
+      ))}
+    </div>
+  </Container>
+</Section>

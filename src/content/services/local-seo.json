@@ -1,0 +1,72 @@
+{
+  "slug": "local-seo",
+  "name": "Local SEO Setup",
+  "shortDescription": "Get found by local customers searching for your services online.",
+  "heroDescription": "Help local customers find your business when they search online. We set up your on-site SEO foundations, Google Business Profile, and local citations to boost your visibility.",
+  "icon": "map-pin",
+  "deliverables": [
+    {
+      "title": "On-Site SEO",
+      "description": "Optimized titles, meta descriptions, and content structure"
+    },
+    {
+      "title": "Google Business Profile",
+      "description": "Setup and optimization of your GBP listing"
+    },
+    {
+      "title": "Local Citations",
+      "description": "Consistent NAP across key directories"
+    },
+    {
+      "title": "Schema Markup",
+      "description": "LocalBusiness and Service schema for rich results"
+    },
+    {
+      "title": "Location Pages",
+      "description": "Dedicated pages for each service area"
+    },
+    {
+      "title": "Internal Linking",
+      "description": "Strategic links to boost page authority"
+    }
+  ],
+  "whoItsFor": [
+    "Local service businesses (plumbers, dentists, lawyers, etc.)",
+    "Businesses wanting more calls and leads from Google",
+    "Companies serving specific geographic areas",
+    "New businesses establishing their online presence"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Audit",
+      "description": "We analyze your current local search presence"
+    },
+    {
+      "step": 2,
+      "title": "Strategy",
+      "description": "We create a plan based on your target areas"
+    },
+    {
+      "step": 3,
+      "title": "Implementation",
+      "description": "We optimize your site and set up profiles"
+    },
+    {
+      "step": 4,
+      "title": "Handoff",
+      "description": "We provide guidance on maintaining rankings"
+    }
+  ],
+  "pricingRange": {
+    "from": 1000,
+    "to": 3000,
+    "unit": "project"
+  },
+  "relatedServices": ["website-design", "speed-technical-seo", "analytics-tracking"],
+  "seo": {
+    "title": "Local SEO Setup Services",
+    "description": "Help local customers find your business online. Professional local SEO setup including on-site optimization, Google Business Profile, and local citations."
+  },
+  "order": 5
+}

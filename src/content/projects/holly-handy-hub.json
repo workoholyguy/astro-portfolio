@@ -1,0 +1,25 @@
+{
+  "slug": "holly-handy-hub",
+  "name": "Holly Handy Hub",
+  "client": "Internal Project",
+  "description": "A community platform for home improvement enthusiasts to share ideas, find inspiration, and connect with other makers. Built with React and Supabase for real-time features and seamless user interactions.",
+  "shortDescription": "Home improvement community platform",
+  "url": "https://holyhandyhub.netlify.app",
+  "image": {
+    "src": "/assets/images/hhh-project-icon.png",
+    "alt": "Holly Handy Hub platform"
+  },
+  "thumbnail": "/assets/images/hhh-project-icon.png",
+  "tags": ["Web App", "React", "Supabase"],
+  "category": "web-app",
+  "featured": false,
+  "order": 7,
+  "deliverables": [
+    "Community platform development",
+    "User authentication with Supabase",
+    "Project sharing features",
+    "Real-time interactions",
+    "Responsive design",
+    "Image upload and gallery"
+  ]
+}
